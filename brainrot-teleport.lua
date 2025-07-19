@@ -1,11 +1,13 @@
 local Players = game:GetService("Players")
 local lp = Players.LocalPlayer
 local RunService = game:GetService("RunService")
+local Workspace = game:GetService("Workspace")
 
 local teleportPoint = nil
 local teleportEnabled = false
+local markerPart = nil -- Parte para marcar el punto
 
--- Función para detectar Brainrot
+-- Detectar Brainrot
 local function hasBrainrot()
     for _, item in ipairs(lp.Backpack:GetChildren()) do
         if item.Name:lower():find("brainrot") then
@@ -27,18 +29,31 @@ RunService.Heartbeat:Connect(function()
     if teleportEnabled and teleportPoint and hasBrainrot() then
         local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
         if hrp then
-            -- Teletransporta suavemente al punto
             hrp.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 3, 0))
-        else
-            print("No se encontró HumanoidRootPart")
         end
     else
         if teleportEnabled then
-            print("Se desactiva teletransporte (punto o brainrot faltante)")
             teleportEnabled = false
         end
     end
 end)
+
+-- Crear marcador visual en el mapa
+local function createMarker(position)
+    if markerPart then
+        markerPart:Destroy()
+    end
+    markerPart = Instance.new("Part")
+    markerPart.Size = Vector3.new(2, 0.2, 2)
+    markerPart.Anchored = true
+    markerPart.CanCollide = false
+    markerPart.Transparency = 0.5
+    markerPart.Color = Color3.fromRGB(255, 0, 0)
+    markerPart.Material = Enum.Material.Neon
+    markerPart.Position = position + Vector3.new(0, 1, 0)
+    markerPart.Name = "TeleportMarker"
+    markerPart.Parent = Workspace
+end
 
 -- Crear GUI y botones
 local gui = Instance.new("ScreenGui", lp:WaitForChild("PlayerGui"))
@@ -67,6 +82,7 @@ btnSetPoint.MouseButton1Click:Connect(function()
     if hrp then
         teleportPoint = hrp.Position
         print("📍 Punto de teletransporte fijado en:", teleportPoint)
+        createMarker(teleportPoint)
     else
         warn("No se pudo fijar el punto: no hay HumanoidRootPart")
     end
@@ -88,5 +104,9 @@ end)
 btnRemovePoint.MouseButton1Click:Connect(function()
     teleportEnabled = false
     teleportPoint = nil
+    if markerPart then
+        markerPart:Destroy()
+        markerPart = nil
+    end
     print("✖ Punto de teletransporte removido y teletransporte detenido")
 end)
