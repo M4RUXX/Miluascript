@@ -85,7 +85,14 @@ RunService.Heartbeat:Connect(function()
         local humanoid = character:FindFirstChildOfClass("Humanoid")
         local hrp = character:FindFirstChild("HumanoidRootPart")
         if humanoid and humanoid.Health > 0 and hrp then
-            hrp.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 5, 0))
+            -- Desactivar física temporalmente para evitar daño
+            humanoid.PlatformStand = true
+            hrp.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 10, 0))
+            task.delay(0.2, function()
+                if humanoid then
+                    humanoid.PlatformStand = false
+                end
+            end)
         end
     end
 end)
@@ -102,7 +109,6 @@ end
 
 lp.CharacterAdded:Connect(onCharacterAdded)
 
--- Ejecutar una vez al inicio si el personaje ya está cargado
 if lp.Character then
     onCharacterAdded()
 end
