@@ -1,13 +1,13 @@
 local Players = game:GetService("Players")
-local lp = Players.LocalPlayer
 local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 
+local lp = Players.LocalPlayer
 local teleportPoint = nil
 local teleportEnabled = false
 local markerPart = nil
+local gui = nil
 
--- Crear marcador visual para el punto de teletransporte
 local function createMarker(position)
     if markerPart then
         markerPart:Destroy()
@@ -24,10 +24,6 @@ local function createMarker(position)
     markerPart.Parent = Workspace
 end
 
--- Crear GUI y botones
-local gui = Instance.new("ScreenGui", lp:WaitForChild("PlayerGui"))
-gui.Name = "TeleportGui"
-
 local function createButton(text, position)
     local btn = Instance.new("TextButton")
     btn.Size = UDim2.new(0, 160, 0, 40)
@@ -42,51 +38,71 @@ local function createButton(text, position)
     return btn
 end
 
-local btnSetPoint = createButton("📍 Fijar punto", UDim2.new(0, 20, 0, 100))
-local btnStartTP = createButton("▶️ Empezar TP", UDim2.new(0, 20, 0, 150))
-local btnRemovePoint = createButton("✖ Quitar punto", UDim2.new(0, 20, 0, 200))
+local function setupGui()
+    if gui then gui:Destroy() end
+    gui = Instance.new("ScreenGui", lp:WaitForChild("PlayerGui"))
+    gui.Name = "TeleportGui"
 
--- Fijar punto de teletransporte
-btnSetPoint.MouseButton1Click:Connect(function()
-    local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
-    if hrp then
-        teleportPoint = hrp.Position
-        createMarker(teleportPoint)
-        print("Punto fijado en:", teleportPoint)
-    else
-        warn("No se encontró HumanoidRootPart para fijar punto")
+    local btnSetPoint = createButton("📍 Fijar punto", UDim2.new(0, 20, 0, 100))
+    local btnStartTP = createButton("▶️ Empezar TP", UDim2.new(0, 20, 0, 150))
+    local btnRemovePoint = createButton("✖ Quitar punto", UDim2.new(0, 20, 0, 200))
+
+    btnSetPoint.MouseButton1Click:Connect(function()
+        local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+        if hrp then
+            teleportPoint = hrp.Position
+            createMarker(teleportPoint)
+            print("Punto fijado en:", teleportPoint)
+        else
+            warn("No se encontró HumanoidRootPart para fijar punto")
+        end
+    end)
+
+    btnStartTP.MouseButton1Click:Connect(function()
+        if teleportPoint then
+            teleportEnabled = true
+            print("Teletransporte activado")
+        else
+            warn("Primero debes fijar un punto")
+        end
+    end)
+
+    btnRemovePoint.MouseButton1Click:Connect(function()
+        teleportEnabled = false
+        teleportPoint = nil
+        if markerPart then
+            markerPart:Destroy()
+            markerPart = nil
+        end
+        print("Punto eliminado y teletransporte detenido")
+    end)
+end
+
+RunService.Heartbeat:Connect(function()
+    if teleportEnabled and teleportPoint then
+        local character = lp.Character
+        if not character then return end
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        local hrp = character:FindFirstChild("HumanoidRootPart")
+        if humanoid and humanoid.Health > 0 and hrp then
+            hrp.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 5, 0))
+        end
     end
 end)
 
--- Iniciar teletransporte
-btnStartTP.MouseButton1Click:Connect(function()
-    if teleportPoint then
-        teleportEnabled = true
-        print("Teletransporte activado")
-    else
-        warn("Primero debes fijar un punto")
-    end
-end)
-
--- Quitar punto y detener teletransporte
-btnRemovePoint.MouseButton1Click:Connect(function()
+local function onCharacterAdded()
     teleportEnabled = false
     teleportPoint = nil
     if markerPart then
         markerPart:Destroy()
         markerPart = nil
     end
-    print("Punto eliminado y teletransporte detenido")
-end)
+    setupGui()
+end
 
--- Teletransporte continuo
-RunService.Heartbeat:Connect(function()
-    if teleportEnabled and teleportPoint then
-        local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
-        if hrp then
-            hrp.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 3, 0))
-        else
-            warn("No se encontró HumanoidRootPart para teletransportar")
-        end
-    end
-end)
+lp.CharacterAdded:Connect(onCharacterAdded)
+
+-- Ejecutar una vez al inicio si el personaje ya está cargado
+if lp.Character then
+    onCharacterAdded()
+end
