@@ -40,6 +40,27 @@ local function getEntrancePart()
     end
 end
 
+-- Crear GUI botón
+local playerGui = lp:WaitForChild("PlayerGui")
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "BrainrotTeleportGUI"
+screenGui.Parent = playerGui
+
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0, 150, 0, 50)
+button.Position = UDim2.new(0, 10, 0, 10)
+button.BackgroundColor3 = Color3.fromRGB(30, 144, 255)
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Font = Enum.Font.SourceSansBold
+button.TextSize = 22
+button.Text = "Activar Teleport"
+button.Parent = screenGui
+
+button.MouseButton1Click:Connect(function()
+    teleportEnabled = not teleportEnabled
+    button.Text = teleportEnabled and "Desactivar Teleport" or "Activar Teleport"
+end)
+
 -- TELEPORT LOOP
 task.spawn(function()
     while true do
@@ -53,12 +74,4 @@ task.spawn(function()
     end
 end)
 
--- CHAT COMMAND TO TOGGLE
-lp.Chatted:Connect(function(msg)
-    if msg == "/tpbrainrot" then
-        teleportEnabled = not teleportEnabled
-        print("📡 Teleport:", teleportEnabled and "ACTIVADO" or "DESACTIVADO")
-    end
-end)
-
-print("✅ Brainrot auto-teleport cargado. Escribe /tpbrainrot en el chat para activarlo.")
+print("✅ Brainrot auto-teleport cargado. Usa el botón para activar o desactivar el teletransporte.")
