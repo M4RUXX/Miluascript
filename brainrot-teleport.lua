@@ -1,4 +1,4 @@
--- YAHRM Clone avanzado para MM2 con GUI, ESP + Highlights de roles
+-- YAHRM Clone avanzado para MM2 con GUI, ESP + Highlights de roles y detección dinámica
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -162,12 +162,64 @@ end
 local espLabels = {}
 local highlights = {}
 
+-- Mejor función para obtener rol del jugador
 local function getRole(player)
-    local roleValue = player:FindFirstChild("Role") or (player:FindFirstChild("leaderstats") and player.leaderstats:FindFirstChild("Role"))
+    local role = player:GetAttribute("Role")
+    if role and role ~= "" then
+        return role
+    end
+
+    local roleValue = player:FindFirstChild("Role")
     if roleValue and roleValue:IsA("StringValue") then
         return roleValue.Value
     end
+
+    if player:FindFirstChild("leaderstats") then
+        local lsRole = player.leaderstats:FindFirstChild("Role")
+        if lsRole and lsRole:IsA("StringValue") then
+            return lsRole.Value
+        end
+    end
+
     return "Innocent"
+end
+
+-- Actualiza texto y color segun rol
+local function setupRoleListener(player, label, highlight)
+    local function updateVisuals()
+        local role = getRole(player)
+        local color
+        if role == "Murderer" or role == "Assassin" then
+            color = Color3.new(1, 0, 0)
+        elseif role == "Sheriff" then
+            color = Color3.new(0, 0, 1)
+        else
+            color = Color3.new(0, 1, 0)
+        end
+        if label then
+            label.Text = player.Name .. "\n[" .. role .. "]"
+            label.TextColor3 = color
+        end
+        if highlight then
+            highlight.FillColor = color
+        end
+    end
+
+    updateVisuals()
+
+    player:GetAttributeChangedSignal("Role"):Connect(updateVisuals)
+
+    local roleVal = player:FindFirstChild("Role")
+    if roleVal and roleVal:IsA("StringValue") then
+        roleVal.Changed:Connect(updateVisuals)
+    end
+
+    if player:FindFirstChild("leaderstats") then
+        local lsRole = player.leaderstats:FindFirstChild("Role")
+        if lsRole and lsRole:IsA("StringValue") then
+            lsRole.Changed:Connect(updateVisuals)
+        end
+    end
 end
 
 local function createESPForPlayer(player)
@@ -189,30 +241,13 @@ local function createESPForPlayer(player)
     label.Size = UDim2.new(1,0,1,0)
     label.BackgroundTransparency = 0.5
     label.BackgroundColor3 = Color3.new(0,0,0)
-    label.TextColor3 = Color3.new(1,1,1)
     label.TextStrokeTransparency = 0
     label.Font = Enum.Font.SourceSansBold
     label.TextSize = 18
     label.Parent = billboard
 
-    local function updateLabel()
-        if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0 then
-            local role = getRole(player)
-            local color = Color3.new(1,1,1)
-            if role == "Murderer" or role == "Assassin" then
-                color = Color3.new(1,0,0)
-            elseif role == "Sheriff" then
-                color = Color3.new(0,0,1)
-            else
-                color = Color3.new(1,1,1)
-            end
-            label.Text = player.Name .. "\n[" .. role .. "]"
-            label.TextColor3 = color
-            label.Visible = true
-        else
-            label.Visible = false
-        end
-    end
+    -- Configurar actualización dinámica de rol y color
+    setupRoleListener(player, label, nil)
 
     local conn
     conn = RunService.Heartbeat:Connect(function()
@@ -223,7 +258,12 @@ local function createESPForPlayer(player)
             end
             espLabels[player] = nil
         else
-            updateLabel()
+            -- Solo actualiza visibilidad según salud
+            if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0 then
+                label.Visible = true
+            else
+                label.Visible = false
+            end
         end
     end)
 
@@ -246,20 +286,12 @@ local function applyHighlight(player)
     local highlight = Instance.new("Highlight")
     highlight.Name = "RoleHighlight"
     highlight.Parent = player.Character
-
-    local role = getRole(player)
-    if role == "Murderer" or role == "Assassin" then
-        highlight.FillColor = Color3.new(1, 0, 0)
-    elseif role == "Sheriff" then
-        highlight.FillColor = Color3.new(0, 0, 1)
-    else
-        highlight.FillColor = Color3.new(0, 1, 0)
-    end
-
     highlight.OutlineColor = Color3.new(0,0,0)
     highlight.Enabled = true
 
     highlights[player] = highlight
+
+    setupRoleListener(player, nil, highlight)
 end
 
 local function removeHighlight(player)
@@ -533,10 +565,4 @@ UserInputService.InputChanged:Connect(function(input)
 end)
 
 -- Restaurar velocidad al reaparecer
-localPlayer.CharacterAdded:Connect(function(char)
-    humanoid = char:WaitForChild("Humanoid")
-    rootPart = char:WaitForChild("HumanoidRootPart")
-    humanoid.WalkSpeed = defaultSpeed
-end)
-
-print("YAHRM Clone avanzado cargado correctamente.")
+localPlayer.CharacterAdded:Connect(function(char
