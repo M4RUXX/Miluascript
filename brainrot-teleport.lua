@@ -10,8 +10,9 @@ local hrp = character:WaitForChild("HumanoidRootPart")
 
 local flying = false
 local speed = 60
-local control = {F = 0, B = 0, L = 0, R = 0, U = 0, D = 
-    
+local control = {F = 0, B = 0, L = 0, R = 0, U = 0, D = 0}
+
+
 local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
 gui.Name = "FlyGUI"
 
@@ -33,3 +34,56 @@ local function startFly()
     bg = Instance.new("BodyGyro", hrp)
     bg.P = 9e4
     bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+    bg.cframe = hrp.CFrame
+
+    bv = Instance.new("BodyVelocity", hrp)
+    bv.velocity = Vector3.zero
+    bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+
+    RunService.RenderStepped:Connect(function()
+        if flying then
+            bg.cframe = workspace.CurrentCamera.CFrame
+            local dir = (control.F - control.B) * workspace.CurrentCamera.CFrame.LookVector +
+                        (control.R - control.L) * workspace.CurrentCamera.CFrame.RightVector +
+                        (control.U - control.D) * workspace.CurrentCamera.CFrame.UpVector
+            bv.velocity = dir * speed
+        end
+    end)
+end
+
+local function stopFly()
+    flying = false
+    btn.Text = "🚀 Fly: OFF"
+    if bg then bg:Destroy() end
+    if bv then bv:Destroy() end
+end
+
+
+btn.MouseButton1Click:Connect(function()
+    if flying then stopFly() else startFly() end
+end)
+
+
+UIS.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        if input.KeyCode == Enum.KeyCode.W then control.F = 1 end
+        if input.KeyCode == Enum.KeyCode.S then control.B = 1 end
+        if input.KeyCode == Enum.KeyCode.A then control.L = 1 end
+        if input.KeyCode == Enum.KeyCode.D then control.R = 1 end
+        if input.KeyCode == Enum.KeyCode.Space then control.U = 1 end
+        if input.KeyCode == Enum.KeyCode.LeftShift then control.D = 1 end
+    end
+end)
+
+UIS.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        if input.KeyCode == Enum.KeyCode.W then control.F = 0 end
+        if input.KeyCode == Enum.KeyCode.S then control.B = 0 end
+        if input.KeyCode == Enum.KeyCode.A then control.L = 0 end
+        if input.KeyCode == Enum.KeyCode.D then control.R = 0 end
+        if input.KeyCode == Enum.KeyCode.Space then control.U = 0 end
+        if input.KeyCode == Enum.KeyCode.LeftShift then control.D = 0 end
+    end
+end)
+
+print("✅ Fly estable con botón cargado.")
