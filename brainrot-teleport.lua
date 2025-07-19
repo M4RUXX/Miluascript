@@ -5,7 +5,7 @@ local RunService = game:GetService("RunService")
 local teleportPoint = nil
 local teleportEnabled = false
 
--- Detectar Brainrot
+-- Función para detectar Brainrot
 local function hasBrainrot()
     for _, item in ipairs(lp.Backpack:GetChildren()) do
         if item.Name:lower():find("brainrot") then
@@ -22,17 +22,21 @@ local function hasBrainrot()
     return false
 end
 
--- Teletransportación automática mientras tengas Brainrot y teleportEnabled
-RunService.RenderStepped:Connect(function()
+-- Teletransporte automático
+RunService.Heartbeat:Connect(function()
     if teleportEnabled and teleportPoint and hasBrainrot() then
         local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
         if hrp then
-            -- Teletransporta suavemente para evitar giros extraños
+            -- Teletransporta suavemente al punto
             hrp.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 3, 0))
+        else
+            print("No se encontró HumanoidRootPart")
         end
     else
-        -- Si no tienes Brainrot o desactivas, para teletransporte
-        teleportEnabled = false
+        if teleportEnabled then
+            print("Se desactiva teletransporte (punto o brainrot faltante)")
+            teleportEnabled = false
+        end
     end
 end)
 
