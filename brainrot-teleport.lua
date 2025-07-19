@@ -7,7 +7,6 @@ local teleportPoint = nil
 local teleportEnabled = false
 local markerPart = nil
 
--- Función para crear el marcador visual en el mapa
 local function createMarker(position)
     if markerPart then
         markerPart:Destroy()
@@ -24,7 +23,6 @@ local function createMarker(position)
     markerPart.Parent = Workspace
 end
 
--- Crear GUI y botones
 local gui = Instance.new("ScreenGui", lp:WaitForChild("PlayerGui"))
 gui.Name = "TeleportGui"
 
@@ -43,38 +41,19 @@ local function createButton(text, position)
 end
 
 local btnSetPoint = createButton("📍 Fijar punto", UDim2.new(0, 20, 0, 100))
-local btnStartTP = createButton("▶️ Empezar TP", UDim2.new(0, 20, 0, 150))
-local btnStopTP = createButton("■ Detener TP", UDim2.new(0, 20, 0, 200))
 
--- Botón para fijar el punto de teletransporte
 btnSetPoint.MouseButton1Click:Connect(function()
     local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
     if hrp then
         teleportPoint = hrp.Position
         createMarker(teleportPoint)
-        print("Punto de teletransporte fijado en:", teleportPoint)
+        teleportEnabled = true -- se activa automáticamente al fijar el punto
+        print("Punto fijado y teletransporte activado en:", teleportPoint)
     else
         warn("No se encontró HumanoidRootPart para fijar punto")
     end
 end)
 
--- Botón para iniciar teletransporte continuo
-btnStartTP.MouseButton1Click:Connect(function()
-    if teleportPoint then
-        teleportEnabled = true
-        print("Teletransporte activado")
-    else
-        warn("Primero debes fijar un punto")
-    end
-end)
-
--- Botón para detener teletransporte
-btnStopTP.MouseButton1Click:Connect(function()
-    teleportEnabled = false
-    print("Teletransporte detenido")
-end)
-
--- Teletransporte continuo en Heartbeat
 RunService.Heartbeat:Connect(function()
     if teleportEnabled and teleportPoint then
         local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
