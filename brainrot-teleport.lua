@@ -85,9 +85,23 @@ RunService.Heartbeat:Connect(function()
         local humanoid = character:FindFirstChildOfClass("Humanoid")
         local hrp = character:FindFirstChild("HumanoidRootPart")
         if humanoid and humanoid.Health > 0 and hrp then
-            -- Desactivar física temporalmente para evitar daño
+            local rayOrigin = teleportPoint + Vector3.new(0, 50, 0)
+            local rayDirection = Vector3.new(0, -100, 0)
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterDescendantsInstances = {character}
+            raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+
+            local raycastResult = Workspace:Raycast(rayOrigin, rayDirection, raycastParams)
+
+            local targetPosition
+            if raycastResult and raycastResult.Position then
+                targetPosition = raycastResult.Position + Vector3.new(0, 3, 0) -- 3 studs arriba del suelo
+            else
+                targetPosition = teleportPoint + Vector3.new(0, 5, 0)
+            end
+
             humanoid.PlatformStand = true
-            hrp.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 10, 0))
+            hrp.CFrame = CFrame.new(targetPosition)
             task.delay(0.2, function()
                 if humanoid then
                     humanoid.PlatformStand = false
