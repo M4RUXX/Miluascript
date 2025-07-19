@@ -22,19 +22,21 @@ local function hasBrainrot()
     return false
 end
 
--- Loop teletransportación automática
+-- Teletransportación automática mientras tengas Brainrot y teleportEnabled
 RunService.RenderStepped:Connect(function()
     if teleportEnabled and teleportPoint and hasBrainrot() then
         local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
         if hrp then
-            hrp.CFrame = teleportPoint + Vector3.new(0, 3, 0)
+            -- Teletransporta suavemente para evitar giros extraños
+            hrp.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 3, 0))
         end
     else
-        teleportEnabled = false -- Apaga si no tienes brainrot o no hay punto
+        -- Si no tienes Brainrot o desactivas, para teletransporte
+        teleportEnabled = false
     end
 end)
 
--- Crear GUI con botones
+-- Crear GUI y botones
 local gui = Instance.new("ScreenGui", lp:WaitForChild("PlayerGui"))
 gui.Name = "TeleportGui"
 
@@ -59,7 +61,7 @@ local btnRemovePoint = createButton("✖ Quitar punto", UDim2.new(0, 20, 0, 200)
 btnSetPoint.MouseButton1Click:Connect(function()
     local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
     if hrp then
-        teleportPoint = hrp.CFrame.Position
+        teleportPoint = hrp.Position
         print("📍 Punto de teletransporte fijado en:", teleportPoint)
     else
         warn("No se pudo fijar el punto: no hay HumanoidRootPart")
