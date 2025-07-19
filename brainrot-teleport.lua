@@ -189,7 +189,6 @@ local function createESPForPlayer(player)
     label.Size = UDim2.new(1,0,1,0)
     label.BackgroundTransparency = 0.5
     label.BackgroundColor3 = Color3.new(0,0,0)
-    label.TextColor3 = Color3.new(1,1,1)
     label.TextStrokeTransparency = 0
     label.Font = Enum.Font.SourceSansBold
     label.TextSize = 18
@@ -198,13 +197,13 @@ local function createESPForPlayer(player)
     local function updateLabel()
         if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0 then
             local role = getRole(player)
-            local color = Color3.new(1,1,1)
+            local color = Color3.new(1,1,1) -- default blanco
             if role == "Murderer" or role == "Assassin" then
-                color = Color3.new(1,0,0)
+                color = Color3.fromRGB(255, 50, 50) -- rojo
             elseif role == "Sheriff" then
-                color = Color3.new(0,0,1)
+                color = Color3.fromRGB(50, 50, 255) -- azul
             else
-                color = Color3.new(1,1,1)
+                color = Color3.fromRGB(150, 255, 150) -- verde claro para inocentes
             end
             label.Text = player.Name .. "\n[" .. role .. "]"
             label.TextColor3 = color
@@ -216,7 +215,7 @@ local function createESPForPlayer(player)
 
     local conn
     conn = RunService.Heartbeat:Connect(function()
-        if not player.Parent then
+        if not player.Parent or not player.Character or not player.Character:FindFirstChild("Head") then
             conn:Disconnect()
             if billboard and billboard.Parent then
                 billboard:Destroy()
@@ -249,11 +248,11 @@ local function applyHighlight(player)
 
     local role = getRole(player)
     if role == "Murderer" or role == "Assassin" then
-        highlight.FillColor = Color3.new(1, 0, 0)
+        highlight.FillColor = Color3.fromRGB(255, 50, 50) -- rojo
     elseif role == "Sheriff" then
-        highlight.FillColor = Color3.new(0, 0, 1)
+        highlight.FillColor = Color3.fromRGB(50, 50, 255) -- azul
     else
-        highlight.FillColor = Color3.new(0, 1, 0)
+        highlight.FillColor = Color3.fromRGB(150, 255, 150) -- verde claro
     end
 
     highlight.OutlineColor = Color3.new(0,0,0)
@@ -269,54 +268,52 @@ local function removeHighlight(player)
     end
 end
 
-local function updateHighlights(enable)
-    if enable then
-        for _, p in pairs(Players:GetPlayers()) do
-            applyHighlight(p)
-        end
-        Players.PlayerAdded:Connect(function(p)
+local playerAddedConn, playerRemovingConn
+
+local function setupESPConnections()
+    if playerAddedConn then playerAddedConn:Disconnect() end
+    if playerRemovingConn then playerRemovingConn:Disconnect() end
+
+    playerAddedConn = Players.PlayerAdded:Connect(function(player)
+        player.CharacterAdded:Connect(function()
             if esp then
-                applyHighlight(p)
+                createESPForPlayer(player)
+                applyHighlight(player)
             end
         end)
-        Players.PlayerRemoving:Connect(function(p)
-            removeHighlight(p)
-        end)
-        Players.PlayerAdded:Connect(function(p)
-            p.CharacterAdded:Connect(function()
-                if esp then
-                    applyHighlight(p)
-                end
-            end)
-        end)
-    else
-        for _, p in pairs(Players:GetPlayers()) do
-            removeHighlight(p)
+        if esp then
+            createESPForPlayer(player)
+            applyHighlight(player)
         end
-    end
+    end)
+
+    playerRemovingConn = Players.PlayerRemoving:Connect(function(player)
+        removeESPFromPlayer(player)
+        removeHighlight(player)
+    end)
 end
 
 function toggleESP(enable)
+    esp = enable
     if enable then
         for _, p in pairs(Players:GetPlayers()) do
             createESPForPlayer(p)
+            applyHighlight(p)
         end
-        updateHighlights(true)
-        Players.PlayerAdded:Connect(function(p)
-            if esp then
-                createESPForPlayer(p)
-                applyHighlight(p)
-            end
-        end)
-        Players.PlayerRemoving:Connect(function(p)
-            removeESPFromPlayer(p)
-            removeHighlight(p)
-        end)
+        setupESPConnections()
     else
         for _, p in pairs(Players:GetPlayers()) do
             removeESPFromPlayer(p)
+            removeHighlight(p)
         end
-        updateHighlights(false)
+        if playerAddedConn then
+            playerAddedConn:Disconnect()
+            playerAddedConn = nil
+        end
+        if playerRemovingConn then
+            playerRemovingConn:Disconnect()
+            playerRemovingConn = nil
+        end
     end
 end
 
@@ -440,8 +437,7 @@ y = y + step
 local espBtn = createToggleButton("ESP", UDim2.new(0, 10, 0, y),
     function() return esp end,
     function(val)
-        esp = val
-        toggleESP(esp)
+        toggleESP(val)
     end)
 y = y + step
 
