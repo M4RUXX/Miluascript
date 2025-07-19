@@ -1,18 +1,22 @@
 
+local Players = game:GetService("Players")
+local lp = Players.LocalPlayer
+local Workspace = game:GetService("Workspace")
+local RunService = game:GetService("RunService")
 
 
-local baseFolder = workspace:FindFirstChild("Bases")
+local baseFolder = Workspace:FindFirstChild("Bases")
 if not baseFolder then
-    warn("No se encontró workspace.Bases")
+    warn("❌ No se encontró carpeta workspace.Bases")
     return
 end
 
-
-local lp = game.Players.LocalPlayer
-local hrp = lp.Character and lp.Character:WaitForChild("HumanoidRootPart")
-
-
-local teleportEnabled = false
+local function getEntrancePart()
+    local base = baseFolder:FindFirstChild(lp.Name)
+    if base then
+        return base:FindFirstChild("Entrance")
+    end
+end
 
 
 local function hasBrainrot()
@@ -29,45 +33,41 @@ local function hasBrainrot()
     return false
 end
 
-local function getEntrancePart()
-    local base = baseFolder:FindFirstChild(lp.Name)
-    if base then
-        return base:FindFirstChild("Entrance")
-    end
-end
 
-
-local playerGui = lp:WaitForChild("PlayerGui")
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "BrainrotTeleportGUI"
-screenGui.Parent = playerGui
-
-local button = Instance.new("TextButton")
-button.Size = UDim2.new(0, 150, 0, 50)
-button.Position = UDim2.new(0, 10, 0, 10)
-button.BackgroundColor3 = Color3.fromRGB(30, 144, 255)
-button.TextColor3 = Color3.new(1, 1, 1)
-button.Font = Enum.Font.SourceSansBold
-button.TextSize = 22
-button.Text = "Activar Teleport"
-button.Parent = screenGui
-
-button.MouseButton1Click:Connect(function()
-    teleportEnabled = not teleportEnabled
-    button.Text = teleportEnabled and "Desactivar Teleport" or "Activar Teleport"
-end)
-
+local teleportEnabled = false
 
 task.spawn(function()
     while true do
         if teleportEnabled and hasBrainrot() then
             local entrance = getEntrancePart()
-            if entrance and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
-                lp.Character.HumanoidRootPart.CFrame = entrance.CFrame + Vector3.new(0, 3, 0)
+            local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+            if entrance and hrp then
+                hrp.CFrame = entrance.CFrame + Vector3.new(0, 3, 0)
             end
         end
         task.wait(0.1)
     end
 end)
 
-print("✅ Brainrot auto-teleport cargado. Usa el botón para activar o desactivar el teletransporte.")
+
+local gui = Instance.new("ScreenGui", lp:WaitForChild("PlayerGui"))
+gui.Name = "BrainrotTPGui"
+
+local button = Instance.new("TextButton")
+button.Parent = gui
+button.Size = UDim2.new(0, 140, 0, 40)
+button.Position = UDim2.new(0, 20, 0, 100)
+button.Text = "🧠 Auto TP: OFF"
+button.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Font = Enum.Font.Gotham
+button.TextSize = 18
+button.AutoButtonColor = true
+button.BorderSizePixel = 0
+
+button.MouseButton1Click:Connect(function()
+    teleportEnabled = not teleportEnabled
+    button.Text = teleportEnabled and "🧠 Auto TP: ON" or "🧠 Auto TP: OFF"
+end)
+
+print("✅ Brainrot auto-teleport listo. Usa el botón para activar o desactivar.")
