@@ -385,21 +385,32 @@ minimizeBtn.Font = Enum.Font.SourceSansBold
 minimizeBtn.TextSize = 24
 minimizeBtn.Text = "–"
 
+-- Botón minimizado (icono redondo)
 local minimizedFrame = Instance.new("Frame", screenGui)
-minimizedFrame.Size = UDim2.new(0, 60, 0, 30)
+minimizedFrame.Size = UDim2.new(0, 50, 0, 50)  -- tamaño cuadrado para círculo
 minimizedFrame.Position = UDim2.new(0, 20, 0, 80)
-minimizedFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+minimizedFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 minimizedFrame.BorderSizePixel = 0
 minimizedFrame.Visible = false
+minimizedFrame.Active = true
+
+local uicornerFrame = Instance.new("UICorner")
+uicornerFrame.CornerRadius = UDim.new(1, 0)  -- redondear completamente para círculo
+uicornerFrame.Parent = minimizedFrame
 
 local minimizedBtn = Instance.new("TextButton", minimizedFrame)
-minimizedBtn.Size = UDim2.new(1, 0, 1, 0)
+minimizedBtn.Size = UDim2.new(1, 0, 1, 0)  -- llena todo el frame circular
 minimizedBtn.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
-minimizedBtn.TextColor3 = Color3.new(1,1,1)
+minimizedBtn.TextColor3 = Color3.new(1, 1, 1)
 minimizedBtn.Font = Enum.Font.SourceSansBold
 minimizedBtn.TextSize = 20
-minimizedBtn.Text = "YAHRM"
+minimizedBtn.Text = "Y"
 minimizedBtn.AutoButtonColor = false
+minimizedBtn.TextStrokeTransparency = 0
+
+local uicornerBtn = Instance.new("UICorner")
+uicornerBtn.CornerRadius = UDim.new(1, 0)  -- también circular para el botón
+uicornerBtn.Parent = minimizedBtn
 
 local function toggleMinimize()
     if frame.Visible then
@@ -503,7 +514,7 @@ end
 
 createActionButton("Teleport al jugador más cercano", UDim2.new(0, 10, 0, y), function()
     local target = findClosestPlayer(100)
-    if target then
+    if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
         rootPart.CFrame = target.Character.HumanoidRootPart.CFrame * CFrame.new(0, 3, 0)
     end
 end)
@@ -534,35 +545,4 @@ local function update(input)
         startPos.X.Scale,
         startPos.X.Offset + delta.X,
         startPos.Y.Scale,
-        startPos.Y.Offset + delta.Y
-    )
-end
-
-frame.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        dragging = true
-        dragStart = input.Position
-        startPos = frame.Position
-
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
-            end
-        end)
-    end
-end)
-
-frame.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-        dragInput = input
-    end
-end)
-
-UserInputService.InputChanged:Connect(function(input)
-    if input == dragInput and dragging then
-        update(input)
-    end
-end)
-
--- Restaurar velocidad al reaparecer
-localPlayer.CharacterAdded:Connect(function(char
+        startPos
