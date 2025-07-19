@@ -1,95 +1,112 @@
--- brainrot-teleport.lua mejorado
-if game.CoreGui:FindFirstChild("TPGui") then
-    game.CoreGui.TPGui:Destroy()
+-- Ugly Hub estilo Steal a Brainrot (simple y funcional)
+
+-- Elimina GUI anterior si existe
+if game.CoreGui:FindFirstChild("StealBrainrotHub") then
+    game.CoreGui.StealBrainrotHub:Destroy()
 end
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local hrp = character:WaitForChild("HumanoidRootPart")
+local mouse = player:GetMouse()
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "StealBrainrotHub"
+ScreenGui.Parent = game.CoreGui
+
+-- Frame principal
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 350, 0, 400)
+MainFrame.Position = UDim2.new(0.5, -175, 0.5, -200)
+MainFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+MainFrame.BorderSizePixel = 0
+MainFrame.Parent = ScreenGui
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+-- Título
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Title.BorderSizePixel = 0
+Title.Text = "Steal a Brainrot Hub"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 22
+Title.Parent = MainFrame
+
+-- Variables para toggles
 local teleporting = false
-local teleportPoint = nil
 
--- Función para crear punto visible
-local function createVisualPoint(pos)
-    local part = Instance.new("Part")
-    part.Size = Vector3.new(2, 0.5, 2)
-    part.Position = pos
-    part.Anchored = true
-    part.CanCollide = false
-    part.BrickColor = BrickColor.Red()
-    part.Material = Enum.Material.Neon
-    part.Name = "TeleportPointMarker"
-    part.Parent = workspace
-    return part
+-- Utilidades para encontrar objetos
+local function findBase()
+    local basesFolder = workspace:FindFirstChild("Bases")
+    if not basesFolder then return nil end
+    return basesFolder:FindFirstChild(player.Name)
 end
 
--- Interfaz de usuario
-local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
-ScreenGui.Name = "TPGui"
-
-local function createButton(text, position, callback)
-    local button = Instance.new("TextButton")
-    button.Size = UDim2.new(0, 160, 0, 35)
-    button.Position = position
-    button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-    button.BorderSizePixel = 0
-    button.Text = text
-    button.TextColor3 = Color3.new(1, 1, 1)
-    button.Font = Enum.Font.GothamBold
-    button.TextSize = 16
-    button.Parent = ScreenGui
-    button.MouseButton1Click:Connect(callback)
-end
-
--- Botón: Fijar punto
-createButton("📍 Fijar Punto", UDim2.new(0, 20, 0, 80), function()
-    teleportPoint = hrp.Position - Vector3.new(0, hrp.Size.Y / 2 + 2, 0)
-    if workspace:FindFirstChild("TeleportPointMarker") then
-        workspace.TeleportPointMarker:Destroy()
-    end
-    createVisualPoint(teleportPoint)
-end)
-
--- Botón: Iniciar TP
-createButton("⚡ Iniciar TP", UDim2.new(0, 20, 0, 125), function()
-    if teleportPoint then
-        teleporting = true
-    end
-end)
-
--- Botón: Detener TP
-createButton("⛔ Detener TP", UDim2.new(0, 20, 0, 170), function()
-    teleporting = false
-end)
-
--- Botón: Eliminar punto
-createButton("🗑 Eliminar Punto", UDim2.new(0, 20, 0, 215), function()
-    teleporting = false
-    teleportPoint = nil
-    if workspace:FindFirstChild("TeleportPointMarker") then
-        workspace.TeleportPointMarker:Destroy()
-    end
-end)
-
--- Teletransporte loop
-task.spawn(function()
-    while true do
-        if teleporting and teleportPoint and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-            local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
-            if humanoid then
-                humanoid:ChangeState(Enum.HumanoidStateType.Physics)
-            end
-            player.Character.HumanoidRootPart.CFrame = CFrame.new(teleportPoint + Vector3.new(0, 3, 0))
+local function findBrainrot()
+    -- Busca brainrot en workspace, cambiar el nombre según tu juego
+    for _, item in pairs(workspace:GetChildren()) do
+        if item.Name:lower():find("brainrot") then
+            return item
         end
-        task.wait(0.2)
+    end
+    return nil
+end
+
+-- Botones
+
+local function createButton(text, pos, parent, callback)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 300, 0, 40)
+    btn.Position = pos
+    btn.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+    btn.BorderSizePixel = 0
+    btn.Text = text
+    btn.TextColor3 = Color3.new(1, 1, 1)
+    btn.Font = Enum.Font.Gotham
+    btn.TextSize = 18
+    btn.Parent = parent
+    btn.MouseButton1Click:Connect(callback)
+    return btn
+end
+
+-- Teleport a base
+createButton("Teleport a mi Base", UDim2.new(0, 25, 0, 60), MainFrame, function()
+    local base = findBase()
+    if base and base:FindFirstChild("Entrance") and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        player.Character.HumanoidRootPart.CFrame = base.Entrance.CFrame + Vector3.new(0, 3, 0)
     end
 end)
 
--- Auto-reload al morir
-player.CharacterAdded:Connect(function(char)
-    char:WaitForChild("HumanoidRootPart")
-    hrp = char.HumanoidRootPart
+-- Teleport a brainrot
+createButton("Teleport a Brainrot", UDim2.new(0, 25, 0, 110), MainFrame, function()
+    local brainrot = findBrainrot()
+    if brainrot and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        player.Character.HumanoidRootPart.CFrame = brainrot.CFrame + Vector3.new(0, 3, 0)
+    end
 end)
 
-print("✅ Teleport script cargado correctamente.")
+-- Toggle auto teleport a brainrot
+local autoTpBtn = createButton("Auto Teleport: OFF", UDim2.new(0, 25, 0, 160), MainFrame, function()
+    teleporting = not teleporting
+    autoTpBtn.Text = "Auto Teleport: " .. (teleporting and "ON" or "OFF")
+end)
+
+-- Loop para auto teleport
+spawn(function()
+    while true do
+        if teleporting then
+            local brainrot = findBrainrot()
+            if brainrot and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                player.Character.HumanoidRootPart.CFrame = brainrot.CFrame + Vector3.new(0, 3, 0)
+            end
+        end
+        wait(0.5)
+    end
+end)
+
+-- Botón para cerrar hub
+createButton("Cerrar Hub", UDim2.new(0, 25, 0, 350), MainFrame, function()
+    ScreenGui:Destroy()
+end)
