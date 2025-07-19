@@ -1,4 +1,5 @@
--- Variables básicas y funciones (igual que antes, omitidas para brevedad)
+-- YAHRM Clone avanzado para MM2 con GUI, ESP + Highlights de roles
+
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -9,6 +10,7 @@ local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 local rootPart = character:WaitForChild("HumanoidRootPart")
 
+-- Variables control
 local autoKnife = false
 local autoStab = false
 local killAura = false
@@ -20,11 +22,309 @@ local autoGetGun = false
 local defaultSpeed = 16
 local hackSpeed = 30
 
--- Colores
-local COLOR_ON = Color3.fromRGB(0, 170, 0)    -- Verde
-local COLOR_OFF = Color3.fromRGB(170, 0, 0)   -- Rojo
+-- Utilidades
 
--- GUI
+local function findClosestPlayer(maxDist)
+    local closest, dist = nil, maxDist or math.huge
+    for _, p in pairs(Players:GetPlayers()) do
+        if p ~= localPlayer and p.Character and p.Character:FindFirstChild("HumanoidRootPart") and p.Character:FindFirstChild("Humanoid") and p.Character.Humanoid.Health > 0 then
+            local d = (p.Character.HumanoidRootPart.Position - rootPart.Position).Magnitude
+            if d < dist then
+                closest, dist = p, d
+            end
+        end
+    end
+    return closest, dist
+end
+
+local function playAttackAnimation()
+    local animator = humanoid:FindFirstChildOfClass("Animator")
+    if not animator then return end
+    local anim = Instance.new("Animation")
+    anim.AnimationId = "rbxassetid://5051539540"
+    local track = animator:LoadAnimation(anim)
+    track:Play()
+    wait(1)
+    track:Stop()
+end
+
+local function murderPlayer(target)
+    local remote = ReplicatedStorage:FindFirstChild("Remotes") and ReplicatedStorage.Remotes:FindFirstChild("MurderEvent")
+    if remote and target then
+        remote:FireServer(target)
+    end
+end
+
+local function flingPlayer(target)
+    if not target or not target.Character or not target.Character:FindFirstChild("HumanoidRootPart") then return end
+    local hrp = target.Character.HumanoidRootPart
+    hrp.Velocity = Vector3.new(0, 100, 0)
+    hrp.RotVelocity = Vector3.new(100, 100, 100)
+end
+
+local function killAll()
+    for _, p in pairs(Players:GetPlayers()) do
+        if p ~= localPlayer then
+            murderPlayer(p)
+            wait(0.3)
+        end
+    end
+end
+
+-- Auto Knife loop
+spawn(function()
+    while true do
+        if autoKnife then
+            local target = findClosestPlayer(10)
+            if target then
+                playAttackAnimation()
+                murderPlayer(target)
+            end
+        end
+        wait(0.5)
+    end
+end)
+
+-- Auto Stab loop
+spawn(function()
+    while true do
+        if autoStab then
+            playAttackAnimation()
+        end
+        wait(0.4)
+    end
+end)
+
+-- Kill Aura loop
+spawn(function()
+    while true do
+        if killAura then
+            local target = findClosestPlayer(10)
+            if target then
+                playAttackAnimation()
+                murderPlayer(target)
+            end
+        end
+        wait(0.3)
+    end
+end)
+
+-- Speed hack loop
+spawn(function()
+    while true do
+        if speedHack then
+            humanoid.WalkSpeed = hackSpeed
+        else
+            humanoid.WalkSpeed = defaultSpeed
+        end
+        wait(0.5)
+    end
+end)
+
+-- No Clip loop
+spawn(function()
+    while true do
+        if noClip then
+            for _, part in pairs(character:GetChildren()) do
+                if part:IsA("BasePart") then
+                    part.CanCollide = false
+                end
+            end
+        else
+            for _, part in pairs(character:GetChildren()) do
+                if part:IsA("BasePart") then
+                    part.CanCollide = true
+                end
+            end
+        end
+        wait(0.1)
+    end
+end)
+
+-- Auto Get Gun (intenta coger el cuchillo)
+local function autoGetGunFunc()
+    while autoGetGun do
+        local gun = localPlayer.Backpack:FindFirstChild("Knife") or character:FindFirstChild("Knife")
+        if not gun then
+            for _, item in pairs(workspace:GetChildren()) do
+                if item.Name == "Knife" and item:IsA("Tool") then
+                    item.Handle.CFrame = rootPart.CFrame * CFrame.new(0, 0, 3)
+                    break
+                end
+            end
+        end
+        wait(3)
+    end
+end
+
+-- ESP con etiquetas y highlights
+
+local espLabels = {}
+local highlights = {}
+
+local function getRole(player)
+    local roleValue = player:FindFirstChild("Role") or (player:FindFirstChild("leaderstats") and player.leaderstats:FindFirstChild("Role"))
+    if roleValue and roleValue:IsA("StringValue") then
+        return roleValue.Value
+    end
+    return "Innocent"
+end
+
+local function createESPForPlayer(player)
+    if espLabels[player] or player == localPlayer then return end
+    local char = player.Character
+    if not char then return end
+    local head = char:FindFirstChild("Head")
+    if not head then return end
+
+    local billboard = Instance.new("BillboardGui")
+    billboard.Name = "ESPLabel"
+    billboard.Adornee = head
+    billboard.Size = UDim2.new(0,150,0,50)
+    billboard.AlwaysOnTop = true
+    billboard.ExtentsOffset = Vector3.new(0, 1.5, 0)
+    billboard.Parent = head
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1,0,1,0)
+    label.BackgroundTransparency = 0.5
+    label.BackgroundColor3 = Color3.new(0,0,0)
+    label.TextColor3 = Color3.new(1,1,1)
+    label.TextStrokeTransparency = 0
+    label.Font = Enum.Font.SourceSansBold
+    label.TextSize = 18
+    label.Parent = billboard
+
+    local function updateLabel()
+        if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0 then
+            local role = getRole(player)
+            local color = Color3.new(1,1,1)
+            if role == "Murderer" or role == "Assassin" then
+                color = Color3.new(1,0,0)
+            elseif role == "Sheriff" then
+                color = Color3.new(0,0,1)
+            else
+                color = Color3.new(1,1,1)
+            end
+            label.Text = player.Name .. "\n[" .. role .. "]"
+            label.TextColor3 = color
+            label.Visible = true
+        else
+            label.Visible = false
+        end
+    end
+
+    local conn
+    conn = RunService.Heartbeat:Connect(function()
+        if not player.Parent then
+            conn:Disconnect()
+            if billboard and billboard.Parent then
+                billboard:Destroy()
+            end
+            espLabels[player] = nil
+        else
+            updateLabel()
+        end
+    end)
+
+    espLabels[player] = billboard
+end
+
+local function removeESPFromPlayer(player)
+    if espLabels[player] then
+        if espLabels[player].Parent then
+            espLabels[player]:Destroy()
+        end
+        espLabels[player] = nil
+    end
+end
+
+local function applyHighlight(player)
+    if highlights[player] then return end
+    if not player.Character then return end
+
+    local highlight = Instance.new("Highlight")
+    highlight.Name = "RoleHighlight"
+    highlight.Parent = player.Character
+
+    local role = getRole(player)
+    if role == "Murderer" or role == "Assassin" then
+        highlight.FillColor = Color3.new(1, 0, 0)
+    elseif role == "Sheriff" then
+        highlight.FillColor = Color3.new(0, 0, 1)
+    else
+        highlight.FillColor = Color3.new(0, 1, 0)
+    end
+
+    highlight.OutlineColor = Color3.new(0,0,0)
+    highlight.Enabled = true
+
+    highlights[player] = highlight
+end
+
+local function removeHighlight(player)
+    if highlights[player] then
+        highlights[player]:Destroy()
+        highlights[player] = nil
+    end
+end
+
+local function updateHighlights(enable)
+    if enable then
+        for _, p in pairs(Players:GetPlayers()) do
+            applyHighlight(p)
+        end
+        Players.PlayerAdded:Connect(function(p)
+            if esp then
+                applyHighlight(p)
+            end
+        end)
+        Players.PlayerRemoving:Connect(function(p)
+            removeHighlight(p)
+        end)
+        Players.PlayerAdded:Connect(function(p)
+            p.CharacterAdded:Connect(function()
+                if esp then
+                    applyHighlight(p)
+                end
+            end)
+        end)
+    else
+        for _, p in pairs(Players:GetPlayers()) do
+            removeHighlight(p)
+        end
+    end
+end
+
+function toggleESP(enable)
+    if enable then
+        for _, p in pairs(Players:GetPlayers()) do
+            createESPForPlayer(p)
+        end
+        updateHighlights(true)
+        Players.PlayerAdded:Connect(function(p)
+            if esp then
+                createESPForPlayer(p)
+                applyHighlight(p)
+            end
+        end)
+        Players.PlayerRemoving:Connect(function(p)
+            removeESPFromPlayer(p)
+            removeHighlight(p)
+        end)
+    else
+        for _, p in pairs(Players:GetPlayers()) do
+            removeESPFromPlayer(p)
+        end
+        updateHighlights(false)
+    end
+end
+
+-- GUI y colores ON/OFF
+
+local COLOR_ON = Color3.fromRGB(0, 170, 0)
+local COLOR_OFF = Color3.fromRGB(170, 0, 0)
+
 local screenGui = Instance.new("ScreenGui", localPlayer:WaitForChild("PlayerGui"))
 screenGui.Name = "YAHRMCloneGUI"
 
@@ -34,8 +334,7 @@ frame.Position = UDim2.new(0, 20, 0, 80)
 frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 frame.BorderSizePixel = 0
 frame.Parent = screenGui
-frame.Active = true  -- Para poder recibir input de mouse
-frame.Draggable = false -- deprecated pero lo dejamos false porque haremos drag manual
+frame.Active = true
 
 local title = Instance.new("TextLabel", frame)
 title.Size = UDim2.new(1, 0, 0, 30)
@@ -45,7 +344,6 @@ title.TextColor3 = Color3.new(1,1,1)
 title.Font = Enum.Font.SourceSansBold
 title.TextSize = 24
 
--- Botón minimizar (icono)
 local minimizeBtn = Instance.new("TextButton", frame)
 minimizeBtn.Size = UDim2.new(0, 30, 0, 30)
 minimizeBtn.Position = UDim2.new(1, -35, 0, 2)
@@ -53,9 +351,8 @@ minimizeBtn.BackgroundColor3 = Color3.fromRGB(80,80,80)
 minimizeBtn.TextColor3 = Color3.new(1,1,1)
 minimizeBtn.Font = Enum.Font.SourceSansBold
 minimizeBtn.TextSize = 24
-minimizeBtn.Text = "–"  -- símbolo menos para minimizar
+minimizeBtn.Text = "–"
 
--- Frame pequeño para cuando está minimizado
 local minimizedFrame = Instance.new("Frame", screenGui)
 minimizedFrame.Size = UDim2.new(0, 60, 0, 30)
 minimizedFrame.Position = UDim2.new(0, 20, 0, 80)
@@ -72,7 +369,6 @@ minimizedBtn.TextSize = 20
 minimizedBtn.Text = "YAHRM"
 minimizedBtn.AutoButtonColor = false
 
--- Toggle función para mostrar/ocultar ventana
 local function toggleMinimize()
     if frame.Visible then
         frame.Visible = false
@@ -86,7 +382,6 @@ end
 minimizeBtn.MouseButton1Click:Connect(toggleMinimize)
 minimizedBtn.MouseButton1Click:Connect(toggleMinimize)
 
--- Función para crear botón toggle con cambio de color y texto
 local function createToggleButton(text, pos, getState, setState)
     local btn = Instance.new("TextButton")
     btn.Size = UDim2.new(0, 280, 0, 30)
@@ -146,12 +441,7 @@ local espBtn = createToggleButton("ESP", UDim2.new(0, 10, 0, y),
     function() return esp end,
     function(val)
         esp = val
-        if esp then
-            -- activar ESP
-            toggleESP(true)
-        else
-            toggleESP(false)
-        end
+        toggleESP(esp)
     end)
 y = y + step
 
@@ -199,7 +489,8 @@ createActionButton("Kill All", UDim2.new(0, 10, 0, y), function()
     killAll()
 end)
 
--- Código para hacer el frame movible con mouse/touch
+-- Código para mover la ventana
+
 local dragging = false
 local dragInput
 local dragStart
@@ -241,6 +532,11 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
--- (Las demás funciones y loops como en el script anterior se mantienen, omito para no repetir)
+-- Restaurar velocidad al reaparecer
+localPlayer.CharacterAdded:Connect(function(char)
+    humanoid = char:WaitForChild("Humanoid")
+    rootPart = char:WaitForChild("HumanoidRootPart")
+    humanoid.WalkSpeed = defaultSpeed
+end)
 
-print("Script actualizado con GUI movible, botones ON/verde y minimizable.")
+print("YAHRM Clone avanzado cargado correctamente.")
