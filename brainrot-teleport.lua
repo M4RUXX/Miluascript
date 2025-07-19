@@ -1,87 +1,86 @@
 local Players = game:GetService("Players")
 local lp = Players.LocalPlayer
-local Workspace = game:GetService("Workspace")
 local RunService = game:GetService("RunService")
 
-local baseFolder = Workspace:FindFirstChild("Bases")
-if not baseFolder then
-    warn("❌ No se encontró carpeta workspace.Bases")
-    return
-end
-
+local teleportPoint = nil
 local teleportEnabled = false
 
+-- Detectar Brainrot
 local function hasBrainrot()
     for _, item in ipairs(lp.Backpack:GetChildren()) do
-        print("Revisando en backpack:", item.Name)
         if item.Name:lower():find("brainrot") then
-            print("✅ Brainrot encontrado en backpack:", item.Name)
             return true
         end
     end
     if lp.Character then
         for _, item in ipairs(lp.Character:GetChildren()) do
-            print("Revisando en character:", item.Name)
             if item.Name:lower():find("brainrot") then
-                print("✅ Brainrot encontrado en character:", item.Name)
                 return true
             end
         end
     end
-    print("❌ No se encontró brainrot")
     return false
 end
 
-local function getEntrancePart()
-    local base = baseFolder:FindFirstChild(lp.Name)
-    if base then
-        local entrance = base:FindFirstChild("Entrance")
-        if entrance then
-            print("✅ Entrada encontrada:", entrance:GetFullName())
-            return entrance
-        else
-            warn("❌ No se encontró 'Entrance' en la base")
+-- Loop teletransportación automática
+RunService.RenderStepped:Connect(function()
+    if teleportEnabled and teleportPoint and hasBrainrot() then
+        local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+        if hrp then
+            hrp.CFrame = teleportPoint + Vector3.new(0, 3, 0)
         end
     else
-        warn("❌ No se encontró base para el jugador:", lp.Name)
+        teleportEnabled = false -- Apaga si no tienes brainrot o no hay punto
     end
+end)
+
+-- Crear GUI con botones
+local gui = Instance.new("ScreenGui", lp:WaitForChild("PlayerGui"))
+gui.Name = "TeleportGui"
+
+local function createButton(text, position)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 160, 0, 40)
+    btn.Position = position
+    btn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    btn.TextColor3 = Color3.new(1, 1, 1)
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 18
+    btn.Text = text
+    btn.BorderSizePixel = 0
+    btn.Parent = gui
+    return btn
 end
 
-task.spawn(function()
-    while true do
-        if teleportEnabled and hasBrainrot() then
-            local entrance = getEntrancePart()
-            local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
-            if entrance and hrp then
-                print("➡️ Teletransportando a base...")
-                hrp.CFrame = entrance.CFrame + Vector3.new(0, 3, 0)
-            else
-                warn("❌ Faltan hrp o entrance")
-            end
-        end
-        task.wait(0.1)
+local btnSetPoint = createButton("📍 Fijar punto", UDim2.new(0, 20, 0, 100))
+local btnStartTP = createButton("▶️ Empezar TP", UDim2.new(0, 20, 0, 150))
+local btnRemovePoint = createButton("✖ Quitar punto", UDim2.new(0, 20, 0, 200))
+
+btnSetPoint.MouseButton1Click:Connect(function()
+    local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+    if hrp then
+        teleportPoint = hrp.CFrame.Position
+        print("📍 Punto de teletransporte fijado en:", teleportPoint)
+    else
+        warn("No se pudo fijar el punto: no hay HumanoidRootPart")
     end
 end)
 
-local gui = Instance.new("ScreenGui", lp:WaitForChild("PlayerGui"))
-gui.Name = "BrainrotTPGui"
-
-local button = Instance.new("TextButton")
-button.Parent = gui
-button.Size = UDim2.new(0, 140, 0, 40)
-button.Position = UDim2.new(0, 20, 0, 100)
-button.Text = "🧠 Auto TP: OFF"
-button.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-button.TextColor3 = Color3.new(1, 1, 1)
-button.Font = Enum.Font.Gotham
-button.TextSize = 18
-button.AutoButtonColor = true
-button.BorderSizePixel = 0
-
-button.MouseButton1Click:Connect(function()
-    teleportEnabled = not teleportEnabled
-    button.Text = teleportEnabled and "🧠 Auto TP: ON" or "🧠 Auto TP: OFF"
-    print("📡 Teleport:", teleportEnabled and "ACTIVADO" or "DESACTIVADO")
+btnStartTP.MouseButton1Click:Connect(function()
+    if teleportPoint then
+        if hasBrainrot() then
+            teleportEnabled = true
+            print("▶️ Teletransporte automático ACTIVADO")
+        else
+            warn("Necesitas tener el Brainrot para activar el teletransporte")
+        end
+    else
+        warn("Primero fija un punto de teletransporte")
+    end
 end)
 
-print("✅ Brainrot auto-teleport listo con debug. Usa el botón para activar o desactivar.")
+btnRemovePoint.MouseButton1Click:Connect(function()
+    teleportEnabled = false
+    teleportPoint = nil
+    print("✖ Punto de teletransporte removido y teletransporte detenido")
+end)
