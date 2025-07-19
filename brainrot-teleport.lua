@@ -1,216 +1,102 @@
--- Ugly Hub básico para Roblox (estilo hub con pestañas y botones)
-
--- Elimina GUI previa si existe
-if game.CoreGui:FindFirstChild("UglyHub") then
-    game.CoreGui.UglyHub:Destroy()
-end
-
+-- Variables principales
 local Players = game:GetService("Players")
-local player = Players.LocalPlayer
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local localPlayer = Players.LocalPlayer
+local mouse = localPlayer:GetMouse()
 
--- Crear GUI principal
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "UglyHub"
-ScreenGui.Parent = game.CoreGui
+-- Esperar a que el personaje cargue
+local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
 
-local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.new(0, 400, 0, 300)
-MainFrame.Position = UDim2.new(0.5, -200, 0.5, -150)
-MainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-MainFrame.BorderSizePixel = 0
-MainFrame.Active = true
-MainFrame.Draggable = true
-MainFrame.Parent = ScreenGui
+-- Crear GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "MurderGUI"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = localPlayer:WaitForChild("PlayerGui")
 
--- Título
-local Title = Instance.new("TextLabel")
-Title.Size = UDim2.new(1, 0, 0, 40)
-Title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Title.BorderSizePixel = 0
-Title.Text = "Ugly Hub - Steal a Brainrot"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.Font = Enum.Font.GothamBold
-Title.TextSize = 22
-Title.Parent = MainFrame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 150, 0, 50)
+frame.Position = UDim2.new(0.5, -75, 0.9, 0)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Parent = screenGui
 
--- Contenedor de contenido
-local ContentFrame = Instance.new("Frame")
-ContentFrame.Size = UDim2.new(1, -20, 1, -60)
-ContentFrame.Position = UDim2.new(0, 10, 0, 50)
-ContentFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-ContentFrame.BorderSizePixel = 0
-ContentFrame.Parent = MainFrame
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(1, -10, 1, -10)
+button.Position = UDim2.new(0, 5, 0, 5)
+button.BackgroundColor3 = Color3.fromRGB(80, 0, 0)
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Font = Enum.Font.SourceSansBold
+button.TextSize = 20
+button.Text = "Asesinar"
+button.Parent = frame
 
--- Panel de pestañas (izquierda)
-local TabsFrame = Instance.new("Frame")
-TabsFrame.Size = UDim2.new(0, 100, 1, 0)
-TabsFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-TabsFrame.BorderSizePixel = 0
-TabsFrame.Parent = ContentFrame
+local statusLabel = Instance.new("TextLabel")
+statusLabel.Size = UDim2.new(1, -10, 0, 20)
+statusLabel.Position = UDim2.new(0, 5, 0, -25)
+statusLabel.BackgroundTransparency = 1
+statusLabel.TextColor3 = Color3.new(1, 1, 1)
+statusLabel.Font = Enum.Font.SourceSans
+statusLabel.TextSize = 14
+statusLabel.Text = ""
+statusLabel.Parent = frame
 
--- Contenedor de páginas (derecha)
-local PagesFrame = Instance.new("Frame")
-PagesFrame.Size = UDim2.new(1, -110, 1, 0)
-PagesFrame.Position = UDim2.new(0, 110, 0, 0)
-PagesFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-PagesFrame.BorderSizePixel = 0
-PagesFrame.Parent = ContentFrame
-
--- Función para crear botón de pestaña
-local function createTabButton(name, position, parent)
-    local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(1, 0, 0, 40)
-    btn.Position = position
-    btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-    btn.BorderSizePixel = 0
-    btn.Text = name
-    btn.TextColor3 = Color3.new(1, 1, 1)
-    btn.Font = Enum.Font.GothamSemibold
-    btn.TextSize = 18
-    btn.Parent = parent
-    return btn
-end
-
--- Función para crear botón funcional
-local function createButton(name, position, parent, callback)
-    local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(1, -20, 0, 35)
-    btn.Position = position
-    btn.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-    btn.BorderSizePixel = 0
-    btn.Text = name
-    btn.TextColor3 = Color3.new(1,1,1)
-    btn.Font = Enum.Font.Gotham
-    btn.TextSize = 16
-    btn.Parent = parent
-    btn.MouseButton1Click:Connect(callback)
-    return btn
-end
-
--- Crear páginas (Frames)
-local pages = {}
-
-local function createPage(name)
-    local page = Instance.new("Frame")
-    page.Size = UDim2.new(1, 0, 1, 0)
-    page.BackgroundTransparency = 1
-    page.Visible = false
-    page.Parent = PagesFrame
-    pages[name] = page
-    return page
-end
-
--- Crear pestañas
-local tabNames = {"Teleport", "Auto", "Info"}
-
-for i, tabName in ipairs(tabNames) do
-    local tabBtn = createTabButton(tabName, UDim2.new(0, 0, 0, 40*(i-1)), TabsFrame)
-    local page = createPage(tabName)
+-- Función para reproducir animación
+local function playAttackAnimation()
+    local animator = humanoid:FindFirstChildOfClass("Animator")
+    if not animator then
+        statusLabel.Text = "No se encontró Animator"
+        return
+    end
     
-    tabBtn.MouseButton1Click:Connect(function()
-        -- Mostrar sólo la página seleccionada
-        for _, p in pairs(pages) do p.Visible = false end
-        page.Visible = true
-        -- Cambiar color pestañas
-        for _, btn in pairs(TabsFrame:GetChildren()) do
-            if btn:IsA("TextButton") then
-                btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    local attackAnim = Instance.new("Animation")
+    attackAnim.AnimationId = "rbxassetid://5051539540" -- animación de ataque MM2
+    local track = animator:LoadAnimation(attackAnim)
+    track:Play()
+    
+    -- Esperar duración animación (aprox 1 seg)
+    wait(1)
+    track:Stop()
+end
+
+-- Función para matar jugador cercano
+local function murderClosestPlayer()
+    local closestPlayer = nil
+    local shortestDistance = math.huge
+    local rootPart = character:FindFirstChild("HumanoidRootPart")
+    if not rootPart then
+        statusLabel.Text = "No se encontró HumanoidRootPart"
+        return
+    end
+    
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= localPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local distance = (player.Character.HumanoidRootPart.Position - rootPart.Position).magnitude
+            if distance < 10 and distance < shortestDistance then
+                closestPlayer = player
+                shortestDistance = distance
             end
         end
-        tabBtn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-    end)
-    
-    if i == 1 then
-        tabBtn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-        page.Visible = true
     end
-end
-
--- FUNCIONALIDADES por pestaña
-
--- Teleport page
-local teleportPage = pages["Teleport"]
-
-local baseName = "base de sid4insana" -- Nombre fijo de tu base
-
-createButton("Teleport a mi Base", UDim2.new(0, 10, 0, 10), teleportPage, function()
-    local basesFolder = workspace:FindFirstChild("Bases")
-    if basesFolder then
-        local base = basesFolder:FindFirstChild(baseName)
-        if base and base:FindFirstChild("Entrance") and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-            player.Character.HumanoidRootPart.CFrame = base.Entrance.CFrame + Vector3.new(0,3,0)
+    
+    if closestPlayer then
+        statusLabel.Text = "Atacando a " .. closestPlayer.Name
+        playAttackAnimation()
+        
+        -- Intentar disparar evento remoto (depende del juego)
+        local remote = ReplicatedStorage:FindFirstChild("Remotes") and ReplicatedStorage.Remotes:FindFirstChild("MurderEvent")
+        if remote then
+            remote:FireServer(closestPlayer)
+            statusLabel.Text = "Asesinato enviado a " .. closestPlayer.Name
         else
-            warn("No se encontró base o entrada")
+            statusLabel.Text = "Remote MurderEvent no encontrado"
         end
     else
-        warn("No se encontró carpeta Bases")
+        statusLabel.Text = "No hay jugadores cerca"
     end
+end
+
+-- Evento para botón
+button.MouseButton1Click:Connect(function()
+    murderClosestPlayer()
 end)
-
-createButton("Teleport a Brainrot", UDim2.new(0, 10, 0, 60), teleportPage, function()
-    local brainrot
-    for _, obj in pairs(workspace:GetChildren()) do
-        if obj.Name:lower():find("brainrot") then
-            brainrot = obj
-            break
-        end
-    end
-    if brainrot and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-        player.Character.HumanoidRootPart.CFrame = brainrot.CFrame + Vector3.new(0,3,0)
-    else
-        warn("No se encontró brainrot o HumanoidRootPart")
-    end
-end)
-
--- Auto page
-local autoPage = pages["Auto"]
-local teleporting = false
-local autoTpBtn
-
-autoTpBtn = createButton("Auto Teleport: OFF", UDim2.new(0, 10, 0, 10), autoPage, function()
-    teleporting = not teleporting
-    autoTpBtn.Text = "Auto Teleport: " .. (teleporting and "ON" or "OFF")
-end)
-
--- Loop auto teleport
-task.spawn(function()
-    while true do
-        if teleporting and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-            local brainrot
-            for _, obj in pairs(workspace:GetChildren()) do
-                if obj.Name:lower():find("brainrot") then
-                    brainrot = obj
-                    break
-                end
-            end
-            if brainrot then
-                player.Character.HumanoidRootPart.CFrame = brainrot.CFrame + Vector3.new(0,3,0)
-            end
-        end
-        task.wait(0.3)
-    end
-end)
-
--- Info page
-local infoPage = pages["Info"]
-
-local infoLabel = Instance.new("TextLabel")
-infoLabel.Size = UDim2.new(1, -20, 1, -20)
-infoLabel.Position = UDim2.new(0, 10, 0, 10)
-infoLabel.BackgroundTransparency = 1
-infoLabel.TextColor3 = Color3.new(1,1,1)
-infoLabel.TextWrapped = true
-infoLabel.Font = Enum.Font.Gotham
-infoLabel.TextSize = 16
-infoLabel.Text = [[
-Ugly Hub básico
-Creado para Steal a Brainrot
-
-Funciones:
-- Teletransportarte a base fija "base de sid4insana"
-- Teletransportarte al brainrot
-- Auto teleport al brainrot
-]]
-infoLabel.Parent = infoPage
-
-print("✅ Ugly Hub básico cargado")
