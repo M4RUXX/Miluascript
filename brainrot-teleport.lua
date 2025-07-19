@@ -1,5 +1,3 @@
--- YAHRM Clone avanzado para MM2 con GUI, ESP + Highlights de roles
-
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -157,18 +155,34 @@ local function autoGetGunFunc()
     end
 end
 
--- ESP con etiquetas y highlights
-
-local espLabels = {}
-local highlights = {}
-
+-- Función para obtener el rol de MM2 con atributo y fallback
 local function getRole(player)
+    local role = player:GetAttribute("Role")
+    if role then
+        return role
+    end
     local roleValue = player:FindFirstChild("Role") or (player:FindFirstChild("leaderstats") and player.leaderstats:FindFirstChild("Role"))
     if roleValue and roleValue:IsA("StringValue") then
         return roleValue.Value
     end
     return "Innocent"
 end
+
+-- Colores según rol
+local function getRoleColor(role)
+    if role == "Murderer" then
+        return Color3.fromRGB(255, 50, 50) -- rojo
+    elseif role == "Sheriff" then
+        return Color3.fromRGB(50, 50, 255) -- azul
+    else
+        return Color3.fromRGB(150, 255, 150) -- verde para inocentes
+    end
+end
+
+-- ESP con etiquetas y highlights
+
+local espLabels = {}
+local highlights = {}
 
 local function createESPForPlayer(player)
     if espLabels[player] or player == localPlayer then return end
@@ -180,15 +194,15 @@ local function createESPForPlayer(player)
     local billboard = Instance.new("BillboardGui")
     billboard.Name = "ESPLabel"
     billboard.Adornee = head
-    billboard.Size = UDim2.new(0,150,0,50)
+    billboard.Size = UDim2.new(0, 150, 0, 50)
     billboard.AlwaysOnTop = true
     billboard.ExtentsOffset = Vector3.new(0, 1.5, 0)
     billboard.Parent = head
 
     local label = Instance.new("TextLabel")
-    label.Size = UDim2.new(1,0,1,0)
+    label.Size = UDim2.new(1, 0, 1, 0)
     label.BackgroundTransparency = 0.5
-    label.BackgroundColor3 = Color3.new(0,0,0)
+    label.BackgroundColor3 = Color3.new(0, 0, 0)
     label.TextStrokeTransparency = 0
     label.Font = Enum.Font.SourceSansBold
     label.TextSize = 18
@@ -197,14 +211,7 @@ local function createESPForPlayer(player)
     local function updateLabel()
         if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0 then
             local role = getRole(player)
-            local color = Color3.new(1,1,1) -- default blanco
-            if role == "Murderer" or role == "Assassin" then
-                color = Color3.fromRGB(255, 50, 50) -- rojo
-            elseif role == "Sheriff" then
-                color = Color3.fromRGB(50, 50, 255) -- azul
-            else
-                color = Color3.fromRGB(150, 255, 150) -- verde claro para inocentes
-            end
+            local color = getRoleColor(role)
             label.Text = player.Name .. "\n[" .. role .. "]"
             label.TextColor3 = color
             label.Visible = true
@@ -246,16 +253,19 @@ local function applyHighlight(player)
     highlight.Name = "RoleHighlight"
     highlight.Parent = player.Character
 
-    local role = getRole(player)
-    if role == "Murderer" or role == "Assassin" then
-        highlight.FillColor = Color3.fromRGB(255, 50, 50) -- rojo
-    elseif role == "Sheriff" then
-        highlight.FillColor = Color3.fromRGB(50, 50, 255) -- azul
-    else
-        highlight.FillColor = Color3.fromRGB(150, 255, 150) -- verde claro
+    local function updateHighlightColor()
+        local role = getRole(player)
+        highlight.FillColor = getRoleColor(role)
     end
 
-    highlight.OutlineColor = Color3.new(0,0,0)
+    updateHighlightColor()
+
+    local roleValue = player:FindFirstChild("Role") or (player:FindFirstChild("leaderstats") and player.leaderstats:FindFirstChild("Role"))
+    if roleValue and roleValue:IsA("StringValue") then
+        roleValue.Changed:Connect(updateHighlightColor)
+    end
+
+    highlight.OutlineColor = Color3.new(0, 0, 0)
     highlight.Enabled = true
 
     highlights[player] = highlight
@@ -268,52 +278,54 @@ local function removeHighlight(player)
     end
 end
 
-local playerAddedConn, playerRemovingConn
-
-local function setupESPConnections()
-    if playerAddedConn then playerAddedConn:Disconnect() end
-    if playerRemovingConn then playerRemovingConn:Disconnect() end
-
-    playerAddedConn = Players.PlayerAdded:Connect(function(player)
-        player.CharacterAdded:Connect(function()
+local function updateHighlights(enable)
+    if enable then
+        for _, p in pairs(Players:GetPlayers()) do
+            applyHighlight(p)
+        end
+        Players.PlayerAdded:Connect(function(p)
             if esp then
-                createESPForPlayer(player)
-                applyHighlight(player)
+                applyHighlight(p)
             end
         end)
-        if esp then
-            createESPForPlayer(player)
-            applyHighlight(player)
+        Players.PlayerRemoving:Connect(function(p)
+            removeHighlight(p)
+        end)
+        Players.PlayerAdded:Connect(function(p)
+            p.CharacterAdded:Connect(function()
+                if esp then
+                    applyHighlight(p)
+                end
+            end)
+        end)
+    else
+        for _, p in pairs(Players:GetPlayers()) do
+            removeHighlight(p)
         end
-    end)
-
-    playerRemovingConn = Players.PlayerRemoving:Connect(function(player)
-        removeESPFromPlayer(player)
-        removeHighlight(player)
-    end)
+    end
 end
 
 function toggleESP(enable)
-    esp = enable
     if enable then
         for _, p in pairs(Players:GetPlayers()) do
             createESPForPlayer(p)
-            applyHighlight(p)
         end
-        setupESPConnections()
+        updateHighlights(true)
+        Players.PlayerAdded:Connect(function(p)
+            if esp then
+                createESPForPlayer(p)
+                applyHighlight(p)
+            end
+        end)
+        Players.PlayerRemoving:Connect(function(p)
+            removeESPFromPlayer(p)
+            removeHighlight(p)
+        end)
     else
         for _, p in pairs(Players:GetPlayers()) do
             removeESPFromPlayer(p)
-            removeHighlight(p)
         end
-        if playerAddedConn then
-            playerAddedConn:Disconnect()
-            playerAddedConn = nil
-        end
-        if playerRemovingConn then
-            playerRemovingConn:Disconnect()
-            playerRemovingConn = nil
-        end
+        updateHighlights(false)
     end
 end
 
@@ -400,6 +412,11 @@ local function createToggleButton(text, pos, getState, setState)
     btn.MouseButton1Click:Connect(function()
         setState(not getState())
         updateBtn()
+        if text == "ESP" then
+            toggleESP(not esp)
+        elseif text == "Auto Get Gun" and autoGetGun then
+            spawn(autoGetGunFunc)
+        end
     end)
 
     updateBtn()
@@ -437,7 +454,8 @@ y = y + step
 local espBtn = createToggleButton("ESP", UDim2.new(0, 10, 0, y),
     function() return esp end,
     function(val)
-        toggleESP(val)
+        esp = val
+        toggleESP(esp)
     end)
 y = y + step
 
@@ -535,4 +553,4 @@ localPlayer.CharacterAdded:Connect(function(char)
     humanoid.WalkSpeed = defaultSpeed
 end)
 
-print("YAHRM Clone avanzado cargado correctamente.")
+print("YAHRM Clone MM2 cargado correctamente.")
