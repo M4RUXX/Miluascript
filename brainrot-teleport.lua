@@ -111,6 +111,13 @@ for i, tabName in ipairs(tabNames) do
         -- Mostrar sólo la página seleccionada
         for _, p in pairs(pages) do p.Visible = false end
         page.Visible = true
+        -- Cambiar color pestañas
+        for _, btn in pairs(TabsFrame:GetChildren()) do
+            if btn:IsA("TextButton") then
+                btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+            end
+        end
+        tabBtn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
     end)
     
     if i == 1 then
@@ -124,10 +131,12 @@ end
 -- Teleport page
 local teleportPage = pages["Teleport"]
 
+local baseName = "base de sid4insana" -- Nombre fijo de tu base
+
 createButton("Teleport a mi Base", UDim2.new(0, 10, 0, 10), teleportPage, function()
     local basesFolder = workspace:FindFirstChild("Bases")
     if basesFolder then
-        local base = basesFolder:FindFirstChild(player.Name)
+        local base = basesFolder:FindFirstChild(baseName)
         if base and base:FindFirstChild("Entrance") and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
             player.Character.HumanoidRootPart.CFrame = base.Entrance.CFrame + Vector3.new(0,3,0)
         else
@@ -198,9 +207,9 @@ Ugly Hub básico
 Creado para Steal a Brainrot
 
 Funciones:
-- Teletransportarte a base
+- Teletransportarte a base fija "base de sid4insana"
 - Teletransportarte al brainrot
-- Auto teleport
+- Auto teleport al brainrot
 ]]
 infoLabel.Parent = infoPage
 
