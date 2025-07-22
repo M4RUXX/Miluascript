@@ -1,4 +1,4 @@
--- M4RU 1.19
+-- YARHM 1.19
 -- real revolutionary stuff im telling ya
 if not game:IsLoaded() then
 	game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -10,7 +10,7 @@ if not game:IsLoaded() then
 end
 		-- Instances:
 local Converted = {
-	["_M4RU"] = Instance.new("ScreenGui");
+	["_YARHM"] = Instance.new("ScreenGui");
 	["_Open"] = Instance.new("TextButton");
 	["_UICorner"] = Instance.new("UICorner");
 	["_InitOpen"] = Instance.new("LocalScript");
@@ -19,7 +19,7 @@ local Converted = {
 	["_UIPadding"] = Instance.new("UIPadding");
 	["_DropdownFrameSample"] = Instance.new("Frame");
 	["_UICorner1"] = Instance.new("UICorner");
-	["_UIGradient"] = 	["_UIStroke"] = 	["_UIGradient1"] = 	["_ScrollingFrame"] = Instance.new("ScrollingFrame");
+	["_ScrollingFrame"] = Instance.new("ScrollingFrame");
 	["_UIListLayout"] = Instance.new("UIListLayout");
 	["_Sample"] = Instance.new("TextButton");
 	["_UIPadding1"] = Instance.new("UIPadding");
@@ -45,13 +45,13 @@ local Converted = {
 	["_UIPadding5"] = Instance.new("UIPadding");
 	["_UICorner7"] = Instance.new("UICorner");
 	["_Keybinding"] = Instance.new("LocalScript");
-	["_UIStroke1"] = 	["_Invisible"] = Instance.new("LocalScript");
+	["_Invisible"] = Instance.new("LocalScript");
 	["_Lock"] = Instance.new("TextLabel");
 	["_UIScale"] = Instance.new("UIScale");
 	["_FloatingButtons"] = Instance.new("Frame");
 	["_AddCustomModule"] = Instance.new("Frame");
 	["_UICorner8"] = Instance.new("UICorner");
-	["_UIStroke2"] = 	["_UIGradient2"] = 	["_UIGradient3"] = 	["_UIScale1"] = Instance.new("UIScale");
+	["_UIScale1"] = Instance.new("UIScale");
 	["_TextLabel1"] = Instance.new("TextLabel");
 	["_TextBox1"] = Instance.new("TextBox");
 	["_UICorner9"] = Instance.new("UICorner");
@@ -60,11 +60,11 @@ local Converted = {
 	["_Add"] = Instance.new("TextButton");
 	["_UICorner10"] = Instance.new("UICorner");
 	["_UIPadding7"] = Instance.new("UIPadding");
-	["_UIStroke3"] = 	["_LocalScript"] = Instance.new("LocalScript");
+	["_LocalScript"] = Instance.new("LocalScript");
 	["_Cancel"] = Instance.new("TextButton");
 	["_UICorner11"] = Instance.new("UICorner");
 	["_UIPadding8"] = Instance.new("UIPadding");
-	["_UIStroke4"] = 	["_LocalScript1"] = Instance.new("LocalScript");
+	["_LocalScript1"] = Instance.new("LocalScript");
 	["_themedColor"] = Instance.new("StringValue");
 	["_Flee the Facility"] = Instance.new("LocalScript");
 	["_Universal"] = Instance.new("LocalScript");
@@ -72,7 +72,7 @@ local Converted = {
 	["_Menu"] = Instance.new("Frame");
 	["_UICorner12"] = Instance.new("UICorner");
 	["_UIScale2"] = Instance.new("UIScale");
-	["_UIStroke5"] = 	["_UIGradient4"] = 	["_Animator"] = Instance.new("LocalScript");
+	["_Animator"] = Instance.new("LocalScript");
 	["_List"] = Instance.new("Frame");
 	["_UICorner13"] = Instance.new("UICorner");
 	["_AutoSetup"] = Instance.new("LocalScript");
@@ -80,10 +80,10 @@ local Converted = {
 	["_UIListLayout3"] = Instance.new("UIListLayout");
 	["_UIPadding9"] = Instance.new("UIPadding");
 	["_UIPadding10"] = Instance.new("UIPadding");
-	["_UIGradient5"] = 	["_UIStroke6"] = 	["_UIGradient6"] = 	["_AddCustomModule1"] = Instance.new("TextButton");
+	["_AddCustomModule1"] = Instance.new("TextButton");
 	["_UICorner14"] = Instance.new("UICorner");
 	["_UIPadding11"] = Instance.new("UIPadding");
-	["_UIStroke7"] = 	["_LocalScript2"] = Instance.new("LocalScript");
+	["_LocalScript2"] = Instance.new("LocalScript");
 	["_themedColor1"] = Instance.new("StringValue");
 	["_themedColor2"] = Instance.new("StringValue");
 	["_HubCredits"] = Instance.new("TextLabel");
@@ -98,7 +98,7 @@ local Converted = {
 	["_Area1"] = Instance.new("ScrollingFrame");
 	["_TextLabel4"] = Instance.new("TextLabel");
 	["_TextLabel5"] = Instance.new("TextLabel");
-	["_UIGradient7"] = 	["_CloseArea"] = Instance.new("TextButton");
+	["_CloseArea"] = Instance.new("TextButton");
 	["_Frame"] = Instance.new("Frame");
 	["_UICorner16"] = Instance.new("UICorner");
 	["_CloseOpen"] = Instance.new("LocalScript");
@@ -121,17 +121,17 @@ local Converted = {
 	["_Modules"] = Instance.new("Folder");
 	["_NotificationSample"] = Instance.new("Frame");
 	["_UICorner20"] = Instance.new("UICorner");
-	["_UIStroke8"] = 	["_UIGradient8"] = 	["_ImageLabel2"] = Instance.new("ImageLabel");
+	["_ImageLabel2"] = Instance.new("ImageLabel");
 	["_TextLabel8"] = Instance.new("TextLabel");
 	["_UITextSizeConstraint"] = Instance.new("UITextSizeConstraint");
 	["_Close"] = Instance.new("ImageButton");
 	["_UICorner21"] = Instance.new("UICorner");
-	["_UIStroke9"] = 	["_UIScale3"] = Instance.new("UIScale");
+	["_UIScale3"] = Instance.new("UIScale");
 	["_themedColor4"] = Instance.new("StringValue");
 	["_Dialog"] = Instance.new("Frame");
 	["_UICorner22"] = Instance.new("UICorner");
-	["_UIGradient9"] = 	["_UIPadding13"] = Instance.new("UIPadding");
-	["_UIStroke10"] = 	["_UIGradient10"] = 	["_DialogTitle"] = Instance.new("TextLabel");
+	["_UIPadding13"] = Instance.new("UIPadding");
+	["_DialogTitle"] = Instance.new("TextLabel");
 	["_UIListLayout5"] = Instance.new("UIListLayout");
 	["_DialogDesc"] = Instance.new("TextLabel");
 	["_UITextSizeConstraint1"] = Instance.new("UITextSizeConstraint");
@@ -140,7 +140,7 @@ local Converted = {
 	["_OptionPlaceholder"] = Instance.new("TextButton");
 	["_UIPadding14"] = Instance.new("UIPadding");
 	["_UICorner23"] = Instance.new("UICorner");
-	["_UIStroke11"] = 	["_UIGradient11"] = 	["_themedColor5"] = Instance.new("StringValue");
+	["_themedColor5"] = Instance.new("StringValue");
 	["_OnSelect"] = Instance.new("BindableEvent");
 	["_UIScale4"] = Instance.new("UIScale");
 	["_themedColor6"] = Instance.new("StringValue");
@@ -184,36 +184,36 @@ local Converted = {
 	["_themedColor9"] = Instance.new("StringValue");
 	["_UIListLayout9"] = Instance.new("UIListLayout");
 	["_Tip"] = Instance.new("TextLabel");
-	["_UIStroke12"] = 	["_UIScale5"] = Instance.new("UIScale");
+	["_UIScale5"] = Instance.new("UIScale");
 	["_Theme"] = Instance.new("ModuleScript");
 	["_PointSave"] = Instance.new("ModuleScript");
 }
 -- Properties:
-Converted["_M4RU"].DisplayOrder = 3
-Converted["_M4RU"].IgnoreGuiInset = true
-Converted["_M4RU"].ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
-Converted["_M4RU"].ResetOnSpawn = false
-Converted["_M4RU"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Converted["_M4RU"].Name = "M4RU"
-Converted["_M4RU"].Parent = game:GetService("CoreGui")
+Converted["_YARHM"].DisplayOrder = 3
+Converted["_YARHM"].IgnoreGuiInset = true
+Converted["_YARHM"].ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
+Converted["_YARHM"].ResetOnSpawn = false
+Converted["_YARHM"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Converted["_YARHM"].Name = "YARHM"
+Converted["_YARHM"].Parent = game:GetService("CoreGui")
 Converted["_Open"].Font = Enum.Font.Gotham
-Converted["_Open"].Text = "Triple-click this region to open M4RU."
+Converted["_Open"].Text = "Triple-click this region to open YARHM."
 Converted["_Open"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Open"].TextScaled = true
 Converted["_Open"].TextSize = 14
-Converted["_Open"].
+Converted["_Open"].TextTransparency = 1
 Converted["_Open"].TextWrapped = true
 Converted["_Open"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Open"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Open"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Open"].BackgroundTransparency = 1
-Converted["_Open"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Open"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Open"].BorderSizePixel = 0
 Converted["_Open"].Position = UDim2.new(0.499372631, 0, 0.06341701, 0)
 Converted["_Open"].Selectable = false
 Converted["_Open"].Size = UDim2.new(0, 493, 0, 50)
 Converted["_Open"].Visible = false
 Converted["_Open"].Name = "Open"
-Converted["_Open"].Parent = Converted["_M4RU"]
+Converted["_Open"].Parent = Converted["_YARHM"]
 Converted["_UICorner"].Parent = Converted["_Open"]
 Converted["_UIPadding"].PaddingBottom = UDim.new(0, 10)
 Converted["_UIPadding"].PaddingLeft = UDim.new(0, 20)
@@ -221,29 +221,38 @@ Converted["_UIPadding"].PaddingRight = UDim.new(0, 20)
 Converted["_UIPadding"].PaddingTop = UDim.new(0, 10)
 Converted["_UIPadding"].Parent = Converted["_Open"]
 Converted["_DropdownFrameSample"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_DropdownFrameSample"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_DropdownFrameSample"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_DropdownFrameSample"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_DropdownFrameSample"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_DropdownFrameSample"].BorderSizePixel = 0
 Converted["_DropdownFrameSample"].Size = UDim2.new(0, 108, 0, 239)
 Converted["_DropdownFrameSample"].Visible = false
 Converted["_DropdownFrameSample"].Name = "DropdownFrameSample"
-Converted["_DropdownFrameSample"].Parent = Converted["_M4RU"]
+Converted["_DropdownFrameSample"].Parent = Converted["_YARHM"]
 Converted["_UICorner1"].Parent = Converted["_DropdownFrameSample"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIGradient"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIGradient"].Rotation = 68
+Converted["_UIGradient"].Parent = Converted["_DropdownFrameSample"]
+Converted["_UIStroke"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke"].Thickness = 2
+Converted["_UIStroke"].Parent = Converted["_DropdownFrameSample"]
+Converted["_UIGradient1"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
+	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
 }
+Converted["_UIGradient1"].Rotation = -107
+Converted["_UIGradient1"].Parent = Converted["_UIStroke"]
 Converted["_ScrollingFrame"].AutomaticCanvasSize = Enum.AutomaticSize.XY
 Converted["_ScrollingFrame"].CanvasSize = UDim2.new(0, 0, 0, 0)
-Converted["_ScrollingFrame"].ScrollBarImageColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ScrollingFrame"].ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ScrollingFrame"].ScrollBarThickness = 0
 Converted["_ScrollingFrame"].Active = true
-Converted["_ScrollingFrame"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ScrollingFrame"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_ScrollingFrame"].BackgroundTransparency = 1
-Converted["_ScrollingFrame"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ScrollingFrame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ScrollingFrame"].BorderSizePixel = 0
 Converted["_ScrollingFrame"].Size = UDim2.new(1, 0, 1, 0)
 Converted["_ScrollingFrame"].Parent = Converted["_DropdownFrameSample"]
@@ -256,8 +265,8 @@ Converted["_Sample"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Sample"].TextScaled = true
 Converted["_Sample"].TextSize = 14
 Converted["_Sample"].TextWrapped = true
-Converted["_Sample"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Sample"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Sample"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_Sample"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Sample"].BorderSizePixel = 0
 Converted["_Sample"].Size = UDim2.new(1, 0, 0, 35)
 Converted["_Sample"].Visible = false
@@ -280,24 +289,24 @@ Converted["_ListButton"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_ListButton"].TextSize = 14
 Converted["_ListButton"].TextWrapped = true
 Converted["_ListButton"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ListButton"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_ListButton"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ListButton"].BackgroundColor3 = Color3.fromRGB(49.00000087916851, 49.00000087916851, 49.00000087916851)
+Converted["_ListButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ListButton"].BorderSizePixel = 0
 Converted["_ListButton"].Position = UDim2.new(0.0450000018, 0, 0.112000003, 0)
 Converted["_ListButton"].Size = UDim2.new(1, 0, 0, 50)
 Converted["_ListButton"].Visible = false
 Converted["_ListButton"].Name = "ListButton"
-Converted["_ListButton"].Parent = Converted["_M4RU"]
+Converted["_ListButton"].Parent = Converted["_YARHM"]
 Converted["_UICorner3"].Parent = Converted["_ListButton"]
 Converted["_Notifications"].AnchorPoint = Vector2.new(1, 0.5)
-Converted["_Notifications"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Notifications"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Notifications"].BackgroundTransparency = 1
-Converted["_Notifications"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Notifications"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Notifications"].BorderSizePixel = 0
 Converted["_Notifications"].Position = UDim2.new(0.99000001, 0, 0.5, 0)
 Converted["_Notifications"].Size = UDim2.new(0, 242, 1, 0)
 Converted["_Notifications"].Name = "Notifications"
-Converted["_Notifications"].Parent = Converted["_M4RU"]
+Converted["_Notifications"].Parent = Converted["_YARHM"]
 Converted["_UIListLayout1"].Padding = UDim.new(0, 10)
 Converted["_UIListLayout1"].HorizontalAlignment = Enum.HorizontalAlignment.Center
 Converted["_UIListLayout1"].SortOrder = Enum.SortOrder.LayoutOrder
@@ -307,8 +316,8 @@ Converted["_UIPadding3"].PaddingBottom = UDim.new(0, 10)
 Converted["_UIPadding3"].PaddingLeft = UDim.new(0, 10)
 Converted["_UIPadding3"].Parent = Converted["_Notifications"]
 Converted["_Placeholder"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_Placeholder"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Placeholder"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Placeholder"].BackgroundColor3 = Color3.fromRGB(31.000001952052116, 31.000001952052116, 31.000001952052116)
+Converted["_Placeholder"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Placeholder"].BorderSizePixel = 0
 Converted["_Placeholder"].Position = UDim2.new(0.0450000018, 0, 0.112000003, 0)
 Converted["_Placeholder"].Visible = false
@@ -322,21 +331,21 @@ Converted["_TextLabel"].TextSize = 14
 Converted["_TextLabel"].TextWrapped = true
 Converted["_TextLabel"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_TextLabel"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel"].BackgroundTransparency = 1
-Converted["_TextLabel"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel"].BorderSizePixel = 0
 Converted["_TextLabel"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_TextLabel"].Size = UDim2.new(0.899999976, 0, 0.800000012, 0)
 Converted["_TextLabel"].Parent = Converted["_Placeholder"]
-Converted["_TextBoxPlaceholder"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextBoxPlaceholder"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextBoxPlaceholder"].BackgroundTransparency = 1
-Converted["_TextBoxPlaceholder"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextBoxPlaceholder"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextBoxPlaceholder"].BorderSizePixel = 0
 Converted["_TextBoxPlaceholder"].Size = UDim2.new(1, 0, 0, 50)
 Converted["_TextBoxPlaceholder"].Visible = false
 Converted["_TextBoxPlaceholder"].Name = "TextBoxPlaceholder"
-Converted["_TextBoxPlaceholder"].Parent = Converted["_M4RU"]
+Converted["_TextBoxPlaceholder"].Parent = Converted["_YARHM"]
 Converted["_UIListLayout2"].Padding = UDim.new(0, 5)
 Converted["_UIListLayout2"].FillDirection = Enum.FillDirection.Horizontal
 Converted["_UIListLayout2"].HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -346,8 +355,8 @@ Converted["_TextButton"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextButton"].TextScaled = true
 Converted["_TextButton"].TextSize = 14
 Converted["_TextButton"].TextWrapped = true
-Converted["_TextButton"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_TextButton"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextButton"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_TextButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextButton"].BorderSizePixel = 0
 Converted["_TextButton"].Position = UDim2.new(0.292333364, 0, 1.67999995, 0)
 Converted["_TextButton"].Size = UDim2.new(0, 50, 0, 50)
@@ -364,8 +373,8 @@ Converted["_TextBox"].Text = ""
 Converted["_TextBox"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextBox"].TextSize = 14
 Converted["_TextBox"].TextWrapped = true
-Converted["_TextBox"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_TextBox"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextBox"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_TextBox"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextBox"].BorderSizePixel = 0
 Converted["_TextBox"].Size = UDim2.new(0.800000012, 0, 0, 50)
 Converted["_TextBox"].Parent = Converted["_TextBoxPlaceholder"]
@@ -377,20 +386,23 @@ Converted["_FloatingButton"].TextScaled = true
 Converted["_FloatingButton"].TextSize = 14
 Converted["_FloatingButton"].TextWrapped = true
 Converted["_FloatingButton"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_FloatingButton"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_FloatingButton"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_FloatingButton"].BackgroundColor3 = Color3.fromRGB(31.000000052154064, 31.000000052154064, 31.000000052154064)
+Converted["_FloatingButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_FloatingButton"].BorderSizePixel = 0
 Converted["_FloatingButton"].Position = UDim2.new(0, 125, 0, 40)
 Converted["_FloatingButton"].Size = UDim2.new(0, 50, 0, 100)
 Converted["_FloatingButton"].Visible = false
 Converted["_FloatingButton"].Name = "FloatingButton"
-Converted["_FloatingButton"].Parent = Converted["_M4RU"]
+Converted["_FloatingButton"].Parent = Converted["_YARHM"]
 Converted["_UIPadding5"].PaddingBottom = UDim.new(0, 5)
 Converted["_UIPadding5"].PaddingLeft = UDim.new(0, 5)
 Converted["_UIPadding5"].PaddingRight = UDim.new(0, 5)
 Converted["_UIPadding5"].PaddingTop = UDim.new(0, 5)
 Converted["_UIPadding5"].Parent = Converted["_FloatingButton"]
 Converted["_UICorner7"].Parent = Converted["_FloatingButton"]
+Converted["_UIStroke1"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UIStroke1"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke1"].Parent = Converted["_FloatingButton"]
 Converted["_Lock"].Font = Enum.Font.Gotham
 Converted["_Lock"].Text = "🔒"
 Converted["_Lock"].TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -398,9 +410,9 @@ Converted["_Lock"].TextScaled = true
 Converted["_Lock"].TextSize = 14
 Converted["_Lock"].TextWrapped = true
 Converted["_Lock"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Lock"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Lock"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Lock"].BackgroundTransparency = 1
-Converted["_Lock"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Lock"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Lock"].BorderSizePixel = 0
 Converted["_Lock"].Position = UDim2.new(1, -10, 1, -10)
 Converted["_Lock"].Size = UDim2.new(0, 20, 0, 20)
@@ -410,35 +422,44 @@ Converted["_Lock"].Parent = Converted["_FloatingButton"]
 Converted["_UIScale"].Scale = 1.0000000116860974e-07
 Converted["_UIScale"].Parent = Converted["_Lock"]
 Converted["_FloatingButtons"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_FloatingButtons"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_FloatingButtons"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_FloatingButtons"].BackgroundTransparency = 1
-Converted["_FloatingButtons"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_FloatingButtons"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_FloatingButtons"].BorderSizePixel = 0
 Converted["_FloatingButtons"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_FloatingButtons"].Size = UDim2.new(1, 0, 1, 0)
 Converted["_FloatingButtons"].ZIndex = 3
 Converted["_FloatingButtons"].Name = "FloatingButtons"
-Converted["_FloatingButtons"].Parent = Converted["_M4RU"]
+Converted["_FloatingButtons"].Parent = Converted["_YARHM"]
 Converted["_AddCustomModule"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_AddCustomModule"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_AddCustomModule"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_AddCustomModule"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_AddCustomModule"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_AddCustomModule"].BorderSizePixel = 0
 Converted["_AddCustomModule"].ClipsDescendants = true
 Converted["_AddCustomModule"].Position = UDim2.new(0.5, 0, -0.5, 0)
 Converted["_AddCustomModule"].Size = UDim2.new(0, 440, 0, 268)
 Converted["_AddCustomModule"].ZIndex = 3
 Converted["_AddCustomModule"].Name = "AddCustomModule"
-Converted["_AddCustomModule"].Parent = Converted["_M4RU"]
+Converted["_AddCustomModule"].Parent = Converted["_YARHM"]
 Converted["_UICorner8"].Parent = Converted["_AddCustomModule"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIStroke2"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke2"].Thickness = 2
+Converted["_UIStroke2"].Parent = Converted["_AddCustomModule"]
+Converted["_UIGradient2"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(53.00000064074993, 53.00000064074993, 53.00000064074993)),
+	ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(50.69031357765198, 50.69031357765198, 50.69031357765198)),
+	ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(255, 255, 255)),
+	ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(50.13314567506313, 50.13314567506313, 50.13314567506313)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(48.000000938773155, 48.000000938773155, 48.000000938773155))
 }
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIGradient2"].Rotation = 62
+Converted["_UIGradient2"].Parent = Converted["_UIStroke2"]
+Converted["_UIGradient3"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
+Converted["_UIGradient3"].Rotation = 68
+Converted["_UIGradient3"].Parent = Converted["_AddCustomModule"]
 Converted["_UIScale1"].Parent = Converted["_AddCustomModule"]
 Converted["_TextLabel1"].Font = Enum.Font.Gotham
 Converted["_TextLabel1"].Text = "Add a module"
@@ -447,9 +468,9 @@ Converted["_TextLabel1"].TextScaled = true
 Converted["_TextLabel1"].TextSize = 14
 Converted["_TextLabel1"].TextWrapped = true
 Converted["_TextLabel1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel1"].BackgroundTransparency = 1
-Converted["_TextLabel1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel1"].BorderSizePixel = 0
 Converted["_TextLabel1"].Position = UDim2.new(0.352256238, 0, 0.133915231, 0)
 Converted["_TextLabel1"].Size = UDim2.new(0.619047642, 0, 0.125920027, 0)
@@ -463,8 +484,8 @@ Converted["_TextBox1"].TextScaled = true
 Converted["_TextBox1"].TextSize = 14
 Converted["_TextBox1"].TextWrapped = true
 Converted["_TextBox1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextBox1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_TextBox1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextBox1"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_TextBox1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextBox1"].BorderSizePixel = 0
 Converted["_TextBox1"].Position = UDim2.new(0.499648541, 0, 0.500059664, 0)
 Converted["_TextBox1"].Size = UDim2.new(0.804988742, 0, 0.544776142, 0)
@@ -477,14 +498,14 @@ Converted["_UIPadding6"].PaddingTop = UDim.new(0, 10)
 Converted["_UIPadding6"].Parent = Converted["_TextBox1"]
 Converted["_TextLabel2"].Font = Enum.Font.GothamBold
 Converted["_TextLabel2"].Text = "ONLY ADD MODULES YOU TRUST!"
-Converted["_TextLabel2"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel2"].TextColor3 = Color3.fromRGB(255, 0, 0)
 Converted["_TextLabel2"].TextScaled = true
 Converted["_TextLabel2"].TextSize = 14
 Converted["_TextLabel2"].TextWrapped = true
 Converted["_TextLabel2"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel2"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel2"].BackgroundTransparency = 1
-Converted["_TextLabel2"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel2"].BorderSizePixel = 0
 Converted["_TextLabel2"].Position = UDim2.new(0.499648541, 0, 0.833542168, 0)
 Converted["_TextLabel2"].Size = UDim2.new(0.619047642, 0, 0.0550245307, 0)
@@ -496,8 +517,8 @@ Converted["_Add"].TextScaled = true
 Converted["_Add"].TextSize = 14
 Converted["_Add"].TextWrapped = true
 Converted["_Add"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Add"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Add"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Add"].BackgroundColor3 = Color3.fromRGB(50.00000461935997, 50.00000461935997, 50.00000461935997)
+Converted["_Add"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Add"].BorderSizePixel = 0
 Converted["_Add"].Position = UDim2.new(0.108492024, 0, 0.927298486, 0)
 Converted["_Add"].Size = UDim2.new(0.163265288, 0, 0.0858208984, 0)
@@ -509,15 +530,18 @@ Converted["_UIPadding7"].PaddingLeft = UDim.new(0, 5)
 Converted["_UIPadding7"].PaddingRight = UDim.new(0, 5)
 Converted["_UIPadding7"].PaddingTop = UDim.new(0, 5)
 Converted["_UIPadding7"].Parent = Converted["_Add"]
+Converted["_UIStroke3"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UIStroke3"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke3"].Parent = Converted["_Add"]
 Converted["_Cancel"].Font = Enum.Font.Gotham
 Converted["_Cancel"].Text = "Cancel"
-Converted["_Cancel"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Cancel"].TextColor3 = Color3.fromRGB(255, 0, 0)
 Converted["_Cancel"].TextScaled = true
 Converted["_Cancel"].TextSize = 14
 Converted["_Cancel"].TextWrapped = true
 Converted["_Cancel"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Cancel"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Cancel"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Cancel"].BackgroundColor3 = Color3.fromRGB(50.00000461935997, 50.00000461935997, 50.00000461935997)
+Converted["_Cancel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Cancel"].BorderSizePixel = 0
 Converted["_Cancel"].Position = UDim2.new(0.899875283, 0, 0.931029797, 0)
 Converted["_Cancel"].Size = UDim2.new(0.163265288, 0, 0.0858208984, 0)
@@ -529,28 +553,37 @@ Converted["_UIPadding8"].PaddingLeft = UDim.new(0, 5)
 Converted["_UIPadding8"].PaddingRight = UDim.new(0, 5)
 Converted["_UIPadding8"].PaddingTop = UDim.new(0, 5)
 Converted["_UIPadding8"].Parent = Converted["_Cancel"]
+Converted["_UIStroke4"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UIStroke4"].Color = Color3.fromRGB(255, 0, 0)
+Converted["_UIStroke4"].Parent = Converted["_Cancel"]
 Converted["_themedColor"].Value = "backgroundColorCSQ"
 Converted["_themedColor"].Name = "themedColor"
 Converted["_themedColor"].Parent = Converted["_AddCustomModule"]
 Converted["_Menu"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_Menu"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Menu"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Menu"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Menu"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Menu"].BorderSizePixel = 0
 Converted["_Menu"].Position = UDim2.new(0.5, 0, 0.0500000007, 0)
 Converted["_Menu"].Size = UDim2.new(0, 441, 0, 268)
 Converted["_Menu"].Name = "Menu"
-Converted["_Menu"].Parent = Converted["_M4RU"]
+Converted["_Menu"].Parent = Converted["_YARHM"]
 Converted["_UICorner12"].Parent = Converted["_Menu"]
 Converted["_UIScale2"].Parent = Converted["_Menu"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIStroke5"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke5"].Thickness = 2
+Converted["_UIStroke5"].Parent = Converted["_Menu"]
+Converted["_UIGradient4"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(53.00000064074993, 53.00000064074993, 53.00000064074993)),
+	ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(50.69031357765198, 50.69031357765198, 50.69031357765198)),
+	ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(255, 0, 4.000000236555934)),
+	ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(50.13314567506313, 50.13314567506313, 50.13314567506313)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(48.000000938773155, 48.000000938773155, 48.000000938773155))
 }
+Converted["_UIGradient4"].Rotation = 180
+Converted["_UIGradient4"].Parent = Converted["_UIStroke5"]
 Converted["_List"].AnchorPoint = Vector2.new(0, 0.5)
-Converted["_List"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_List"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_List"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_List"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_List"].BorderSizePixel = 0
 Converted["_List"].Position = UDim2.new(0, 0, 0.606999993, 0)
 Converted["_List"].Size = UDim2.new(0.315405339, 0, 0.785387993, 0)
@@ -563,9 +596,9 @@ Converted["_ScrollingFrame1"].ScrollBarThickness = 2
 Converted["_ScrollingFrame1"].VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
 Converted["_ScrollingFrame1"].Active = true
 Converted["_ScrollingFrame1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ScrollingFrame1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ScrollingFrame1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_ScrollingFrame1"].BackgroundTransparency = 1
-Converted["_ScrollingFrame1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ScrollingFrame1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ScrollingFrame1"].BorderSizePixel = 0
 Converted["_ScrollingFrame1"].Position = UDim2.new(0.478333294, 0, 0.408619136, 0)
 Converted["_ScrollingFrame1"].Size = UDim2.new(1, 0, 0.795258284, 0)
@@ -581,13 +614,23 @@ Converted["_UIPadding10"].PaddingLeft = UDim.new(0, 10)
 Converted["_UIPadding10"].PaddingRight = UDim.new(0, 10)
 Converted["_UIPadding10"].PaddingTop = UDim.new(0, 10)
 Converted["_UIPadding10"].Parent = Converted["_List"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIGradient5"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIGradient5"].Offset = Vector2.new(0, -0.5)
+Converted["_UIGradient5"].Rotation = -133
+Converted["_UIGradient5"].Parent = Converted["_List"]
+Converted["_UIStroke6"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke6"].Thickness = 0
+Converted["_UIStroke6"].Parent = Converted["_List"]
+Converted["_UIGradient6"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
+	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
 }
+Converted["_UIGradient6"].Rotation = -44
+Converted["_UIGradient6"].Parent = Converted["_UIStroke6"]
 Converted["_AddCustomModule1"].Font = Enum.Font.Gotham
 Converted["_AddCustomModule1"].Text = "+"
 Converted["_AddCustomModule1"].TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -595,8 +638,8 @@ Converted["_AddCustomModule1"].TextScaled = true
 Converted["_AddCustomModule1"].TextSize = 14
 Converted["_AddCustomModule1"].TextWrapped = true
 Converted["_AddCustomModule1"].AnchorPoint = Vector2.new(1, 1)
-Converted["_AddCustomModule1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_AddCustomModule1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_AddCustomModule1"].BackgroundColor3 = Color3.fromRGB(50.00000461935997, 50.00000461935997, 50.00000461935997)
+Converted["_AddCustomModule1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_AddCustomModule1"].BorderSizePixel = 0
 Converted["_AddCustomModule1"].Position = UDim2.new(1, 0, 1, 0)
 Converted["_AddCustomModule1"].Size = UDim2.new(0.215681866, 0, 0.142528668, 0)
@@ -605,6 +648,9 @@ Converted["_AddCustomModule1"].Parent = Converted["_List"]
 Converted["_UICorner14"].Parent = Converted["_AddCustomModule1"]
 Converted["_UIPadding11"].PaddingLeft = UDim.new(0, 1)
 Converted["_UIPadding11"].Parent = Converted["_AddCustomModule1"]
+Converted["_UIStroke7"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UIStroke7"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke7"].Parent = Converted["_AddCustomModule1"]
 Converted["_themedColor1"].Value = "primaryColor"
 Converted["_themedColor1"].Name = "themedColor"
 Converted["_themedColor1"].Parent = Converted["_AddCustomModule1"]
@@ -616,13 +662,13 @@ Converted["_HubCredits"].Text = "made and open sourced by imperial"
 Converted["_HubCredits"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubCredits"].TextScaled = true
 Converted["_HubCredits"].TextSize = 14
-Converted["_HubCredits"].
+Converted["_HubCredits"].TextTransparency = 0.699999988079071
 Converted["_HubCredits"].TextWrapped = true
 Converted["_HubCredits"].TextXAlignment = Enum.TextXAlignment.Right
 Converted["_HubCredits"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_HubCredits"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_HubCredits"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubCredits"].BackgroundTransparency = 1
-Converted["_HubCredits"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_HubCredits"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_HubCredits"].BorderSizePixel = 0
 Converted["_HubCredits"].Position = UDim2.new(0.785926819, 0, 0.160157606, 0)
 Converted["_HubCredits"].Size = UDim2.new(0.316320807, 0, 0.0585099049, 0)
@@ -635,25 +681,25 @@ Converted["_HubDesc"].TextSize = 14
 Converted["_HubDesc"].TextWrapped = true
 Converted["_HubDesc"].TextXAlignment = Enum.TextXAlignment.Right
 Converted["_HubDesc"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_HubDesc"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_HubDesc"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubDesc"].BackgroundTransparency = 1
-Converted["_HubDesc"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_HubDesc"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_HubDesc"].BorderSizePixel = 0
 Converted["_HubDesc"].Position = UDim2.new(0.708829343, 0, 0.116141364, 0)
 Converted["_HubDesc"].Size = UDim2.new(0.470515788, 0, 0.082417585, 0)
 Converted["_HubDesc"].Name = "HubDesc"
 Converted["_HubDesc"].Parent = Converted["_Menu"]
 Converted["_HubName"].Font = Enum.Font.GothamBold
-Converted["_HubName"].Text = "M4RU"
+Converted["_HubName"].Text = "YARHM"
 Converted["_HubName"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubName"].TextScaled = true
 Converted["_HubName"].TextSize = 14
 Converted["_HubName"].TextWrapped = true
 Converted["_HubName"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_HubName"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_HubName"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_HubName"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_HubName"].BackgroundTransparency = 1
-Converted["_HubName"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_HubName"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_HubName"].BorderSizePixel = 0
 Converted["_HubName"].Position = UDim2.new(0.186153606, 0, 0.112410031, 0)
 Converted["_HubName"].Size = UDim2.new(0.259631485, 0, 0.0824175924, 0)
@@ -661,8 +707,8 @@ Converted["_HubName"].Name = "HubName"
 Converted["_HubName"].Parent = Converted["_Menu"]
 Converted["_CanvasGroup"].GroupTransparency = 1
 Converted["_CanvasGroup"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_CanvasGroup"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_CanvasGroup"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_CanvasGroup"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_CanvasGroup"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_CanvasGroup"].BorderSizePixel = 0
 Converted["_CanvasGroup"].Interactable = false
 Converted["_CanvasGroup"].Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -674,8 +720,8 @@ Converted["_UICorner15"].Parent = Converted["_CanvasGroup"]
 Converted["_ImageLabel"].Image = "rbxassetid://17864987433"
 -- Converted["_ImageLabel"].ImageContent = Content
 Converted["_ImageLabel"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ImageLabel"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_ImageLabel"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ImageLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ImageLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ImageLabel"].BorderSizePixel = 0
 Converted["_ImageLabel"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_ImageLabel"].Size = UDim2.new(0, 50, 0, 50)
@@ -684,33 +730,33 @@ Converted["_ImageLabel"].ZIndex = 3
 Converted["_ImageLabel"].Parent = Converted["_CanvasGroup"]
 Converted["_Opener"].Font = Enum.Font.SourceSans
 Converted["_Opener"].Text = ""
-Converted["_Opener"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Opener"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Opener"].TextSize = 14
 Converted["_Opener"].AutoButtonColor = false
-Converted["_Opener"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Opener"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Opener"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Opener"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Opener"].BorderSizePixel = 0
 Converted["_Opener"].Size = UDim2.new(1, 0, 1, 0)
 Converted["_Opener"].Name = "Opener"
 Converted["_Opener"].Parent = Converted["_CanvasGroup"]
 Converted["_TextLabel3"].Font = Enum.Font.GothamBold
 Converted["_TextLabel3"].Text = "Yet Another Random Hub Menu"
-Converted["_TextLabel3"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel3"].TextColor3 = Color3.fromRGB(255, 69.00000348687172, 67.00000360608101)
 Converted["_TextLabel3"].TextScaled = true
 Converted["_TextLabel3"].TextSize = 14
 Converted["_TextLabel3"].TextWrapped = true
-Converted["_TextLabel3"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel3"].BackgroundTransparency = 1
-Converted["_TextLabel3"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel3"].BorderSizePixel = 0
 Converted["_TextLabel3"].Position = UDim2.new(0.204081595, 0, 0.447761208, 0)
 Converted["_TextLabel3"].Size = UDim2.new(0, 260, 0, 27)
 Converted["_TextLabel3"].ZIndex = 3
 Converted["_TextLabel3"].Parent = Converted["_CanvasGroup"]
 Converted["_Area"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Area"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Area"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Area"].BackgroundTransparency = 1
-Converted["_Area"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Area"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Area"].BorderSizePixel = 0
 Converted["_Area"].ClipsDescendants = true
 Converted["_Area"].Position = UDim2.new(0.659600496, 0, 0.60637325, 0)
@@ -721,9 +767,9 @@ Converted["_Area1"].AutomaticCanvasSize = Enum.AutomaticSize.Y
 Converted["_Area1"].CanvasSize = UDim2.new(0, 0, 0, 0)
 Converted["_Area1"].ScrollBarThickness = 0
 Converted["_Area1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Area1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Area1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Area1"].BackgroundTransparency = 1
-Converted["_Area1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Area1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Area1"].BorderSizePixel = 0
 Converted["_Area1"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_Area1"].Selectable = false
@@ -735,44 +781,47 @@ Converted["_TextLabel4"].Text = "hello 1.19"
 Converted["_TextLabel4"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel4"].TextSize = 14
 Converted["_TextLabel4"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel4"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel4"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel4"].BackgroundTransparency = 1
-Converted["_TextLabel4"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel4"].BorderSizePixel = 0
 Converted["_TextLabel4"].Position = UDim2.new(0.4923051, 0, 0.46438089, 0)
 Converted["_TextLabel4"].Size = UDim2.new(0, 200, 0, 50)
 Converted["_TextLabel4"].Parent = Converted["_Area1"]
 Converted["_TextLabel5"].Font = Enum.Font.GothamBold
-Converted["_TextLabel5"].Text = "M4RU"
+Converted["_TextLabel5"].Text = "YARHM"
 Converted["_TextLabel5"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel5"].TextScaled = true
 Converted["_TextLabel5"].TextSize = 14
 Converted["_TextLabel5"].TextWrapped = true
 Converted["_TextLabel5"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel5"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel5"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel5"].BackgroundTransparency = 1
-Converted["_TextLabel5"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel5"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel5"].BorderSizePixel = 0
 Converted["_TextLabel5"].Position = UDim2.new(0.491272807, 0, 0.363785654, 0)
 Converted["_TextLabel5"].Size = UDim2.new(0, 135, 0, 33)
 Converted["_TextLabel5"].Parent = Converted["_Area1"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIGradient7"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
+Converted["_UIGradient7"].Rotation = 68
+Converted["_UIGradient7"].Parent = Converted["_Menu"]
 Converted["_CloseArea"].Text = ""
 Converted["_CloseArea"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_CloseArea"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_CloseArea"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_CloseArea"].BackgroundTransparency = 1
-Converted["_CloseArea"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_CloseArea"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_CloseArea"].BorderSizePixel = 0
 Converted["_CloseArea"].Position = UDim2.new(0.5, 0, 0.00295135868, 0)
 Converted["_CloseArea"].Size = UDim2.new(0.326999992, 0, 0.184, 0)
 Converted["_CloseArea"].Name = "CloseArea"
 Converted["_CloseArea"].Parent = Converted["_Menu"]
 Converted["_Frame"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Frame"].BackgroundTransparency = 0.6499999761581421
-Converted["_Frame"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Frame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame"].BorderSizePixel = 0
 Converted["_Frame"].Position = UDim2.new(0.5, 0, 0.699999988, 0)
 Converted["_Frame"].Size = UDim2.new(0.699999988, 0, 0.100000001, 0)
@@ -785,9 +834,9 @@ Converted["_TextLabel6"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel6"].TextSize = 15
 Converted["_TextLabel6"].TextWrapped = true
 Converted["_TextLabel6"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel6"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel6"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel6"].BackgroundTransparency = 0.4000000059604645
-Converted["_TextLabel6"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel6"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel6"].BorderSizePixel = 0
 Converted["_TextLabel6"].Position = UDim2.new(0.5, 0, 0.680000007, 0)
 Converted["_TextLabel6"].Size = UDim2.new(1.39999998, 0, 0.740999997, 0)
@@ -798,14 +847,14 @@ Converted["_AllowForSpring"].Parent = Converted["_CloseArea"]
 Converted["_themedColor3"].Value = "backgroundColorCSQ"
 Converted["_themedColor3"].Name = "themedColor"
 Converted["_themedColor3"].Parent = Converted["_Menu"]
-Converted["_Toggle"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Toggle"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Toggle"].BackgroundTransparency = 1
-Converted["_Toggle"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Toggle"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Toggle"].BorderSizePixel = 0
 Converted["_Toggle"].Size = UDim2.new(1, 0, 0, 35)
 Converted["_Toggle"].Visible = false
 Converted["_Toggle"].Name = "Toggle"
-Converted["_Toggle"].Parent = Converted["_M4RU"]
+Converted["_Toggle"].Parent = Converted["_YARHM"]
 Converted["_TextLabel7"].Font = Enum.Font.Unknown
 Converted["_TextLabel7"].Text = "Loop walkspeed and FOV"
 Converted["_TextLabel7"].TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -813,9 +862,9 @@ Converted["_TextLabel7"].TextScaled = true
 Converted["_TextLabel7"].TextSize = 14
 Converted["_TextLabel7"].TextWrapped = true
 Converted["_TextLabel7"].TextXAlignment = Enum.TextXAlignment.Left
-Converted["_TextLabel7"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel7"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel7"].BackgroundTransparency = 1
-Converted["_TextLabel7"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel7"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel7"].BorderSizePixel = 0
 Converted["_TextLabel7"].Size = UDim2.new(0.699999988, 0, 1, 0)
 Converted["_TextLabel7"].Parent = Converted["_Toggle"]
@@ -824,15 +873,15 @@ Converted["_UIListLayout4"].FillDirection = Enum.FillDirection.Horizontal
 Converted["_UIListLayout4"].HorizontalAlignment = Enum.HorizontalAlignment.Center
 Converted["_UIListLayout4"].SortOrder = Enum.SortOrder.LayoutOrder
 Converted["_UIListLayout4"].Parent = Converted["_Toggle"]
-Converted["_Frame1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Frame1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Frame1"].BackgroundTransparency = 1
-Converted["_Frame1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Frame1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame1"].BorderSizePixel = 0
 Converted["_Frame1"].Size = UDim2.new(0.200000003, 0, 1, 0)
 Converted["_Frame1"].Parent = Converted["_Toggle"]
 Converted["_Frame2"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Frame2"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Frame2"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Frame2"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_Frame2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame2"].BorderSizePixel = 0
 Converted["_Frame2"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_Frame2"].Size = UDim2.new(0, 89, 1, 0)
@@ -841,11 +890,11 @@ Converted["_UICorner18"].CornerRadius = UDim.new(1, 0)
 Converted["_UICorner18"].Parent = Converted["_Frame2"]
 Converted["_Toggler"].Font = Enum.Font.SourceSans
 Converted["_Toggler"].Text = ""
-Converted["_Toggler"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Toggler"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Toggler"].TextSize = 14
 Converted["_Toggler"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Toggler"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Toggler"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Toggler"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Toggler"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Toggler"].BorderSizePixel = 0
 Converted["_Toggler"].Position = UDim2.new(0.300000012, 0, 0.5, 0)
 Converted["_Toggler"].Size = UDim2.new(0.449438214, 0, 0.800000012, 0)
@@ -854,12 +903,12 @@ Converted["_Toggler"].Parent = Converted["_Frame2"]
 Converted["_UICorner19"].CornerRadius = UDim.new(1, 0)
 Converted["_UICorner19"].Parent = Converted["_Toggler"]
 Converted["_ImageLabel1"].Image = "rbxassetid://10002373478"
-Converted["_ImageLabel1"].ImageColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ImageLabel1"].ImageColor3 = Color3.fromRGB(255, 0, 4.000000236555934)
 -- Converted["_ImageLabel1"].ImageContent = Content
 Converted["_ImageLabel1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ImageLabel1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ImageLabel1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_ImageLabel1"].BackgroundTransparency = 1
-Converted["_ImageLabel1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ImageLabel1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ImageLabel1"].BorderSizePixel = 0
 Converted["_ImageLabel1"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_ImageLabel1"].Size = UDim2.new(0, 20, 0, 20)
@@ -867,10 +916,10 @@ Converted["_ImageLabel1"].Parent = Converted["_Toggler"]
 Converted["_UIPadding12"].PaddingRight = UDim.new(0.0700000003, 0)
 Converted["_UIPadding12"].Parent = Converted["_Toggle"]
 Converted["_Modules"].Name = "Modules"
-Converted["_Modules"].Parent = Converted["_M4RU"]
+Converted["_Modules"].Parent = Converted["_YARHM"]
 Converted["_NotificationSample"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_NotificationSample"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_NotificationSample"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_NotificationSample"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_NotificationSample"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_NotificationSample"].BorderSizePixel = 0
 Converted["_NotificationSample"].ClipsDescendants = true
 Converted["_NotificationSample"].Position = UDim2.new(0.5, 0, 0, 10)
@@ -878,19 +927,24 @@ Converted["_NotificationSample"].Size = UDim2.new(0, 400, 0, 50)
 Converted["_NotificationSample"].Visible = false
 Converted["_NotificationSample"].ZIndex = 5
 Converted["_NotificationSample"].Name = "NotificationSample"
-Converted["_NotificationSample"].Parent = Converted["_M4RU"]
+Converted["_NotificationSample"].Parent = Converted["_YARHM"]
 Converted["_UICorner20"].CornerRadius = UDim.new(0, 10)
 Converted["_UICorner20"].Parent = Converted["_NotificationSample"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIStroke8"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke8"].Thickness = 1.600000023841858
+Converted["_UIStroke8"].Parent = Converted["_NotificationSample"]
+Converted["_UIGradient8"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(12.000000234693289, 12.000000234693289, 12.000000234693289))
 }
+Converted["_UIGradient8"].Parent = Converted["_NotificationSample"]
 Converted["_ImageLabel2"].Image = "rbxassetid://11780939099"
 -- Converted["_ImageLabel2"].ImageContent = Content
 Converted["_ImageLabel2"].ScaleType = Enum.ScaleType.Fit
 Converted["_ImageLabel2"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ImageLabel2"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ImageLabel2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_ImageLabel2"].BackgroundTransparency = 1
-Converted["_ImageLabel2"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ImageLabel2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ImageLabel2"].BorderSizePixel = 0
 Converted["_ImageLabel2"].Position = UDim2.new(0.100000001, 0, 0.5, 0)
 Converted["_ImageLabel2"].Size = UDim2.new(0.0799999982, 0, 0.639999986, 0)
@@ -902,9 +956,9 @@ Converted["_TextLabel8"].TextSize = 14
 Converted["_TextLabel8"].TextWrapped = true
 Converted["_TextLabel8"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_TextLabel8"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel8"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel8"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel8"].BackgroundTransparency = 1
-Converted["_TextLabel8"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel8"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel8"].BorderSizePixel = 0
 Converted["_TextLabel8"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_TextLabel8"].Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
@@ -916,9 +970,9 @@ Converted["_Close"].Image = "rbxassetid://10002373478"
 Converted["_Close"].ScaleType = Enum.ScaleType.Fit
 Converted["_Close"].Active = false
 Converted["_Close"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Close"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Close"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Close"].BackgroundTransparency = 1
-Converted["_Close"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Close"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Close"].BorderSizePixel = 0
 Converted["_Close"].Position = UDim2.new(0.899999976, 0, 0.5, 0)
 Converted["_Close"].Selectable = false
@@ -926,43 +980,54 @@ Converted["_Close"].Size = UDim2.new(0.0799999982, 0, 0.639999986, 0)
 Converted["_Close"].Name = "Close"
 Converted["_Close"].Parent = Converted["_NotificationSample"]
 Converted["_UICorner21"].Parent = Converted["_Close"]
+Converted["_UIStroke9"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke9"].Parent = Converted["_Close"]
 Converted["_UIScale3"].Scale = 0.800000011920929
 Converted["_UIScale3"].Parent = Converted["_NotificationSample"]
 Converted["_themedColor4"].Value = "backgroundColorCSQ"
 Converted["_themedColor4"].Name = "themedColor"
 Converted["_themedColor4"].Parent = Converted["_NotificationSample"]
 Converted["_Dialog"].AnchorPoint = Vector2.new(0.5, 1)
-Converted["_Dialog"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Dialog"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Dialog"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Dialog"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Dialog"].BorderSizePixel = 0
 Converted["_Dialog"].Position = UDim2.new(0.499000013, 0, 0.984000027, 0)
 Converted["_Dialog"].Size = UDim2.new(0, 313, 0, 147)
 Converted["_Dialog"].Visible = false
 Converted["_Dialog"].ZIndex = 5
 Converted["_Dialog"].Name = "Dialog"
-Converted["_Dialog"].Parent = Converted["_M4RU"]
+Converted["_Dialog"].Parent = Converted["_YARHM"]
 Converted["_UICorner22"].Parent = Converted["_Dialog"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIGradient9"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
+Converted["_UIGradient9"].Rotation = -133
+Converted["_UIGradient9"].Parent = Converted["_Dialog"]
 Converted["_UIPadding13"].PaddingBottom = UDim.new(0, 15)
 Converted["_UIPadding13"].PaddingLeft = UDim.new(0, 15)
 Converted["_UIPadding13"].PaddingRight = UDim.new(0, 15)
 Converted["_UIPadding13"].PaddingTop = UDim.new(0, 15)
 Converted["_UIPadding13"].Parent = Converted["_Dialog"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIStroke10"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke10"].Thickness = 2
+Converted["_UIStroke10"].Parent = Converted["_Dialog"]
+Converted["_UIGradient10"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
+	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
 }
+Converted["_UIGradient10"].Rotation = -107
+Converted["_UIGradient10"].Parent = Converted["_UIStroke10"]
 Converted["_DialogTitle"].Font = Enum.Font.Unknown
 Converted["_DialogTitle"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_DialogTitle"].TextScaled = true
 Converted["_DialogTitle"].TextSize = 14
 Converted["_DialogTitle"].TextWrapped = true
 Converted["_DialogTitle"].TextXAlignment = Enum.TextXAlignment.Right
-Converted["_DialogTitle"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_DialogTitle"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_DialogTitle"].BackgroundTransparency = 1
-Converted["_DialogTitle"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_DialogTitle"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_DialogTitle"].BorderSizePixel = 0
 Converted["_DialogTitle"].Size = UDim2.new(0.997416437, 0, 0.16459392, 0)
 Converted["_DialogTitle"].Name = "DialogTitle"
@@ -977,9 +1042,9 @@ Converted["_DialogDesc"].TextSize = 14
 Converted["_DialogDesc"].TextWrapped = true
 Converted["_DialogDesc"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_DialogDesc"].TextYAlignment = Enum.TextYAlignment.Top
-Converted["_DialogDesc"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_DialogDesc"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_DialogDesc"].BackgroundTransparency = 1
-Converted["_DialogDesc"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_DialogDesc"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_DialogDesc"].BorderSizePixel = 0
 Converted["_DialogDesc"].Position = UDim2.new(0, 0, 0.187079012, 0)
 Converted["_DialogDesc"].Size = UDim2.new(0.997416437, 0, 0.604575336, 0)
@@ -988,9 +1053,9 @@ Converted["_DialogDesc"].Parent = Converted["_Dialog"]
 Converted["_UITextSizeConstraint1"].MaxTextSize = 20
 Converted["_UITextSizeConstraint1"].MinTextSize = 5
 Converted["_UITextSizeConstraint1"].Parent = Converted["_DialogDesc"]
-Converted["_Options"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Options"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Options"].BackgroundTransparency = 1
-Converted["_Options"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Options"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Options"].BorderSizePixel = 0
 Converted["_Options"].Position = UDim2.new(0, 0, 0.82045126, 0)
 Converted["_Options"].Size = UDim2.new(0.997436285, 0, 0.241758227, 0)
@@ -1008,8 +1073,8 @@ Converted["_OptionPlaceholder"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_OptionPlaceholder"].TextScaled = true
 Converted["_OptionPlaceholder"].TextSize = 100
 Converted["_OptionPlaceholder"].TextWrapped = true
-Converted["_OptionPlaceholder"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_OptionPlaceholder"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_OptionPlaceholder"].BackgroundColor3 = Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)
+Converted["_OptionPlaceholder"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_OptionPlaceholder"].BorderSizePixel = 0
 Converted["_OptionPlaceholder"].Size = UDim2.new(0.532000005, -5, 1.00899994, 0)
 Converted["_OptionPlaceholder"].Visible = false
@@ -1021,10 +1086,17 @@ Converted["_UIPadding14"].PaddingRight = UDim.new(0, 15)
 Converted["_UIPadding14"].PaddingTop = UDim.new(0, 1)
 Converted["_UIPadding14"].Parent = Converted["_OptionPlaceholder"]
 Converted["_UICorner23"].Parent = Converted["_OptionPlaceholder"]
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(40, 40, 40)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+Converted["_UIStroke11"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UIStroke11"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke11"].Thickness = 2
+Converted["_UIStroke11"].Parent = Converted["_OptionPlaceholder"]
+Converted["_UIGradient11"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
+	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
 }
+Converted["_UIGradient11"].Rotation = -107
+Converted["_UIGradient11"].Parent = Converted["_UIStroke11"]
 Converted["_themedColor5"].Value = "primaryColor"
 Converted["_themedColor5"].Name = "themedColor"
 Converted["_themedColor5"].Parent = Converted["_OptionPlaceholder"]
@@ -1034,14 +1106,14 @@ Converted["_UIScale4"].Parent = Converted["_Dialog"]
 Converted["_themedColor6"].Value = "backgroundColorCSQ"
 Converted["_themedColor6"].Name = "themedColor"
 Converted["_themedColor6"].Parent = Converted["_Dialog"]
-Converted["_Range"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Range"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Range"].BackgroundTransparency = 1
-Converted["_Range"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Range"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Range"].BorderSizePixel = 0
 Converted["_Range"].Size = UDim2.new(1, 0, 0, 35)
 Converted["_Range"].Visible = false
 Converted["_Range"].Name = "Range"
-Converted["_Range"].Parent = Converted["_M4RU"]
+Converted["_Range"].Parent = Converted["_YARHM"]
 Converted["_TextLabel9"].Font = Enum.Font.Unknown
 Converted["_TextLabel9"].Text = "How many #### I give"
 Converted["_TextLabel9"].TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -1049,9 +1121,9 @@ Converted["_TextLabel9"].TextScaled = true
 Converted["_TextLabel9"].TextSize = 14
 Converted["_TextLabel9"].TextWrapped = true
 Converted["_TextLabel9"].TextXAlignment = Enum.TextXAlignment.Left
-Converted["_TextLabel9"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel9"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel9"].BackgroundTransparency = 1
-Converted["_TextLabel9"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextLabel9"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel9"].BorderSizePixel = 0
 Converted["_TextLabel9"].Size = UDim2.new(0.699999988, 0, 1, 0)
 Converted["_TextLabel9"].Parent = Converted["_Range"]
@@ -1063,9 +1135,9 @@ Converted["_UIListLayout7"].Parent = Converted["_Range"]
 Converted["_UIPadding15"].PaddingLeft = UDim.new(0.0700000003, 0)
 Converted["_UIPadding15"].PaddingRight = UDim.new(0.0700000003, 0)
 Converted["_UIPadding15"].Parent = Converted["_Range"]
-Converted["_Frame3"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Frame3"].BackgroundColor3 = Color3.fromRGB(31.000001952052116, 31.000001952052116, 31.000001952052116)
 Converted["_Frame3"].BackgroundTransparency = 1
-Converted["_Frame3"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Frame3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame3"].BorderSizePixel = 0
 Converted["_Frame3"].Size = UDim2.new(0.400000006, 0, 1, 0)
 Converted["_Frame3"].Parent = Converted["_Range"]
@@ -1075,8 +1147,8 @@ Converted["_UIPadding16"].PaddingRight = UDim.new(0, 7)
 Converted["_UIPadding16"].PaddingTop = UDim.new(0, 7)
 Converted["_UIPadding16"].Parent = Converted["_Frame3"]
 Converted["_UICorner24"].Parent = Converted["_Frame3"]
-Converted["_Frame4"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Frame4"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Frame4"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Frame4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame4"].BorderSizePixel = 0
 Converted["_Frame4"].Size = UDim2.new(1, 0, 0.200000003, 0)
 Converted["_Frame4"].Parent = Converted["_Frame3"]
@@ -1084,11 +1156,11 @@ Converted["_UICorner25"].CornerRadius = UDim.new(1, 0)
 Converted["_UICorner25"].Parent = Converted["_Frame4"]
 Converted["_TextButton1"].Font = Enum.Font.SourceSans
 Converted["_TextButton1"].Text = ""
-Converted["_TextButton1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextButton1"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextButton1"].TextSize = 14
 Converted["_TextButton1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextButton1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_TextButton1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_TextButton1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextButton1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextButton1"].BorderSizePixel = 0
 Converted["_TextButton1"].Position = UDim2.new(0, 0, 0.5, 0)
 Converted["_TextButton1"].Size = UDim2.new(0, 20, 0, 20)
@@ -1096,29 +1168,29 @@ Converted["_TextButton1"].Parent = Converted["_Frame4"]
 Converted["_UICorner26"].CornerRadius = UDim.new(1, 0)
 Converted["_UICorner26"].Parent = Converted["_TextButton1"]
 Converted["_FloatingButtonSetting"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_FloatingButtonSetting"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_FloatingButtonSetting"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_FloatingButtonSetting"].BackgroundTransparency = 0.5
-Converted["_FloatingButtonSetting"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_FloatingButtonSetting"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_FloatingButtonSetting"].BorderSizePixel = 0
 Converted["_FloatingButtonSetting"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_FloatingButtonSetting"].Size = UDim2.new(1, 0, 1, 0)
 Converted["_FloatingButtonSetting"].Visible = false
 Converted["_FloatingButtonSetting"].ZIndex = 10
 Converted["_FloatingButtonSetting"].Name = "FloatingButtonSetting"
-Converted["_FloatingButtonSetting"].Parent = Converted["_M4RU"]
+Converted["_FloatingButtonSetting"].Parent = Converted["_YARHM"]
 Converted["_ControlBarContainer"].AnchorPoint = Vector2.new(0.5, 1)
-Converted["_ControlBarContainer"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ControlBarContainer"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_ControlBarContainer"].BackgroundTransparency = 1
-Converted["_ControlBarContainer"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ControlBarContainer"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ControlBarContainer"].BorderSizePixel = 0
 Converted["_ControlBarContainer"].Position = UDim2.new(0.5, 0, 1, -50)
 Converted["_ControlBarContainer"].Size = UDim2.new(1, 0, 0, 40)
 Converted["_ControlBarContainer"].Name = "ControlBarContainer"
 Converted["_ControlBarContainer"].Parent = Converted["_FloatingButtonSetting"]
 Converted["_ControlBar"].AnchorPoint = Vector2.new(0.5, 1)
-Converted["_ControlBar"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ControlBar"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_ControlBar"].BackgroundTransparency = 1
-Converted["_ControlBar"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_ControlBar"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ControlBar"].BorderSizePixel = 0
 Converted["_ControlBar"].Position = UDim2.new(0.5, 0, 1, -30)
 Converted["_ControlBar"].Size = UDim2.new(1, 0, 0, 40)
@@ -1135,8 +1207,8 @@ Converted["_Visibility"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Visibility"].TextScaled = true
 Converted["_Visibility"].TextSize = 14
 Converted["_Visibility"].TextWrapped = true
-Converted["_Visibility"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Visibility"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Visibility"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_Visibility"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Visibility"].BorderSizePixel = 0
 Converted["_Visibility"].Size = UDim2.new(0, 200, 1, 0)
 Converted["_Visibility"].Name = "Visibility"
@@ -1158,8 +1230,8 @@ Converted["_Lock1"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Lock1"].TextScaled = true
 Converted["_Lock1"].TextSize = 14
 Converted["_Lock1"].TextWrapped = true
-Converted["_Lock1"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Lock1"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Lock1"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_Lock1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Lock1"].BorderSizePixel = 0
 Converted["_Lock1"].Size = UDim2.new(0, 200, 1, 0)
 Converted["_Lock1"].Name = "Lock"
@@ -1181,8 +1253,8 @@ Converted["_Exit"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Exit"].TextScaled = true
 Converted["_Exit"].TextSize = 14
 Converted["_Exit"].TextWrapped = true
-Converted["_Exit"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Converted["_Exit"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Exit"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 0, 0)
+Converted["_Exit"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Exit"].BorderSizePixel = 0
 Converted["_Exit"].Size = UDim2.new(1, 0, 1, 0)
 Converted["_Exit"].Name = "Exit"
@@ -1208,20 +1280,21 @@ Converted["_Tip"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Tip"].TextScaled = true
 Converted["_Tip"].TextSize = 14
 Converted["_Tip"].TextWrapped = true
-Converted["_Tip"].BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Tip"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Tip"].BackgroundTransparency = 1
-Converted["_Tip"].BorderColor3 = Color3.fromRGB(40, 40, 40)
+Converted["_Tip"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Tip"].BorderSizePixel = 0
 Converted["_Tip"].Size = UDim2.new(1, 0, 0, 10)
 Converted["_Tip"].Name = "Tip"
 Converted["_Tip"].Parent = Converted["_ControlBarContainer"]
+Converted["_UIStroke12"].Parent = Converted["_Tip"]
 Converted["_UIScale5"].Parent = Converted["_ControlBarContainer"]
 -- Fake Module Scripts:
 local fake_module_scripts = {}
-do -- Fake Module: StarterGui.M4RU.FUNCTIONS
+do -- Fake Module: StarterGui.YARHM.FUNCTIONS
     local script = Instance.new("ModuleScript")
     script.Name = "FUNCTIONS"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local function module_script()
 		local FUNCTIONSmodule = {}
 		
@@ -1247,7 +1320,7 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 		
 		
 		
-		local M4RUPointSave = PointSave.new("M4RU")
+		local YARHMPointSave = PointSave.new("YARHM")
 		
 		local States = {}
 		local toggleStates = {}
@@ -1279,31 +1352,31 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 		
 		FUNCTIONSmodule.theme = {
 			font = Enum.Font.Montserrat,
-			textColor = Color3.fromRGB(40, 40, 40),
-			accentColor = Color3.fromRGB(40, 40, 40),
-			primaryColor = Color3.fromRGB(40, 40, 40),
-			secondaryColor = Color3.fromRGB(40, 40, 40),
+			textColor = Color3.fromRGB(255, 255, 255),
+			accentColor = Color3.fromRGB(197, 0, 0),
+			primaryColor = Color3.fromRGB(22, 22, 22),
+			secondaryColor = Color3.fromRGB(12, 12, 12),
 		
-			backgroundColorCSQ = ColorSequence.new(Color3.fromRGB(40, 40, 40), Color3.fromRGB(40, 40, 40)),	
+			backgroundColorCSQ = ColorSequence.new(Color3.fromRGB(36, 36, 36), Color3.fromRGB(68, 68, 68)),	
 			strokeColorCSQ = ColorSequence.new{
-				ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-				ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(40, 40, 40)),
-				ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(40, 40, 40)),
-				ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(40, 40, 40)),
-				ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(53.00000064074993, 53.00000064074993, 53.00000064074993)),
+				ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(50.69031357765198, 50.69031357765198, 50.69031357765198)),
+				ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(255, 0, 4.000000236555934)),
+				ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(50.13314567506313, 50.13314567506313, 50.13314567506313)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(48.000000938773155, 48.000000938773155, 48.000000938773155))
 			},
 		}
 		
 		function FUNCTIONSmodule.getTheme()
 			if getgenv then
-				return getgenv().M4RU_THEME or FUNCTIONSmodule.theme
+				return getgenv().YARHM_THEME or FUNCTIONSmodule.theme
 			else
 				return FUNCTIONSmodule.theme
 			end
 		end
 		function FUNCTIONSmodule.setTheme(t)
 			FUNCTIONSmodule.theme = t
-			if getgenv then getgenv().M4RU_THEME = t end
+			if getgenv then getgenv().YARHM_THEME = t end
 		end
 		
 		local floatingButtonObjects = {}
@@ -1493,7 +1566,7 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 					Size = newSize
 				}):Play()
 				button.Size = newSize
-				M4RUPointSave:set(string.gsub(button.Name, "_", ""), udim2Serializer(button.Position) .. "|" .. udim2Serializer(button.Size) .. "|" .. tostring(button.Visible) .. "|" .. tostring(dragger.CanBeDragged))
+				YARHMPointSave:set(string.gsub(button.Name, "_", ""), udim2Serializer(button.Position) .. "|" .. udim2Serializer(button.Size) .. "|" .. tostring(button.Visible) .. "|" .. tostring(dragger.CanBeDragged))
 			end
 			fBSFResizeDragger:Enable()
 		
@@ -1512,10 +1585,10 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 			}):Play()
 		
 			if finetuningButton.BackgroundTransparency == 1 then
-				finetuningButton.Lock.
+				finetuningButton.Lock.TextTransparency = 0
 				ts:Create(finetuningButton, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 					BackgroundTransparency = 0.5,
-					
+					TextTransparency = 0.5
 				}):Play()
 				ts:Create(finetuningButton.UIStroke, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 					Transparency = 0.5
@@ -1539,50 +1612,50 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 					Scale = 0
 				}):Play()
 			end
-			M4RUPointSave:set(string.gsub(getgenv().fBSFRealButton.Name, "_", ""), udim2Serializer(getgenv().fBSFRealButton.Position) .. "|" .. udim2Serializer(getgenv().fBSFRealButton.Size) .. "|" .. tostring(getgenv().fBSFRealButton.Visible) .. "|" .. tostring(getgenv().fBSF_ButtonDragger.CanBeDragged))
+			YARHMPointSave:set(string.gsub(getgenv().fBSFRealButton.Name, "_", ""), udim2Serializer(getgenv().fBSFRealButton.Position) .. "|" .. udim2Serializer(getgenv().fBSFRealButton.Size) .. "|" .. tostring(getgenv().fBSFRealButton.Visible) .. "|" .. tostring(getgenv().fBSF_ButtonDragger.CanBeDragged))
 		end
 		
 		function FUNCTIONSmodule.ftToggleVisibility()
 			if getgenv().fBSFButton.BackgroundTransparency == 0 then
 				getgenv().fBSFRealButton.BackgroundTransparency = 1
-				getgenv().fBSFRealButton.
+				getgenv().fBSFRealButton.TextTransparency = 1
 				getgenv().fBSFRealButton.UIStroke.Transparency = 1
-				getgenv().fBSFRealButton.Lock.
+				getgenv().fBSFRealButton.Lock.TextTransparency = 1
 		
 				ts:Create(getgenv().fBSFButton, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 					BackgroundTransparency = 0.5,
-					
+					TextTransparency = 0.5
 				}):Play()
 				ts:Create(getgenv().fBSFButton.UIStroke, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 					Transparency = 0.5
 				}):Play()
 			else
 				getgenv().fBSFRealButton.BackgroundTransparency = 0
-				getgenv().fBSFRealButton.
+				getgenv().fBSFRealButton.TextTransparency = 0
 				getgenv().fBSFRealButton.UIStroke.Transparency = 0
-				getgenv().fBSFRealButton.Lock.
+				getgenv().fBSFRealButton.Lock.TextTransparency = 0
 		
 				ts:Create(getgenv().fBSFButton, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 					BackgroundTransparency = 0,
-					
+					TextTransparency = 0
 				}):Play()
 				ts:Create(getgenv().fBSFButton.UIStroke, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 					Transparency = 0
 				}):Play()
 			end
-			M4RUPointSave:set(string.gsub(getgenv().fBSFRealButton.Name, "_", ""), udim2Serializer(getgenv().fBSFRealButton.Position) .. "|" .. udim2Serializer(getgenv().fBSFRealButton.Size) .. "|" .. tostring(getgenv().fBSFRealButton.Visible) .. "|" .. tostring(getgenv().fBSF_ButtonDragger.CanBeDragged))
+			YARHMPointSave:set(string.gsub(getgenv().fBSFRealButton.Name, "_", ""), udim2Serializer(getgenv().fBSFRealButton.Position) .. "|" .. udim2Serializer(getgenv().fBSFRealButton.Size) .. "|" .. tostring(getgenv().fBSFRealButton.Visible) .. "|" .. tostring(getgenv().fBSF_ButtonDragger.CanBeDragged))
 		end
 		
 		function FUNCTIONSmodule.createFloatingButton(item,button,buttonname,fromload)
-			if not getgenv().M4RU.FloatingButtons:FindFirstChild(string.gsub(buttonname, "_", "")) then
+			if not getgenv().YARHM.FloatingButtons:FindFirstChild(string.gsub(buttonname, "_", "")) then
 				
 				
 				if not fromload then
-					M4RUPointSave:set(string.gsub(buttonname, "_", ""), udim2Serializer(UDim2.fromOffset(125, 90)) .. "|" .. udim2Serializer(UDim2.fromOffset(200,50)) .. "|true|true")
+					YARHMPointSave:set(string.gsub(buttonname, "_", ""), udim2Serializer(UDim2.fromOffset(125, 90)) .. "|" .. udim2Serializer(UDim2.fromOffset(200,50)) .. "|true|true")
 				end
 		
-				local newFloatingButton = getgenv().M4RU.FloatingButton:Clone()
-				newFloatingButton.Parent = getgenv().M4RU.FloatingButtons
+				local newFloatingButton = getgenv().YARHM.FloatingButton:Clone()
+				newFloatingButton.Parent = getgenv().YARHM.FloatingButtons
 				
 				newFloatingButton.Name = string.gsub(buttonname, "_", "")
 				newFloatingButton.Text = string.gsub(buttonname, "_", " ")
@@ -1607,8 +1680,8 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 				local shouldBeDraggable = true
 				if not fromload then
 					newFloatingButton.Position = UDim2.fromOffset(-125, 90)
-				elseif M4RUPointSave:get(string.gsub(buttonname, "_", "")) then
-					local data = M4RUPointSave:get(string.gsub(buttonname, "_", "")):split("|")
+				elseif YARHMPointSave:get(string.gsub(buttonname, "_", "")) then
+					local data = YARHMPointSave:get(string.gsub(buttonname, "_", "")):split("|")
 					newFloatingButton.Position = udim2Serializer(data[1])
 					ts:Create(newFloatingButton, TweenInfo.new(2, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
 						Size = udim2Serializer(data[2])
@@ -1636,7 +1709,7 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 					floatingButtonDraggers[string.gsub(buttonname, "_", "")]:Enable()
 				end
 				floatingButtonDraggers[string.gsub(buttonname, "_", "")].Dragged = function(newPos)
-					M4RUPointSave:set(string.gsub(buttonname, "_", ""), udim2Serializer(newPos) .. "|" .. udim2Serializer(newFloatingButton.Size) .. "|" .. tostring(newFloatingButton.Visible) .. "|" .. tostring(floatingButtonDraggers[string.gsub(buttonname, "_", "")].CanBeDragged))
+					YARHMPointSave:set(string.gsub(buttonname, "_", ""), udim2Serializer(newPos) .. "|" .. udim2Serializer(newFloatingButton.Size) .. "|" .. tostring(newFloatingButton.Visible) .. "|" .. tostring(floatingButtonDraggers[string.gsub(buttonname, "_", "")].CanBeDragged))
 				end
 		
 				local holder = ClickAndHold.new(newFloatingButton)
@@ -1680,9 +1753,9 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 				if floatingButtonConnections[string.gsub(buttonname, "_", "")] then
 					floatingButtonConnections[string.gsub(buttonname, "_", "")]:Disconnect()
 				end
-				M4RUPointSave:remove(string.gsub(buttonname, "_", ""))
+				YARHMPointSave:remove(string.gsub(buttonname, "_", ""))
 				task.spawn(function()
-					local buttontodestroy = getgenv().M4RU.FloatingButtons:FindFirstChild(string.gsub(buttonname, "_", ""))
+					local buttontodestroy = getgenv().YARHM.FloatingButtons:FindFirstChild(string.gsub(buttonname, "_", ""))
 					local btdtween = ts:Create(buttontodestroy, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
 						Size = UDim2.new(0,0,0,0)
 					})
@@ -1699,7 +1772,7 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 				for _, item in ipairs(module) do
 					if item["Type"] == "Button" then
 						local key = string.gsub(item["Args"][1], "_", "")
-						local saved = M4RUPointSave:get(key)
+						local saved = YARHMPointSave:get(key)
 						if saved then
 							FUNCTIONSmodule.createFloatingButton(item, Instance.new("TextButton"), item["Args"][1], true)
 						end
@@ -1865,7 +1938,7 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 		
 		
 				elseif item["Type"] == "Input" then
-					local cloneinput = getgenv().M4RU.TextBoxPlaceholder:Clone()
+					local cloneinput = getgenv().YARHM.TextBoxPlaceholder:Clone()
 					cloneinput.Parent = frameHolder
 					cloneinput.Visible = true
 					
@@ -1883,7 +1956,7 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 						item["Args"][3](cloneinput.TextButton, cloneinput.TextBox.Text)
 					end)
 				elseif item["Type"] == "Toggle" then
-					local clonetoggle = getgenv().M4RU.Toggle:Clone()
+					local clonetoggle = getgenv().YARHM.Toggle:Clone()
 					clonetoggle.Parent = frameHolder
 					clonetoggle.Visible = true
 		
@@ -1916,8 +1989,8 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 						item["Args"][2](clonetoggletoggler, toggleStates[item["Args"][1] .. module.Name])
 					end)
 				elseif item["Type"] == "Dropdown" then	
-					local clonedropdown = getgenv().M4RU.Dropdown:Clone()
-					local dropdownFrame = getgenv().M4RU.DropdownFrameSample
+					local clonedropdown = getgenv().YARHM.Dropdown:Clone()
+					local dropdownFrame = getgenv().YARHM.DropdownFrameSample
 					clonedropdown.Parent = frameHolder
 					clonedropdown.Visible = true
 		
@@ -2001,7 +2074,7 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 			for i, module in ipairs(dense) do
 				local success, err = pcall(function()
 		
-					local listbutton = getgenv().M4RU.ListButton:Clone()
+					local listbutton = getgenv().YARHM.ListButton:Clone()
 					listbutton.Parent           = script.Parent.Menu.List.ScrollingFrame
 					listbutton.Name             = module.Name
 					listbutton.Text             = module.Name
@@ -2024,8 +2097,8 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 						selected.Value = listbutton
 						AREAModuleSelected = module
 						ts:Create(selected.Value, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-							BackgroundColor3 = Color3.fromRGB(40, 40, 40),
-							TextColor3 = Color3.fromRGB(255, 255, 255),
+							BackgroundColor3 = Color3.fromRGB(255,255,255),
+							TextColor3       = Color3.fromRGB(0,0,0),
 						}):Play()
 		
 						FUNCTIONSmodule.loader(module)
@@ -2051,7 +2124,7 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 				end)
 		
 				if not success then
-					warn(("[M4RU] Error loading module %q: %s"):format(module.Name, err))
+					warn(("[YARHM] Error loading module %q: %s"):format(module.Name, err))
 				end
 			end
 		end
@@ -2105,81 +2178,81 @@ do -- Fake Module: StarterGui.M4RU.FUNCTIONS
 		end
 		
 		
-		getgenv().M4RUFUNCTIONS = FUNCTIONSmodule
+		getgenv().YARHMFUNCTIONS = FUNCTIONSmodule
 		return FUNCTIONSmodule
 		
     end
     fake_module_scripts[script] = module_script
 end
-do -- Fake Module: StarterGui.M4RU.DraggableObject
+do -- Fake Module: StarterGui.YARHM.DraggableObject
     local script = Instance.new("ModuleScript")
     script.Name = "DraggableObject"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local function module_script()
 		local function a(b,c)local d=c.AbsoluteSize;local e=c.AbsolutePosition;local f=b.X.Scale*d.X+b.X.Offset;local g=b.Y.Scale*d.Y+b.Y.Offset;local h=math.clamp(f,0,d.X)local i=math.clamp(g,0,d.Y)local j=UDim2.new(b.X.Scale,h-b.X.Scale*d.X,b.Y.Scale,i-b.Y.Scale*d.Y)return j end;local k=UDim2.new;local l=game:GetService("UserInputService")local m=game:GetService("TweenService")local n={}n.__index=n;function n.new(o,p,q,r)local self={}self.Object=o;self.ToMove=p;self.Smooth=q;self.CallbackOnly=r;self.DragStarted=nil;self.DragEnded=nil;self.Dragged=nil;self.Dragging=false;self.LastPosition=nil;self.Velocity=Vector2.new(0,0)setmetatable(self,n)return self end;function n:Enable()local s=self.Object;local t=self.ToMove;local u=nil;local v=nil;local w=nil;local x=false;local function y(z)local A=z.Position-v;local B=UDim2.new(w.X.Scale,w.X.Offset+A.X,w.Y.Scale,w.Y.Offset+A.Y)if self.CallbackOnly then else B=a(B,self.Object:FindFirstAncestorWhichIsA("ScreenGui"))if(self.Smooth==nil or self.Smooth==true)and self.Smooth~=false then m:Create(t and t or s,TweenInfo.new(0.5,Enum.EasingStyle.Cubic,Enum.EasingDirection.Out),{Position=B}):Play()else local C=t and t or s;C.Position=B end end;return B end;self.InputBegan=s.InputBegan:Connect(function(z)if z.UserInputType==Enum.UserInputType.MouseButton1 or z.UserInputType==Enum.UserInputType.Touch then x=true;local D;D=z.Changed:Connect(function()if z.UserInputState==Enum.UserInputState.End and(self.Dragging or x)then self.Dragging=false;D:Disconnect()if self.DragEnded and not x then self.DragEnded(self.Velocity)end;x=false end end)end end)self.InputChanged=s.InputChanged:Connect(function(z)if z.UserInputType==Enum.UserInputType.MouseMovement or z.UserInputType==Enum.UserInputType.Touch then u=z end end)self.InputChanged2=l.InputChanged:Connect(function(z)if s.Parent==nil then self:Disable()return end;if x then x=false;if self.DragStarted then self.DragStarted()end;self.Dragging=true;v=z.Position;if t then w=t.Position else w=s.Position end;self.LastPosition=z.Position end;if z==u and self.Dragging then local B=y(z)self.Velocity=z.Position-self.LastPosition;self.LastPosition=z.Position;if self.Dragged then self.Dragged(B)end end end)end;function n:Disable()self.InputBegan:Disconnect()self.InputChanged:Disconnect()self.InputChanged2:Disconnect()if self.Dragging then self.Dragging=false;if self.DragEnded then self.DragEnded(self.Velocity)end end end;return n
 		
     end
     fake_module_scripts[script] = module_script
 end
-do -- Fake Module: StarterGui.M4RU.ClickAndHold
+do -- Fake Module: StarterGui.YARHM.ClickAndHold
     local script = Instance.new("ModuleScript")
     script.Name = "ClickAndHold"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local function module_script()
 		local a={}a.__index=a;local b=game:GetService("UserInputService")function a.new(c,d)local self=setmetatable({},a)self.textButton=c;self.holdTime=d or 0.5;self.holdTask=nil;self.initialPosition=nil;self.Holded=Instance.new("BindableEvent")local function e(f,g)return math.sqrt((g.X-f.X)^2+(g.Y-f.Y)^2)end;self.textButton.MouseButton1Down:Connect(function(h,i)self.initialPosition=Vector2.new(h,i)self.holdTask=task.spawn(function()task.wait(self.holdTime)if self.holdTask then self.Holded:Fire()end end)end)b.InputChanged:Connect(function(j)if j.UserInputType==Enum.UserInputType.MouseMovement or j.UserInputType==Enum.UserInputType.Touch then if self.holdTask and self.initialPosition then local k=j.Position;local l=e(self.initialPosition,k)if l>10 then coroutine.close(self.holdTask)self.holdTask=nil end end end end)b.InputEnded:Connect(function(j)if j.UserInputType==Enum.UserInputType.MouseButton1 or j.UserInputType==Enum.UserInputType.Touch then if self.holdTask then coroutine.close(self.holdTask)self.holdTask=nil end;self.initialPosition=nil end end)return self end;return a
     end
     fake_module_scripts[script] = module_script
 end
-do -- Fake Module: StarterGui.M4RU.Spring
+do -- Fake Module: StarterGui.YARHM.Spring
     local script = Instance.new("ModuleScript")
     script.Name = "Spring"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local function module_script()
 		local a=game:GetService("RunService")local b={}function OverDamping(c,d,e,f,g,h)local i=d*d-4*e/c;local j=-1/2;local k=d+math.sqrt(i)local l=d-math.sqrt(i)local m,n=j*k,j*l;local o,p=(n*f-g)/(n-m),(m*f-g)/(m-n)local q=h/e;return{Offset=function(r)return o*math.exp(m*r)+p*math.exp(n*r)+q end,Velocity=function(r)return o*m*math.exp(m*r)+p*n*math.exp(n*r)end,Acceleration=function(r)return o*m*m*math.exp(m*r)+p*n*n*math.exp(n*r)end}end;function CriticalDamping(c,d,e,f,g,h)local s=-d/2;local o,p=f,g-s*f;local q=h/e;return{Offset=function(r)return math.exp(s*r)*(o+p*r)+q end,Velocity=function(r)return math.exp(s*r)*(p*s*r+o*s+p)end,Acceleration=function(r)return s*math.exp(s*r)*(p*s*r+o*s+2*p)end}end;function UnderDamping(c,d,e,f,g,h)local i=d*d-4*e/c;local s=-d/2;local t=math.sqrt(-i)local o,p=f,(g-s*f)/t;local q=h/e;return{Offset=function(r)return math.exp(s*r)*(o*math.cos(t*r)+p*math.sin(t*r))+q end,Velocity=function(r)return-math.exp(s*r)*((o*t-p*s)*math.sin(t*r)+(-p*t-o*s)*math.cos(t*r))end,Acceleration=function(r)return-math.exp(s*r)*((p*t*t+2*o*s*t-p*s*s)*math.sin(t*r)+(o*t*t-2*p*s*t-o*s*s)*math.cos(t*r))end}end;function b.F(u)local f,g,h=u.InitialOffset,u.InitialVelocity,u.ExternalForce;local c,d,e=u.Mass,u.Damping,u.Constant;local i=d*d-4*e/c;if i>0 then return OverDamping(c,d,e,f,g,h)elseif i==0 then return CriticalDamping(c,d,e,f,g,h)else return UnderDamping(c,d,e,f,g,h)end end;local v=b;local w=math.sqrt;local x=math.pi;local y={OFFSET="Offset",VELOCITY="Velocity",ACCELERATION="Acceleration",GOAL="Goal",FREQUENCY="Frequency"}local z=[[.]]local A=[[.]]local u={}local B={}B.__index=function(self,C)local D={[y.OFFSET]=function()local r=tick()-self.StartTick;local E=self.F;local F=E.Offset(r)return F end,[y.VELOCITY]=function()local r=tick()-self.StartTick;local E=self.F;local G=E.Velocity(r)return G end,[y.ACCELERATION]=function()local r=tick()-self.StartTick;local E=self.F;local H=E.Acceleration(r)return H end,[y.GOAL]=function()local I=self.ExternalForce;local J=self.Constant;return I/J end,[y.FREQUENCY]=function()local K=self.Damping;local L=self.Constant;local M=self.Mass;return w(-K*K+4*L/M)/(2*x)end}local N=rawget(self,C)if N~=nil then return N end;local O=D[C]if O~=nil then return O()end;return B[C]end;B.__tostring=function(self)local r=tick()-self.StartTick;local E=self.F;local P=self.AdvancedObjectStringEnabled;local Q;if P==false then Q=string.format(z,E.Offset(r),E.Velocity(r),E.Acceleration(r))elseif P==true then Q=string.format(A,self.Mass,self.Damping,self.Constant,self.Goal,self.Frequency,self.InitialOffset,self.InitialVelocity,self.ExternalForce,self.StartTick,E.Offset(r),E.Velocity(r),E.Acceleration(r))end;return Q end;function u.new(M,K,L,f,g,R)assert(M>0,"Mass for spring system cannot be less than or equal to 0")assert(L>0,"Spring constant for spring system cannot be less than or equal to 0")f=f or 0;g=g or 0;R=R or 0;local S=R*L;local T={Mass=M,Damping=K,Constant=L,InitialOffset=f-R,InitialVelocity=g,ExternalForce=S,AdvancedObjectStringEnabled=false,StartTick=0}setmetatable(T,B)T:Reset()return T end;function u.fromFrequency(M,K,U,f,g,R)assert(M>0,"Mass for spring system cannot be less than or equal to 0")assert(U>0,"Spring frequency for spring system cannot be less than or equal to 0")local L=0.25*M*(4*x*x*U*U+K*K)f=f or 0;g=g or 0;R=R or 0;local S=R*L;local T={Mass=M,Damping=K,Constant=L,InitialOffset=f-R,InitialVelocity=g,ExternalForce=S,AdvancedObjectStringEnabled=false,StartTick=0}setmetatable(T,B)T:Reset()return T end;function B:Reset()self.F=v.F(self)self.StartTick=tick()end;function B:SetExternalForce(V)self.ExternalForce=V;self.InitialOffset=self.Offset-V/self.Constant;self.InitialVelocity=self.Velocity;self:Reset()end;function B:SetGoal(R)self.ExternalForce=R*self.Constant;self.InitialOffset=self.Offset-R;self.InitialVelocity=self.Velocity;self:Reset()end;function B:SetFrequency(U)self.Constant=0.25*self.Mass*(4*x*x*U*U+self.Damping*self.Damping)self.InitialOffset=self.Offset;self.InitialVelocity=self.Velocity;self:Reset()end;function B:SnapToCriticalDamping()self.Damping=2*w(self.Constant/self.Mass)self.InitialOffset=self.Offset;self.InitialVelocity=self.Velocity;self:Reset()end;function B:SetOffset(F,W)self.InitialOffset=F-self.Goal;self.InitialVelocity=W and 0 or self.Velocity;self:Reset()end;function B:AddOffset(F)self.InitialOffset=self.Offset+F;self.InitialVelocity=self.Velocity;self:Reset()end;function B:SetVelocity(G)self.InitialOffset=self.Offset;self.InitialVelocity=G;self:Reset()end;function B:AddVelocity(G)self.InitialOffset=self.Offset;self.InitialVelocity=self.Velocity+G;self:Reset()end;function B:Print()local X=tostring(self)print(X)end;return u
     end
     fake_module_scripts[script] = module_script
 end
-do -- Fake Module: StarterGui.M4RU.ESPIndicator
+do -- Fake Module: StarterGui.YARHM.ESPIndicator
     local script = Instance.new("ModuleScript")
     script.Name = "ESPIndicator"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local function module_script()
 		local e={} e.__index=e local a=game:GetService("RunService") local _=game:GetService("Players") local b=game:GetService("HttpService") local l=game:GetService("TweenService") e.Groups={} e.TargetIndex={} e.Defaults={AccentColor=Color3.new(1,1,0),HighlightFillTransparency=0.7,HighlightOutlineTransparency=0,HighlightDepthMode=Enum.HighlightDepthMode.AlwaysOnTop,ArrowShow=false,ArrowEdgePadding=50,ArrowMinDistance=0,ArrowSize=UDim2.new(0,30,0,30),ArrowImage="rbxassetid://97136202386756",ArrowShowDistanceText=true,ArrowDistanceFont=Enum.Font.Montserrat,ArrowDistanceTextSize=18,ShowLabel=false,LabelText="Target",LabelMaxDistance=99999,LabelOffset=Vector3.new(0,2,0),Parent=game:GetService("CoreGui")} function e.new(b)local c=setmetatable({},e) c.Settings={} for a,_ in pairs(e.Defaults)do c.Settings[a]=(b and b[a]~=nil)and b[a]or _ end local _=c.Settings.Parent or _.LocalPlayer:WaitForChild("PlayerGui") c.ScreenGui=Instance.new("ScreenGui") c.ScreenGui.Name="ESPIndicators" c.ScreenGui.IgnoreGuiInset=true c.ScreenGui.ResetOnSpawn=false c.ScreenGui.Parent=_ c.ArrowTemplate=Instance.new("ImageLabel") c.ArrowTemplate.Name="ArrowTemplate" c.ArrowTemplate.Size=c.Settings.ArrowSize c.ArrowTemplate.AnchorPoint=Vector2.new(0.5,0.5) c.ArrowTemplate.BackgroundTransparency=1 c.ArrowTemplate.Image=c.Settings.ArrowImage c.ArrowTemplate.ImageColor3=c.Settings.AccentColor c.ArrowTemplate.Visible=false c.ArrowTemplate.Parent=c.ScreenGui c.Scaler=Instance.new("UIScale") c.Scaler.Name="Scaler" c.Scaler.Scale=0 c.Scaler.Parent=c.ArrowTemplate c.Indicators={} c._updateConn=a.RenderStepped:Connect(function()c:_update()end) c._cleanupConn=a.Heartbeat:Connect(function()c:_cleanupOrphanedArrows() c:_cleanupOrphanedHighlights() c:_cleanupOrphanedLabels()end) return c end function e:AddGroup(_)local a=e.Groups[_] if not a then a={enabled=true,properties={},targets={}} e.Groups[_]=a end return a end function e:GetGroup(_)return e.Groups[_]end function e:RemoveGroup(b)local _=e.Groups[b] if not _ then return false end for _,_ in ipairs(_.targets)do local c=e.TargetIndex[_] if c then for _,a in ipairs(c)do if a==b then table.remove(c,_) break end end if#c==0 then e.TargetIndex[_]=nil end end if not e.TargetIndex[_]then self:Remove(_)end end e.Groups[b]=nil return true end function e:ClearAllGroups()for a,_ in pairs(e.Groups)do self:RemoveGroup(a)end end function e:ToggleGroup(_,a)local b=e.Groups[_] if not b then return end b.enabled=(a~=nil)and a or not b.enabled for _,_ in ipairs(b.targets)do local _=self.Indicators[_] if _ then if _.Highlight then _.Highlight.Enabled=b.enabled end if _.Arrow then _.Arrow.Visible=b.enabled and self.Settings.ArrowShow end if _.Label then _.Label.Enabled=b.enabled end end end return b.enabled end function e:SetGroupProperty(_,a,b)local _=self:AddGroup(_) _.properties[a]=b for _,_ in ipairs(_.targets)do local _=self.Indicators[_] if _ then if a=="AccentColor"then if _.Highlight then _.Highlight.FillColor=b _.Highlight.OutlineColor=b end if _.Arrow then _.Arrow.ImageColor3=b end if _.DistanceLabel then _.DistanceLabel.TextColor3=b end if _.Label and _.Label:FindFirstChild("TextLabel")then _.Label.TextLabel.TextColor3=b end end end end end function e:Add(a,g)assert(a,"ESPIndicator:Add requires a non-nil target") g=g or{} local d=Instance.new("Highlight") d.Name="Highlight_"..b:GenerateGUID(false) d.Adornee=a d.FillTransparency=g.HighlightFillTransparency or self.Settings.HighlightFillTransparency d.FillColor=g.AccentColor or self.Settings.AccentColor d.OutlineColor=g.AccentColor or self.Settings.AccentColor d.OutlineTransparency=g.HighlightOutlineTransparency or self.Settings.HighlightOutlineTransparency d.DepthMode=g.HighlightDepthMode or self.Settings.HighlightDepthMode d.Parent=self.ScreenGui local c,_,e if(g.ArrowShow or self.Settings.ArrowShow)then c=self.ArrowTemplate:Clone() c.Name="Arrow_"..b:GenerateGUID(false) c.ImageColor3=g.AccentColor or self.Settings.AccentColor c.Visible=true c.Parent=self.ScreenGui _=c:FindFirstChild("Scaler") if(g.ArrowShowDistanceText or self.Settings.ArrowShowDistanceText)then e=Instance.new("TextLabel") e.Name="DistanceLabel" e.AnchorPoint=Vector2.new(0.5,0) e.BackgroundTransparency=1 e.Font=g.ArrowDistanceFont or self.Settings.ArrowDistanceFont e.TextSize=g.ArrowDistanceTextSize or self.Settings.ArrowDistanceTextSize e.TextColor3=g.AccentColor or self.Settings.AccentColor e.Parent=c end end local f if(g.ShowLabel or self.Settings.ShowLabel)then f=Instance.new("BillboardGui") f.Name="Label_"..b:GenerateGUID(false) f.AlwaysOnTop=true f.MaxDistance=self.Settings.LabelMaxDistance f.Size=UDim2.new(0,70,0,70) f.StudsOffset=self.Settings.LabelOffset f.Adornee=a f.Parent=self.ScreenGui local _=Instance.new("TextLabel") _.Name="TextLabel" _.Size=UDim2.new(1,0,1,0) _.AnchorPoint=Vector2.new(0.5,0.5) _.Position=UDim2.new(0.5,0,0.5,0) _.BackgroundTransparency=1 _.Font=Enum.Font.SourceSansBold _.TextScaled=true _.TextWrapped=true _.TextSize=14 _.TextColor3=g.AccentColor or self.Settings.AccentColor _.Text=g.LabelText or self.Settings.LabelText _.Parent=f Instance.new("UIStroke",_)end self.Indicators[a]={Highlight=d,Arrow=c,Scaler=_,DistanceLabel=e,Label=f,Options=g} local _=g.GroupName or self.Settings.GroupName if _ then self:AddToGroup(a,_)end end function e:Remove(c)local _=self.Indicators[c] if not _ then return end if _.Highlight then _.Highlight.Adornee=nil _.Highlight:Destroy()end if _.Arrow then _.Arrow:Destroy()end if _.Label then _.Label:Destroy()end local _=e.TargetIndex[c] if _ then for _,_ in ipairs(_)do local b=e.Groups[_] if b then for a,_ in ipairs(b.targets)do if _==c then table.remove(b.targets,a) break end end end end e.TargetIndex[c]=nil end self.Indicators[c]=nil end function e:AddToGroup(c,b)local _=self:AddGroup(b) if not table.find(_.targets,c)then table.insert(_.targets,c)end local a=e.TargetIndex[c] if not a then a={} e.TargetIndex[c]=a end if not table.find(a,b)then table.insert(a,b)end for a,_ in pairs(_.properties)do self:SetGroupProperty(b,a,_)end if not _.enabled then local _=self.Indicators[c] if _ and _.Highlight then _.Highlight.Enabled=false end end return true end function e:RemoveFromGroup(d,b)local c=e.Groups[b] if not c then return false end if table.find(c.targets,d)then for _,a in ipairs(c.targets)do if a==d then table.remove(c.targets,_) break end end else return false end local c=e.TargetIndex[d] if c then for a,_ in ipairs(c)do if _==b then table.remove(c,a) break end end if#c==0 then e.TargetIndex[d]=nil end end return true end function e:GetGroupTargets(_)local _=e.Groups[_] return _ and _.targets or{}end function e:GetTargetGroups(_)return e.TargetIndex[_]or{}end function e:_cleanupOrphanedHighlights()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("Highlight")and not table.find(self:_allHighlights(),_)then _.Adornee=nil _:Destroy()end end end function e:_allHighlights()local a={} for _,_ in pairs(self.Indicators)do if _.Highlight then table.insert(a,_.Highlight)end end return a end function e:_cleanupOrphanedArrows()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("ImageLabel")and _.Name:match("^Arrow_")then if not table.find(self:_allArrows(),_)then _:Destroy()end end end end function e:_allArrows()local a={} for _,_ in pairs(self.Indicators)do if _.Arrow then table.insert(a,_.Arrow)end end return a end function e:_cleanupOrphanedLabels()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("BillboardGui")and _.Name:match("^Label_")then if not table.find(self:_allLabels(),_)then _.Adornee=nil _:Destroy()end end end end function e:_allLabels()local a={} for _,_ in pairs(self.Indicators)do if _.Label then table.insert(a,_.Label)end end return a end function e:_update()local a=workspace.CurrentCamera local _=a.ViewportSize local f,i=_.X,_.Y for _,p in pairs(self.Indicators)do local j=p.Options local h=p.Arrow local k=p.Scaler if((not h)or(not k))and self.Settings.ArrowShow then self:Remove(_) continue end if not h then continue end local n if _:IsA("Model")then n=(_.PrimaryPart and _.PrimaryPart.Position)or _:GetModelCFrame().p elseif _:IsA("BasePart")then n=_.Position else continue end local m,e=a:WorldToViewportPoint(n) local c=(a.CFrame.p-n).Magnitude local _=j.ArrowMinDistance or self.Settings.ArrowMinDistance local o=j.ArrowEdgePadding or self.Settings.ArrowEdgePadding if e and c>_ then l:Create(k,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Scale=0}):Play()else l:Create(k,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Scale=1}):Play() local d,g=f-o*2,i-o*2 local b=a.CFrame local _=math.sqrt((d/2)^2+(g/2)^2) local a=n-b.Position local a=b:VectorToObjectSpace(a) local n=Vector2.new(a.X,a.Y).Unit local a=math.clamp(m.X,o,f-o) local b=math.clamp(m.Y,o,i-o) if a==m.X and b==m.Y and e then l:Create(k,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Scale=0}):Play()else local _=n*_ local b if math.abs(_.Y)>g/2 then b=n*math.abs((g/2)/n.Y)else b=n*math.abs((d/2)/n.X)end local a=f/2+b.X local _=i/2-b.Y local b=math.atan2(n.X,n.Y) l:Create(h,TweenInfo.new(0.1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Position=UDim2.fromOffset(a,_),Rotation=math.deg(b)}):Play()end if p.DistanceLabel then p.DistanceLabel.Text=string.format("%dm",math.round(c)) local _=(j.ArrowSize and j.ArrowSize.Y.Offset or self.Settings.ArrowSize.Y.Offset)+16 p.DistanceLabel.Position=UDim2.new(0.5,0,0,_)end end end end function e:Destroy()if self._updateConn then self._updateConn:Disconnect()end if self._cleanupConn then self._cleanupConn:Disconnect()end self:ClearAllGroups() for _,_ in pairs(self.Indicators)do if _.Highlight then _.Highlight:Destroy()end if _.Arrow then _.Arrow:Destroy()end if _.Label then _.Label:Destroy()end end self.ScreenGui:Destroy() self.Indicators={} e.Groups={} e.TargetIndex={}end return e
     end
     fake_module_scripts[script] = module_script
 end
-do -- Fake Module: StarterGui.M4RU.Bezier
+do -- Fake Module: StarterGui.YARHM.Bezier
     local script = Instance.new("ModuleScript")
     script.Name = "Bezier"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local function module_script()
 		local h={} h.__index=h function h.new(...)local k={...} assert(#k>=3,"Must have at least 3 points") local e=(#k==3) local _=(#k==4) local j={} local d=Vector3.new local b=d().lerp local f=nil local i={} local c=0 local a=nil local function g(_)local _={_.X,_.Y,_.Z} function _:ToVector3()return d(self[1],self[2],self[3])end function _:lerp(_,a)return b(self:ToVector3(),_:ToVector3(),a)end return _ end if(not e and not _)then for _=1,#k-1 do local a=g(k[_]) local _=g(k[_+1]) local _={a,_,g(a)} i[#i+1]=_ end local b=i for _=#i,2,-1 do local a={} for c=1,_-1 do local b,_=b[c],b[c+1] local _={b[3],_[3],g(b[3])} a[c]=_ i[#i+1]=_ end b=a end a=b[1] c=#i end if(e)then local b,c,_=k[1],k[2],k[3] function j:Get(d,a)if(a)then d=(d<0 and 0 or d>1 and 1 or d)end return(1-d)*(1-d)*b+2*(1-d)*d*c+d*d*_ end elseif(_)then local _,a,c,b=k[1],k[2],k[3],k[4] function j:Get(e,d)if(d)then e=(e<0 and 0 or e>1 and 1 or e)end return(1-e)*(1-e)*(1-e)*_+3*(1-e)*(1-e)*e*a+3*(1-e)*e*e*c+e*e*e*b end else function j:Get(b,_)if(_)then b=(b<0 and 0 or b>1 and 1 or b)end for _=1,c do local _=i[_] local a=_[1]:lerp(_[2],b) local _=_[3] _[1],_[2],_[3]=a.X,a.Y,a.Z end return a[3]:ToVector3()end end function j:GetLength(_)if(not f)then local a=self:GetPath(_ or 0.1) local b=0 for _=2,#a do local _=(a[_-1]-a[_]).Magnitude b=(b+_)end f=b end return f end function j:GetPath(_)assert(type(_)=="number","Must provide a step increment") assert(_>0 and _<1,"Step out of domain; should be between 0 and 1 (exclusive)") local b={} local a=0 for _=0,1,_ do a=_ b[#b+1]=self:Get(_)end if(a<1)then local _=((1-a)<(_*0.5)) b[#b+(_ and 0 or 1)]=self:Get(1)end return b end function j:GetPathByNumberSegments(_)assert(type(_)=="number","Must provide number of segments") assert(_>0,"Number of segments must be greater than 0") return self:GetPath(1/_)end function j:GetPathBySegmentLength(a)assert(type(a)=="number","Must provide a segment length") assert(a>0,"Segment length must be greater than 0") local _=self:GetLength() local _=_/a return self:GetPathByNumberSegments(math.floor(_+0.5))end function j:GetPoints()return k end return setmetatable(j,h)end return h
     end
     fake_module_scripts[script] = module_script
 end
-do -- Fake Module: StarterGui.M4RU.Theme
+do -- Fake Module: StarterGui.YARHM.Theme
     local script = Instance.new("ModuleScript")
     script.Name = "Theme"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local function module_script()
 		-- Theme module
 		
-		local M4RURoot = getgenv().M4RU
+		local YARHMRoot = getgenv().YARHM
 		local api = {
 			colors = {
 				font = Enum.Font.Montserrat,
-				textColor = Color3.fromRGB(40, 40, 40),
-				accentColor = Color3.fromRGB(40, 40, 40),
-				primaryColor = Color3.fromRGB(40, 40, 40),
-				secondaryColor = Color3.fromRGB(40, 40, 40),
+				textColor = Color3.fromRGB(255, 255, 255),
+				accentColor = Color3.fromRGB(197, 0, 0),
+				primaryColor = Color3.fromRGB(22, 22, 22),
+				secondaryColor = Color3.fromRGB(12, 12, 12),
 		
-				backgroundColorCSQ = ColorSequence.new(Color3.fromRGB(40, 40, 40), Color3.fromRGB(40, 40, 40)),	
+				backgroundColorCSQ = ColorSequence.new(Color3.fromRGB(36, 36, 36), Color3.fromRGB(68, 68, 68)),	
 				strokeColorCSQ = ColorSequence.new{
-					ColorSequenceKeypoint.new(0, Color3.fromRGB(40, 40, 40)),
-					ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(40, 40, 40)),
-					ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(40, 40, 40)),
-					ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(40, 40, 40)),
-					ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+					ColorSequenceKeypoint.new(0, Color3.fromRGB(53.00000064074993, 53.00000064074993, 53.00000064074993)),
+					ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(50.69031357765198, 50.69031357765198, 50.69031357765198)),
+					ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(255, 0, 4.000000236555934)),
+					ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(50.13314567506313, 50.13314567506313, 50.13314567506313)),
+					ColorSequenceKeypoint.new(1, Color3.fromRGB(48.000000938773155, 48.000000938773155, 48.000000938773155))
 				},
 			}
 		}
@@ -2302,7 +2375,7 @@ do -- Fake Module: StarterGui.M4RU.Theme
 		
 		function api:setColorTable(t)
 			api.colors = t
-			if getgenv then getgenv().M4RU_THEME = t end
+			if getgenv then getgenv().YARHM_THEME = t end
 		end
 		
 		function api:init(p)
@@ -2322,17 +2395,17 @@ do -- Fake Module: StarterGui.M4RU.Theme
     end
     fake_module_scripts[script] = module_script
 end
-do -- Fake Module: StarterGui.M4RU.PointSave
+do -- Fake Module: StarterGui.YARHM.PointSave
     local script = Instance.new("ModuleScript")
     script.Name = "PointSave"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local function module_script()
 		local _=false local function d(...)if _ then print("[PointSave DEBUG]:",...)end end _G._FOLDERS=_G._FOLDERS or{} _G._FILES=_G._FILES or{} isfolder=isfolder or function(_)d("Checking if folder exists:",_) return _G._FOLDERS[_]~=nil end makefolder=makefolder or function(_)d("Creating folder:",_) _G._FOLDERS[_]={} return _G._FOLDERS[_]end isfile=isfile or function(_)d("Checking if file exists:",_) return _G._FILES[_]~=nil end writefile=writefile or function(a,_)d("Writing file:",a,"with content:",_) _G._FILES[a]=_ return _G._FILES[a]end readfile=readfile or function(_)d("Reading file:",_) return _G._FILES[_]end delfile=delfile or function(_)d("Deleting file:",_) _G._FILES[_]=nil end listfiles=listfiles or function(c)d("Listing files in folder:",c) local _=_G._FOLDERS[c] if _ then local a={} for b,_ in pairs(_G._FILES)do if b:sub(1,#c+1)==c.."/"then local _=b:sub(#c+2) d("Found file in folder:",_) table.insert(a,_)end end return a end d("Folder does not exist:",c) return{}end local b={} b.__index=b local c="PointSaveData" local function _()if not isfolder(c)then d("Base folder not found, creating:",c) makefolder(c)else d("Base folder already exists:",c)end end function b.new(a)d("Initializing new PointSave instance for namespace:",a) _() local _=setmetatable({},b) _.namespace=a _.folderPath=c.."/"..a if not isfolder(_.folderPath)then d("Namespace folder does not exist, creating:",_.folderPath) makefolder(_.folderPath)else d("Namespace folder already exists:",_.folderPath)end return _ end function b:set(b,a)local _=self.folderPath.."/"..b..".txt" d("Setting value for key:",b,"->",a) writefile(_,tostring(a))end function b:get(a)local _=self.folderPath.."/"..a..".txt" d("Getting value for key:",a) if isfile(_)then local _=readfile(_) d("Found value for key:",a,"->",_) return _ end d("Key not found:",a) return nil end function b:remove(a)local _=self.folderPath.."/"..a..".txt" d("Removing key:",a) if isfile(_)then delfile(_) d("Removed file for key:",a)else d("File for key does not exist:",a)end end function b:clear()d("Clearing all keys in namespace:",self.namespace) local _=listfiles(self.folderPath) for _,_ in ipairs(_)do local _=self.folderPath.."/".._ if isfile(_)then d("Deleting file:",_) delfile(_)end end end function b.deleteNamespace(a)local b=c.."/"..a d("Deleting namespace:",a) local _=listfiles(b) for _,_ in ipairs(_)do local _=b.."/".._ if isfile(_)then d("Deleting file from namespace:",_) delfile(_)end end _G._FOLDERS[b]=nil d("Deleted folder for namespace:",a)end function b.listNamespaces()d("Listing all namespaces") _() local b={} for a,_ in pairs(_G._FOLDERS)do if a:sub(1,#c+1)==c.."/"then local _=a:sub(#c+2) d("Found namespace:",_) table.insert(b,_)end end return b end return b
     end
     fake_module_scripts[script] = module_script
 end
 -- Fake Local Scripts:
-local function ZTSOVAR_fake_script() -- Fake Script: StarterGui.M4RU.Open.InitOpen
+local function ZTSOVAR_fake_script() -- Fake Script: StarterGui.YARHM.Open.InitOpen
     local script = Instance.new("LocalScript")
     script.Name = "InitOpen"
     script.Parent = Converted["_Open"]
@@ -2347,9 +2420,10 @@ local function ZTSOVAR_fake_script() -- Fake Script: StarterGui.M4RU.Open.InitOp
 	local ts = game:GetService("TweenService")
 	
 	
-	local stroke = 	stroke.Parent = script.Parent
+	local stroke = Instance.new("UIStroke")
+	stroke.Parent = script.Parent
 	stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-	stroke.Color = Color3.fromRGB(40, 40, 40)
+	stroke.Color = Color3.fromRGB(255,255,255)
 	
 	
 	script.Parent.Position = UDim2.fromScale(0.5, -1)
@@ -2360,13 +2434,13 @@ local function ZTSOVAR_fake_script() -- Fake Script: StarterGui.M4RU.Open.InitOp
 	
 	task.wait(5)
 	ts:Create(script.Parent, TweenInfo.new(5), {
-		
+		TextTransparency = 1
 	}):Play()
 	--ts:Create(stroke, TweenInfo.new(5), {
 	--	Transparency = 1
 	--}):Play()
 end
-local function FONQUUM_fake_script() -- Fake Script: StarterGui.M4RU.Open.OnClick
+local function FONQUUM_fake_script() -- Fake Script: StarterGui.YARHM.Open.OnClick
     local script = Instance.new("LocalScript")
     script.Name = "OnClick"
     script.Parent = Converted["_Open"]
@@ -2385,9 +2459,9 @@ local function FONQUUM_fake_script() -- Fake Script: StarterGui.M4RU.Open.OnClic
 	script.Parent.MouseButton1Click:Connect(function()
 		local currentTime = tick()
 		
-		script.Parent.
+		script.Parent.TextTransparency = 1
 		ts:Create(script.Parent, TweenInfo.new(1),
-			{}
+			{TextTransparency = 1}
 		):Play()
 		
 		-- Check if the time since the last click is within a certain threshold
@@ -2403,14 +2477,14 @@ local function FONQUUM_fake_script() -- Fake Script: StarterGui.M4RU.Open.OnClic
 		if clickCount == 3 then
 			-- Triple-click detected
 	
-			ts:Create(getgenv().M4RU.Menu, TweenInfo.new(0.7, Enum.EasingStyle.Back, Enum.EasingDirection.Out), 
+			ts:Create(getgenv().YARHM.Menu, TweenInfo.new(0.7, Enum.EasingStyle.Back, Enum.EasingDirection.Out), 
 				{Position = UDim2.fromScale(0.499, 0.041), Size = UDim2.fromOffset(441, 268)}
 			):Play()
 		end
 	end)
 	
 end
-local function DOAXIVT_fake_script() -- Fake Script: StarterGui.M4RU.Open.Resizer
+local function DOAXIVT_fake_script() -- Fake Script: StarterGui.YARHM.Open.Resizer
     local script = Instance.new("LocalScript")
     script.Name = "Resizer"
     script.Parent = Converted["_Open"]
@@ -2495,7 +2569,7 @@ local function DOAXIVT_fake_script() -- Fake Script: StarterGui.M4RU.Open.Resize
 	userInputService.InputChanged:Connect(onInputChanged)
 	
 end
-local function DVJENL_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButton.Keybinding
+local function DVJENL_fake_script() -- Fake Script: StarterGui.YARHM.FloatingButton.Keybinding
     local script = Instance.new("LocalScript")
     script.Name = "Keybinding"
     script.Parent = Converted["_FloatingButton"]
@@ -2509,7 +2583,7 @@ local function DVJENL_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButt
     end
 	
 end
-local function SAJO_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButton.Invisible
+local function SAJO_fake_script() -- Fake Script: StarterGui.YARHM.FloatingButton.Invisible
     local script = Instance.new("LocalScript")
     script.Name = "Invisible"
     script.Parent = Converted["_FloatingButton"]
@@ -2536,7 +2610,7 @@ local function SAJO_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButton
 	--			invisible = true
 	--			ts:Create(script.Parent, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 	--				BackgroundTransparency = 1,
-	--				
+	--				TextTransparency = 1
 	--			}):Play()
 	--			ts:Create(script.Parent.UIStroke, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 	--				Transparency = 0.7
@@ -2545,7 +2619,7 @@ local function SAJO_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButton
 	--			invisible = false
 	--			ts:Create(script.Parent, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 	--				BackgroundTransparency = 0,
-	--				
+	--				TextTransparency = 0
 	--			}):Play()
 	--			ts:Create(script.Parent.UIStroke, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {
 	--				Transparency = 0
@@ -2558,7 +2632,7 @@ local function SAJO_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButton
 	--	holding = false
 	--end)
 end
-local function NCDB_fake_script() -- Fake Script: StarterGui.M4RU.AddCustomModule.Add.LocalScript
+local function NCDB_fake_script() -- Fake Script: StarterGui.YARHM.AddCustomModule.Add.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Add"]
@@ -2603,7 +2677,7 @@ local function NCDB_fake_script() -- Fake Script: StarterGui.M4RU.AddCustomModul
 	end)
 	
 end
-local function SBOBP_fake_script() -- Fake Script: StarterGui.M4RU.AddCustomModule.Cancel.LocalScript
+local function SBOBP_fake_script() -- Fake Script: StarterGui.YARHM.AddCustomModule.Cancel.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Cancel"]
@@ -2626,10 +2700,10 @@ local function SBOBP_fake_script() -- Fake Script: StarterGui.M4RU.AddCustomModu
 		}):Play()
 	end)
 end
-local function VIZJP_fake_script() -- Fake Script: StarterGui.M4RU.Flee the Facility
+local function VIZJP_fake_script() -- Fake Script: StarterGui.YARHM.Flee the Facility
     local script = Instance.new("LocalScript")
     script.Name = "Flee the Facility"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local req = require
     local require = function(obj)
         local fake = fake_module_scripts[obj]
@@ -2710,9 +2784,9 @@ local function VIZJP_fake_script() -- Fake Script: StarterGui.M4RU.Flee the Faci
 							repeat
 								task.wait(0.1)
 								if player == getBeast() then
-									a.FillColor = Color3.fromRGB(40, 40, 40)
+									a.FillColor = Color3.fromRGB(255,0,0)
 								else
-									a.FillColor = Color3.fromRGB(40, 40, 40)
+									a.FillColor = Color3.fromRGB(0,255,0)
 								end
 							until character == nil or a == nil
 						end)
@@ -2753,7 +2827,7 @@ local function VIZJP_fake_script() -- Fake Script: StarterGui.M4RU.Flee the Faci
 					hili.Name = "PodsHighlight"
 					hili.OutlineTransparency = 1
 					hili.Adornee = obj
-					hili.FillColor = Color3.fromRGB(40, 40, 40)
+					hili.FillColor = Color3.fromRGB(0, 200, 255)
 				end
 			end
 	
@@ -2771,7 +2845,7 @@ local function VIZJP_fake_script() -- Fake Script: StarterGui.M4RU.Flee the Faci
 					hili.Name = "ExitsHighlight"
 					hili.OutlineTransparency = 1
 					hili.Adornee = obj
-					hili.FillColor = Color3.fromRGB(40, 40, 40)
+					hili.FillColor = Color3.fromRGB(255,255,0)
 				end
 			end
 	
@@ -2935,10 +3009,10 @@ local function VIZJP_fake_script() -- Fake Script: StarterGui.M4RU.Flee the Faci
 	repeat task.wait() until getgenv().Modules
 	getgenv().Modules[2] = module
 end
-local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
+local function UTRFSE_fake_script() -- Fake Script: StarterGui.YARHM.Universal
     local script = Instance.new("LocalScript")
     script.Name = "Universal"
-    script.Parent = Converted["_M4RU"]
+    script.Parent = Converted["_YARHM"]
     local req = require
     local require = function(obj)
         local fake = fake_module_scripts[obj]
@@ -2970,7 +3044,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	
 	local hidden = false
 	
-	local M4RUPointSave = PointSave.new("M4RU")
+	local YARHMPointSave = PointSave.new("YARHM")
 	
 	function splitString(str,delim)
 		local broken = {}
@@ -3140,7 +3214,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	
 	table.insert(module, {
 		Type = "Text",
-		Args = {"Welcome to M4RU! The open, free script hub."}
+		Args = {"Welcome to YARHM! The open, free script hub."}
 	})
 	
 	table.insert(module, {
@@ -3151,7 +3225,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	table.insert(module, {
 		Type = "Button",
 		Args = {"AFEM - A free, FE, simple and easy emotes menu!", function()
-			loadstring(game:HttpGet("https://M4RU.mhi.im/scr?channel=afem"))()
+			loadstring(game:HttpGet("https://yarhm.mhi.im/scr?channel=afem"))()
 		end,}
 	})
 	
@@ -3960,7 +4034,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	
 	table.insert(module, {
 		Type = "Button",
-		Args = {"Hide M4RU", function(Self)
+		Args = {"Hide YARHM", function(Self)
 			if uis.KeyboardEnabled then
 				ts:Create(script.Parent.Menu.UIScale, TweenInfo.new(0.6, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
 					Scale = 0
@@ -3974,7 +4048,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 				hidden=true
 				fu.notification("Shake your device to bring back the menu.")
 			else
-				fu.notification("Can't hide M4RU!") -- how else are you gonna open???
+				fu.notification("Can't hide YARHM!") -- how else are you gonna open???
 			end
 		end,}
 	}
@@ -4088,17 +4162,17 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 		Type = "Button",
 		Args = {"Open developer console (debugging)", function(Self)
 			game.StarterGui:SetCore("DevConsoleVisible", true)
-			--getgenv().M4RU.Open.UIStroke.Transparency = 0
-			--getgenv().M4RU.Open.
-			--ts:Create(getgenv().M4RU.Open, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
+			--getgenv().YARHM.Open.UIStroke.Transparency = 0
+			--getgenv().YARHM.Open.TextTransparency = 0
+			--ts:Create(getgenv().YARHM.Open, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
 			--	Position = UDim2.fromScale(0.5, 0.903)
 			--}):Play()
 	
-			--ts:Create(getgenv().M4RU.Open.UIStroke, TweenInfo.new(1), {
+			--ts:Create(getgenv().YARHM.Open.UIStroke, TweenInfo.new(1), {
 			--	Transparency = 1
 			--}):Play()
-			--ts:Create(getgenv().M4RU.Open, TweenInfo.new(1), {
-			--	
+			--ts:Create(getgenv().YARHM.Open, TweenInfo.new(1), {
+			--	TextTransparency = 1
 			--}):Play()
 		end}
 	}
@@ -4161,10 +4235,10 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	
 	local function loadThemeFromSave(last)
 		if not last then task.wait(1) else task.wait(0.2) end
-		if M4RUPointSave:get("M4RUGlobal_themeCode") then
-			local themeObjectImport = themeDeserialize(https:JSONDecode(fu.from_base64(M4RUPointSave:get("M4RUGlobal_themeCode"))))
+		if YARHMPointSave:get("YARHMGlobal_themeCode") then
+			local themeObjectImport = themeDeserialize(https:JSONDecode(fu.from_base64(YARHMPointSave:get("YARHMGlobal_themeCode"))))
 			theme:setColorTable(themeObjectImport)
-			theme:init(getgenv().M4RU)
+			theme:init(getgenv().YARHM)
 	
 			fu.setTheme(themeObjectImport)
 	
@@ -4182,7 +4256,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 			function(obj, value)
 				local themeObjectImport = themeDeserialize(https:JSONDecode(fu.from_base64(value)))
 				theme:setColorTable(themeObjectImport)
-				theme:init(getgenv().M4RU)
+				theme:init(getgenv().YARHM)
 				
 				fu.setTheme(themeObjectImport)
 				
@@ -4190,7 +4264,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 				fu.refresharea()
 				fu.notification("Successfully applied theme!")
 				
-				M4RUPointSave:set("M4RUGlobal_themeCode", value)
+				YARHMPointSave:set("YARHMGlobal_themeCode", value)
 			end
 		}
 	})
@@ -4198,7 +4272,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	table.insert(module, {
 		Type = "Button",
 		Args = {"Reload theme", function()
-			theme:init(getgenv().M4RU)
+			theme:init(getgenv().YARHM)
 	
 			fu.refreshlist()
 			fu.refresharea()
@@ -4208,7 +4282,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	table.insert(module, {
 		Type = "Button",
 		Args = {"Delete theme from save", function()
-			M4RUPointSave:remove("M4RUGlobal_themeCode")
+			YARHMPointSave:remove("YARHMGlobal_themeCode")
 			
 			fu.notification("Theme will not be restored on the next executes.")
 		end,}
@@ -4225,7 +4299,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	local usernameColors = {
 		["XxxS_omeonexxX"] = Color3.fromHex("#f48fff"),
 		["Dextacular"] = Color3.fromHex("#f48fff"),
-		["M4RUplus"] = Color3.fromHex("#f48fff"),
+		["yarhmplus"] = Color3.fromHex("#f48fff"),
 		["joystick531"] = Color3.fromHex("#ff0000"),
 		["givepetroblox"] = Color3.fromHex("#ff0000"),
 		["Bubberbolf"] = Color3.fromHex("#0030ff"),
@@ -4239,9 +4313,9 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 		["fweemeimtrapwed"] = Color3.fromHex("ffac33"),
 	}
 	
-	local mainText = "M4RU Developer"
+	local mainText = "YARHM Developer"
 	local mainFont = Enum.Font.GothamBold
-	local specialText = "M4RU+"
+	local specialText = "YARHM+"
 	local specialFont = Enum.Font.GothamBold
 	
 	local function createTextLabel(player, text, color)
@@ -4306,7 +4380,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 
 	table.insert(module, {
 		Type = "Toggle",
-		Args = {"Hide M4RU+/Developer tags", function(Self, state)
+		Args = {"Hide YARHM+/Developer tags", function(Self, state)
 			for _, tag in ipairs(tagsFolder:GetChildren()) do
 				tag.Enabled = not state
 			end
@@ -4316,7 +4390,7 @@ local function UTRFSE_fake_script() -- Fake Script: StarterGui.M4RU.Universal
 	repeat task.wait() until getgenv().Modules
 	getgenv().Modules[1] = module
 end
-local function SFEGW_fake_script() -- Fake Script: StarterGui.M4RU.Menu.UIStroke.UIGradient.Animator
+local function SFEGW_fake_script() -- Fake Script: StarterGui.YARHM.Menu.UIStroke.UIGradient.Animator
 	local script = Instance.new("LocalScript")
 	script.Name = "Animator"
 	script.Parent = Converted["_UIGradient4"]
@@ -4336,7 +4410,7 @@ local function SFEGW_fake_script() -- Fake Script: StarterGui.M4RU.Menu.UIStroke
 			Rotation = -180
 		}):Play()
 end
-local function MZHT_fake_script() -- Fake Script: StarterGui.M4RU.Menu.List.AutoSetup
+local function MZHT_fake_script() -- Fake Script: StarterGui.YARHM.Menu.List.AutoSetup
 	local script = Instance.new("LocalScript")
 	script.Name = "AutoSetup"
 	script.Parent = Converted["_List"]
@@ -4389,7 +4463,7 @@ local function MZHT_fake_script() -- Fake Script: StarterGui.M4RU.Menu.List.Auto
 	--	--end
 	--end)
 end
-local function PKEHOF_fake_script() -- Fake Script: StarterGui.M4RU.Menu.List.AddCustomModule.LocalScript
+local function PKEHOF_fake_script() -- Fake Script: StarterGui.YARHM.Menu.List.AddCustomModule.LocalScript
 	local script = Instance.new("LocalScript")
 	script.Name = "LocalScript"
 	script.Parent = Converted["_AddCustomModule1"]
@@ -4412,7 +4486,7 @@ local function PKEHOF_fake_script() -- Fake Script: StarterGui.M4RU.Menu.List.Ad
 		}):Play()
 	end)
 end
-local function OEALVLK_fake_script() -- Fake Script: StarterGui.M4RU.Menu.CloseArea.CloseOpen
+local function OEALVLK_fake_script() -- Fake Script: StarterGui.YARHM.Menu.CloseArea.CloseOpen
 	local script = Instance.new("LocalScript")
 	script.Name = "CloseOpen"
 	script.Parent = Converted["_CloseArea"]
@@ -4435,7 +4509,7 @@ local function OEALVLK_fake_script() -- Fake Script: StarterGui.M4RU.Menu.CloseA
 
 	-- Tween the TextLabel transparency
 	--TweenService:Create(script.Parent.TextLabel, TweenInfo.new(20, Enum.EasingStyle.Linear), {
-	--	,
+	--	TextTransparency = 1,
 	--	BackgroundTransparency = 1
 	--}):Play()
 
@@ -4492,7 +4566,7 @@ local function OEALVLK_fake_script() -- Fake Script: StarterGui.M4RU.Menu.CloseA
 		--if not textHidden then
 		--	textHidden = true
 		--	TweenService:Create(script.Parent.TextLabel, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
-		--		,
+		--		TextTransparency = 1,
 		--		BackgroundTransparency = 1
 		--	}):Play()
 		--end
@@ -4513,7 +4587,7 @@ local function OEALVLK_fake_script() -- Fake Script: StarterGui.M4RU.Menu.CloseA
 		if not textHidden then
 			textHidden = true
 			TweenService:Create(script.Parent.TextLabel, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
-				,
+				TextTransparency = 1,
 				BackgroundTransparency = 1
 			}):Play()
 		end
@@ -4541,7 +4615,7 @@ local function OEALVLK_fake_script() -- Fake Script: StarterGui.M4RU.Menu.CloseA
 			if not textHidden then
 				textHidden = true
 				TweenService:Create(script.Parent.TextLabel, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {
-					,
+					TextTransparency = 1,
 					BackgroundTransparency = 1
 				}):Play()
 			end
@@ -4620,10 +4694,10 @@ local function OEALVLK_fake_script() -- Fake Script: StarterGui.M4RU.Menu.CloseA
 	script.Parent.AllowForSpring.Event:Wait()
 	springing = true
 end
-local function NFLXNSA_fake_script() -- Fake Script: StarterGui.M4RU.Init
+local function NFLXNSA_fake_script() -- Fake Script: StarterGui.YARHM.Init
 	local script = Instance.new("LocalScript")
 	script.Name = "Init"
-	script.Parent = Converted["_M4RU"]
+	script.Parent = Converted["_YARHM"]
 	local req = require
 	local require = function(obj)
 		local fake = fake_module_scripts[obj]
@@ -4637,7 +4711,7 @@ local function NFLXNSA_fake_script() -- Fake Script: StarterGui.M4RU.Init
 	local ts = game:GetService("TweenService")
 
 
-	getgenv().M4RU = script.Parent
+	getgenv().YARHM = script.Parent
 	getgenv().ThemeManager = require(script.Parent.Theme)
 	local COREGUI = game:GetService("CoreGui")
 	function randomString()
@@ -4653,30 +4727,30 @@ local function NFLXNSA_fake_script() -- Fake Script: StarterGui.M4RU.Init
 			local hiddenUI = get_hidden_gui or gethui
 			script.Parent.Name = randomString()
 			script.Parent.Parent = hiddenUI()
-			--print("[M4RU] - Using get_hidden_gui for anti-detection.")
+			--print("[YARHM] - Using get_hidden_gui for anti-detection.")
 		elseif (not is_sirhurt_closure) and (syn and syn.protect_gui) then
 			script.Parent.Name = randomString()
 			syn.protect_gui(script.Parent)
 			script.Parent.Parent = COREGUI
-			--print("[M4RU] - Using syn.protect_gui for anti-detection.")
+			--print("[YARHM] - Using syn.protect_gui for anti-detection.")
 		elseif COREGUI:FindFirstChild('RobloxGui') then
 			script.Parent.Parent = COREGUI.RobloxGui
-			--print("[M4RU] - Using RobloxGui for anti-detection.")
+			--print("[YARHM] - Using RobloxGui for anti-detection.")
 		else
-			--warn("[M4RU] - Using CoreGui as anti-detection. This is the most basic coverage and can still be detected.")
+			--warn("[YARHM] - Using CoreGui as anti-detection. This is the most basic coverage and can still be detected.")
 		end
 	end)
 
-	--print("[M4RU] - M4RU is now in " .. tostring(script.Parent:GetFullName()))
+	--print("[YARHM] - YARHM is now in " .. tostring(script.Parent:GetFullName()))
 	if not s then
-		--warn("[M4RU] - Attempts at anti-detection failed. Using CoreGui as anti-detection.")
+		--warn("[YARHM] - Attempts at anti-detection failed. Using CoreGui as anti-detection.")
 		warn(e)	
 	end
 
-	--printidentity("[M4RU] - Your executor level (identity) is")
+	--printidentity("[YARHM] - Your executor level (identity) is")
 
 	local getExeName = identifyexecutor or getexecutorname or function() return "Yet Another Roblox Executor v1.2" end
-	--print("[M4RU] - Your executor is " .. getExeName())
+	--print("[YARHM] - Your executor is " .. getExeName())
 
 	script.Parent.SafeAreaCompatibility = Enum.SafeAreaCompatibility.None
 	script.Parent.ScreenInsets = Enum.ScreenInsets.None
@@ -4697,7 +4771,7 @@ local function NFLXNSA_fake_script() -- Fake Script: StarterGui.M4RU.Init
 	if not game:IsLoaded() then
 		game.Loaded:Wait()
 	end
-	require(script.Parent.FUNCTIONS).notification("Welcome to M4RU Nebula.")
+	require(script.Parent.FUNCTIONS).notification("Welcome to YARHM Nebula.")
 
 	ts:Create(script.Parent.Menu, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), 
 		{Position = UDim2.fromScale(0.5, 0.05)}
@@ -4717,17 +4791,17 @@ local function NFLXNSA_fake_script() -- Fake Script: StarterGui.M4RU.Init
 	script.Parent.Menu.CloseArea.AllowForSpring:Fire()
 	task.wait(1)
 	require(script.Parent.FUNCTIONS).loadFloatingButtons()
-	--require(script.Parent.Theme):init(getgenv().M4RU)
+	--require(script.Parent.Theme):init(getgenv().YARHM)
 
 	--require(script.Parent.FUNCTIONS).refreshlist()
 	--require(script.Parent.FUNCTIONS).refresharea()
 
 	--getgenv().ThemeManager:init(script.Parent)
 end
-local function DFEDO_fake_script() -- Fake Script: StarterGui.M4RU.Forsaken
+local function DFEDO_fake_script() -- Fake Script: StarterGui.YARHM.Forsaken
 	local script = Instance.new("LocalScript")
 	script.Name = "Forsaken"
-	script.Parent = Converted["_M4RU"]
+	script.Parent = Converted["_YARHM"]
 	local req = require
 	local require = function(obj)
 		local fake = fake_module_scripts[obj]
@@ -4741,15 +4815,15 @@ local function DFEDO_fake_script() -- Fake Script: StarterGui.M4RU.Forsaken
 	module.gameId = 6331902150
 	module.Name = "Forsaken"
 
-	local fu = require(getgenv().M4RU.FUNCTIONS)
+	local fu = require(getgenv().YARHM.FUNCTIONS)
 	if (module.gameId ~= game.GameId) then
 		table.insert(module, {
 			Type = "Text",
-			Args = {"M4RU now includes an official <font color='#FFFF00'>Forsaken</font> module!"}
+			Args = {"YARHM now includes an official <font color='#FFFF00'>Forsaken</font> module!"}
 		})
 		table.insert(module, {
 			Type = "Text",
-			Args = {"<font size='10'>To use, run M4RU on Forsaken.</font>"}
+			Args = {"<font size='10'>To use, run YARHM on Forsaken.</font>"}
 		})
 		repeat task.wait() until getgenv().Modules
 		getgenv().Modules[4] = module
@@ -5057,10 +5131,10 @@ local function DFEDO_fake_script() -- Fake Script: StarterGui.M4RU.Forsaken
 	repeat task.wait() until getgenv().Modules
 	getgenv().Modules[4] = module
 end
-local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Mystery 2
+local function QUXUEEW_fake_script() -- Fake Script: StarterGui.YARHM.Murder Mystery 2
 	local script = Instance.new("LocalScript")
 	script.Name = "Murder Mystery 2"
-	script.Parent = Converted["_M4RU"]
+	script.Parent = Converted["_YARHM"]
 	local req = require
 	local require = function(obj)
 		local fake = fake_module_scripts[obj]
@@ -5073,7 +5147,7 @@ local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Myst
 	module["gameId"] = 0 -- 66654135 -- Restrict module to a certain game ID only. 0 allows all games.
 
 
-	local fu = require(getgenv().M4RU.FUNCTIONS)
+	local fu = require(getgenv().YARHM.FUNCTIONS)
 	local espindc = require(script.Parent.ESPIndicator)
 
 	local espcontainer = espindc.new({EdgePadding = 120, ShowDistanceText = false,})
@@ -5090,8 +5164,8 @@ local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Myst
 	local trapDetection = false
 	--local trapESP = Instance.new("Highlight")
 	--trapESP.Name = "TrapESP"
-	--trapESP.FillColor = Color3.fromRGB(40, 40, 40)
-	--trapESP.OutlineColor = Color3.fromRGB(40, 40, 40)
+	--trapESP.FillColor = Color3.fromRGB(255, 112, 10)
+	--trapESP.OutlineColor = Color3.fromRGB(255, 112, 10)
 	--trapESP.FillTransparency = 0.5
 
 
@@ -5251,7 +5325,7 @@ local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Myst
 
 		if fu.waitfordialog() == "No" then
 			fu.closedialog()
-			fu.notification("MM2 will not be loaded until you rejoin.", Color3.fromRGB(40, 40, 40), "x")
+			fu.notification("MM2 will not be loaded until you rejoin.", Color3.fromRGB(255, 0, 0), "x")
 			return
 		end	
 		fu.closedialog()
@@ -5404,7 +5478,7 @@ local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Myst
 			--if not script.Parent:FindFirstChild("GunESP") then
 			--	local gunesp = Instance.new("Highlight", script.Parent)
 			--	gunesp.OutlineTransparency = 1
-			--	gunesp.FillColor = Color3.fromRGB(40, 40, 40)
+			--	gunesp.FillColor = Color3.fromRGB(255, 255, 0)
 			--	gunesp.Name = "GunESP"
 			--	gunesp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 			--	gunesp.Adornee = ch
@@ -5454,23 +5528,23 @@ local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Myst
 			--			a.Name = "PlayerESP"
 			--			a.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 			--			a.Adornee = character
-			--			a.FillColor = Color3.fromRGB(40, 40, 40)
+			--			a.FillColor = Color3.fromRGB(255, 255, 255)
 			--			a.FillTransparency = 0.5
 			--			task.spawn(function()
 			--				if player == findMurderer() then
 			--					local mbgui = script.Parent.MurdererBGUI:Clone()
 			--					mbgui.Enabled = true
 			--					mbgui.Name = "AppliedMurdererBGUI"
-			--					mbgui.Parent = getgenv().M4RU
+			--					mbgui.Parent = getgenv().YARHM
 			--					mbgui.Adornee = character
-			--					a.FillColor = Color3.fromRGB(40, 40, 40)
-			--					a.OutlineColor = Color3.fromRGB(40, 40, 40)
+			--					a.FillColor = Color3.fromRGB(255,0,0)
+			--					a.OutlineColor = Color3.fromRGB(255,0,0)
 			--				elseif player == findSheriff() then
-			--					a.FillColor = Color3.fromRGB(40, 40, 40)
-			--					a.OutlineColor = Color3.fromRGB(40, 40, 40)
+			--					a.FillColor = Color3.fromRGB(255, 255,0)
+			--					a.OutlineColor = Color3.fromRGB(255, 255,0)
 			--				else
-			--					a.FillColor = Color3.fromRGB(40, 40, 40)
-			--					a.OutlineColor = Color3.fromRGB(40, 40, 40)
+			--					a.FillColor = Color3.fromRGB(0,255,0)
+			--					a.OutlineColor = Color3.fromRGB(0, 255, 0)
 			--				end
 			--				if a then
 			--					if not player then return end
@@ -5863,7 +5937,7 @@ local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Myst
 					repeat
 						task.wait(0.1)
 						local murderer = findMurderer() or findSheriffThatsNotMe()
-						if not murderer then warn("[M4RU] > MM2 Autoshoot - No murderer.") continue end
+						if not murderer then warn("[YARHM] > MM2 Autoshoot - No murderer.") continue end
 						local murdererPosition = murderer.Character.HumanoidRootPart.Position
 						local characterRootPart = localplayer.Character.HumanoidRootPart
 						local rayDirection = (murdererPosition - characterRootPart.Position).Unit * 50
@@ -5968,7 +6042,7 @@ local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Myst
 				if sher then sherName = sher.Name end
 				local message = string.format([[Murderer: %s |
 	Sheriff: %s |
-	<<M4RU>>]], murdName, sherName)
+	<<YARHM>>]], murdName, sherName)
 				textchannel:SendAsync(message)
 			end
 		end,}
@@ -6261,7 +6335,7 @@ local function QUXUEEW_fake_script() -- Fake Script: StarterGui.M4RU.Murder Myst
 	getgenv().Modules[3] = module
 	fu.refreshlist()
 end
-local function PIXKC_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButtonSetting.ControlBarContainer.ControlBar.Visibility.LocalScript
+local function PIXKC_fake_script() -- Fake Script: StarterGui.YARHM.FloatingButtonSetting.ControlBarContainer.ControlBar.Visibility.LocalScript
 	local script = Instance.new("LocalScript")
 	script.Name = "LocalScript"
 	script.Parent = Converted["_Visibility"]
@@ -6274,10 +6348,10 @@ local function PIXKC_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButto
 		return req(obj)
 	end
 	script.Parent.MouseButton1Click:Connect(function()
-		getgenv().M4RUFUNCTIONS.ftToggleVisibility()
+		getgenv().YARHMFUNCTIONS.ftToggleVisibility()
 	end)
 end
-local function JIUI_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButtonSetting.ControlBarContainer.ControlBar.Lock.LocalScript
+local function JIUI_fake_script() -- Fake Script: StarterGui.YARHM.FloatingButtonSetting.ControlBarContainer.ControlBar.Lock.LocalScript
 	local script = Instance.new("LocalScript")
 	script.Name = "LocalScript"
 	script.Parent = Converted["_Lock1"]
@@ -6290,10 +6364,10 @@ local function JIUI_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButton
 		return req(obj)
 	end
 	script.Parent.MouseButton1Click:Connect(function()
-		getgenv().M4RUFUNCTIONS.ftToggleLock()
+		getgenv().YARHMFUNCTIONS.ftToggleLock()
 	end)
 end
-local function ZISNWBG_fake_script() -- Fake Script: StarterGui.M4RU.FloatingButtonSetting.ControlBarContainer.ControlBar.Exit.LocalScript
+local function ZISNWBG_fake_script() -- Fake Script: StarterGui.YARHM.FloatingButtonSetting.ControlBarContainer.ControlBar.Exit.LocalScript
 	local script = Instance.new("LocalScript")
 	script.Name = "LocalScript"
 	script.Parent = Converted["_Exit"]
@@ -6306,7 +6380,7 @@ local function ZISNWBG_fake_script() -- Fake Script: StarterGui.M4RU.FloatingBut
 		return req(obj)
 	end
 	script.Parent.MouseButton1Click:Connect(function()
-		getgenv().M4RUFUNCTIONS.closeFinetuneFB()
+		getgenv().YARHMFUNCTIONS.closeFinetuneFB()
 	end)
 end
 coroutine.wrap(ZTSOVAR_fake_script)()
